@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApnaShop</title>
+    <link rel="shortcut icon" href="/image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="wrapper" class="wrapper">
+        <div class="panel">
+            <h1>Welcome Back</h1>
+            <p style="margin-bottom: 10px;">Login to continue your journey</p>
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showSignup()">Sign Up</button>
+        </div>
+
+        <div class="forms">
+            <!-- Login -->
+            <div class="form login">
+                <h2>Login</h2>
+
+                <div class="input-box">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Username">
+                </div>
+
+                <div class="input-box">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+
+                <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button class="liquid-btn">
+                    <span>Login</span>
+                </button>
+
+                <div class="google-btn">
+                    <i class="fa-brands fa-google"></i>
+                    Continue with Google
+                </div>
+
+                <div class="google-btn">
+                    <i class="fa-brands fa-facebook"></i>
+                    Continue with Facebook
+                </div>
+
+                <div class="google-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 315">
+                        <path
+                            d="M213.803 167.03c.442 47.58 41.74 63.413 42.197 63.615c-.35 1.116-6.599 22.563-21.757 44.716c-13.104 19.153-26.705 38.235-48.13 38.63c-21.05.388-27.82-12.483-51.888-12.483c-24.061 0-31.582 12.088-51.51 12.871c-20.68.783-36.428-20.71-49.64-39.793c-27-39.033-47.633-110.3-19.928-158.406c13.763-23.89 38.36-39.017 65.056-39.405c20.307-.387 39.475 13.662 51.889 13.662c12.406 0 35.699-16.895 60.186-14.414c10.25.427 39.026 4.14 57.503 31.186c-1.49.923-34.335 20.044-33.978 59.822M174.24 50.199c10.98-13.29 18.369-31.79 16.353-50.199c-15.826.636-34.962 10.546-46.314 23.828c-10.173 11.763-19.082 30.589-16.678 48.633c17.64 1.365 35.66-8.964 46.64-22.262" />
+                    </svg>
+                    Continue with Apple
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Signup -->
+        <div class="form2 signup">
+            <h2>Create Account</h2>
+
+            <div class="input-box">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username">
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Password">
+            </div>
+
+            <button class="liquid-btn signup" style="left: 0;">
+                <span>Sign Up</span>
+            </button>
+
+            <div class="google-btn">
+                <i class="fa-brands fa-google"></i>
+                Continue with Google
+            </div>
+
+            <div class="google-btn">
+                <i class="fa-brands fa-facebook"></i>
+                Continue with Facebook
+            </div>
+
+            <div class="google-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 315">
+                    <path
+                        d="M213.803 167.03c.442 47.58 41.74 63.413 42.197 63.615c-.35 1.116-6.599 22.563-21.757 44.716c-13.104 19.153-26.705 38.235-48.13 38.63c-21.05.388-27.82-12.483-51.888-12.483c-24.061 0-31.582 12.088-51.51 12.871c-20.68.783-36.428-20.71-49.64-39.793c-27-39.033-47.633-110.3-19.928-158.406c13.763-23.89 38.36-39.017 65.056-39.405c20.307-.387 39.475 13.662 51.889 13.662c12.406 0 35.699-16.895 60.186-14.414c10.25.427 39.026 4.14 57.503 31.186c-1.49.923-34.335 20.044-33.978 59.822M174.24 50.199c10.98-13.29 18.369-31.79 16.353-50.199c-15.826.636-34.962 10.546-46.314 23.828c-10.173 11.763-19.082 30.589-16.678 48.633c17.64 1.365 35.66-8.964 46.64-22.262" />
+                </svg>
+                Continue with Apple
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.querySelector(".login");
+        const signupForm = document.querySelector(".signup");
+        
+        function showLogin() {
+            loginForm.style.left = "0";
+            signupForm.style.left = "100%";
+        }
+
+        function showSignup() {
+            loginForm.style.left = "-100%";
+            signupForm.style.left = "0";
+        }
+
+    </script>
+    <script src="script.js" ></script>
+</body>
+
+</html>

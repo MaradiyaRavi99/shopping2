@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "shopping2",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "shopping2"
+	}
+}

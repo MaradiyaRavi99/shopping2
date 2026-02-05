@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/profile.css">
+    <!-- <link rel="stylesheet" href="/static/order.css"> -->
+</head>
+<script src="/static/index.js" defer></script>
+
+<body>
+    <div class="blur-bg">
+    </div>
+    <div class="main">
+        <div class="navigation" id="navigation">
+            <nav>
+                <div class="nav_logo">
+                    <img src="/static/logo1.png" alt="" id="logo">
+                </div>
+                <ul>
+                    <div class="nav_ul" id="nav_ul">
+                        <li class="items1"><a href="/">Home</a></li>
+                        <li class="items2">
+                            <div class="dropdown">Categories
+                                <div class="dropdown-content">
+                                    <button class="dropdown_btn" id="electronics"><a
+                                            href="/Electronics.html">Electronics</a></button>
+                                    <button class="dropdown_btn" id="Sports"><a href="/Sports.html">Sports</a></button>
+                                    <button class="dropdown_btn" id="Fashion">Fashion</button>
+                                    <button class="dropdown_btn" id="Footwear">Footwear</button>
+                                    <button class="dropdown_btn" id="Kitchen">Kitchen</button>
+                                    <button class="dropdown_btn" id="Gaming">Gaming</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="items3"><a href="/">About</a></li>
+                        <li class="items9"><a href="/">Orders</a></li>
+                        <li class="items4"><a href="/">Contact</a></li>
+                        <li class="items8"><button class="login_btn" id="openBtn2" onclick="showWrapper()">Sign
+                                Up</button></li>
+                    </div>
+                </ul>
+                <div class="icons" id="icons">
+                    <ul>
+                        <div id="search">
+                            <form class="example" action="/action_page.php" style="max-width:300px">
+                                <input type="text" placeholder="Search products.." name="search2">
+                                <button type="submit">
+                                    <div class="hi">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#fff"
+                                                d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                        <li class="items6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="margin-left: 5px; margin-top: 3px;" viewBox="0 0 24 24">
+                                <g fill="none" stroke="#fff" stroke-width="1.5">
+                                    <path stroke-linejoin="round"
+                                        d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                                    <circle cx="12" cy="7" r="3" />
+                                </g>
+                            </svg>
+
+
+                        </li>
+                        <li class="items5">
+                            <button class="cart" id="openBtn">
+                                <span id="cartCount">0</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    style="margin-left: 4px; margin-top: -7px;" viewBox="0 0 16 16">
+                                    <path fill="#fff"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607L1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4a2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2a1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <li class="items7">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="margin-left: 5px; margin-top: 5px;" viewBox="0 0 24 24">
+                            <path fill="#fff"
+                                d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2m18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2m0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2" />
+                        </svg>
+                    </a>
+                </li>
+            </nav>
+            <svg width="0" height="0">
+                <defs>
+                    <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
+
+                        <!-- Displacement texture -->
+                        <feImage href="https://essykings.github.io/JavaScript/map.png" x="-50%" y="-50%" width="200%"
+                            height="200%" result="map" />
+
+                        <!-- Blur the original object -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+
+                        <!-- Glass distortion -->
+                        <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />
+
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+    <div class="main_profile">
+        <div class="profile">
+            <div class="profile_icon">
+                <div class="profile_icon_subclass">
+                    <img src="/static/trainer1.jpg" alt="">
+                </div>
+                <div class="profile_btn"><button class="btn_edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px;" width="18" height="18"
+                            viewBox="0 0 24 24">
+                            <g fill="none">
+                                <path fill="#fff" d="m5 16l-1 4l4-1L18 9l-3-3z" opacity="0.16" />
+                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m5 16l-1 4l4-1L19.586 7.414a2 2 0 0 0 0-2.828l-.172-.172a2 2 0 0 0-2.828 0zM15 6l3 3m-5 11h8" />
+                            </g>
+                        </svg>
+                        Edit Profile</button>
+                </div>
+            </div>
+            <div class="profile_img_change">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <g fill="#a0d591" fill-rule="evenodd" clip-rule="evenodd">
+                        <path
+                            d="M5.696 5.078L5.398 6H4.5a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-.899l-.297-.922A3 3 0 0 0 11.449 3H8.55a3 3 0 0 0-2.855 2.078M4.5 8h2.354L7.6 5.693A1 1 0 0 1 8.551 5h2.898a1 1 0 0 1 .951.693L13.145 8H15.5a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
+                        <path
+                            d="M6.5 11.5a3.5 3.5 0 1 0 7 0a3.5 3.5 0 0 0-7 0m5 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0" />
+                    </g>
+                </svg>
+            </div>
+            <div class="profile_name">
+                <h1>AARAV SHARMA</h1>
+            </div>
+        </div>
+        <div class="wallet" style="color: aliceblue;">
+            <div class="balance" style="width: 34%;">
+                <div class="wallet_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                        style="color: #4f6f45; background: #a1d591e9; margin-right: 4%; margin-bottom: 10px; padding: 7px 7px; border-radius: 10px;"
+                        viewBox="0 0 24 24">
+                        <path fill="none" stroke="#4f6f45" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M3 8.5v-3m0 0C3 4.67 3.67 4 4.5 4l11.99-1C17.88 3 19 4.06 19 5.38V7H4.5C3.67 7 3 6.33 3 5.5M21 11h-6.286c-.947 0-1.714.716-1.714 1.6v2.8c0 .884.768 1.6 1.714 1.6H21m-5-3h.01M4.2 7h14.4C19.92 7 21 8.08 21 9.4v9.2c0 1.32-1.08 2.4-2.4 2.4H5.4C4.08 21 3 19.92 3 18.6V8.2C3 7.54 3.54 7 4.2 7" />
+                    </svg>
+
+                    <div class="apna">
+                        <h2>APNA<span style="color: #A1D591;">WALLET</span></h2>
+                        <div class="active_apna">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5"
+                                style="border: 1px solid #ade19d; border-radius: 20px; padding: 2px 2px;"
+                                viewBox="0 0 448 512">
+                                <path fill="#ade19d"
+                                    d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z" />
+                            </svg><span style="font-size: 10px; margin-left: 4px; color: #ade19d;">ACTIVE</span>
+                        </div>
+                        <span
+                            style="font-size: 11px; color: gray;  margin-left: 47%; width: 100%; display: flex;  margin-top: -18px;">LAST
+                            UPDATED: 2M AGO</span>
+                    </div>
+                </div>
+                <div id="amount" style="width: 70%;">
+                    <h1>₹10,500</h1>
+                </div>
+            </div>
+            <div class="about_wallet">
+                <div class="limit" style="margin-left: -20%;">
+                    <p style="font-size: 29px; margin-bottom: 5px;">LIMIT</p>
+                    <span style="font-size: 29px;">₹50,000 / day</span>
+                    <div class="wifi">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="#ade19d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-wifi" aria-hidden="true">
+                            <path d="M12 20h.01"></path>
+                            <path d="M2 8.82a15 15 0 0 1 20 0"></path>
+                            <path d="M5 12.859a10 10 0 0 1 14 0"></path>
+                            <path d="M8.5 16.429a5 5 0 0 1 7 0"></path>
+                        </svg>
+                        <p style="color: #ade19d; margin-left: 3%;">Internet Stable</p>
+                    </div>
+                </div>
+                <div class="kyc">
+                    <p style="font-size: 14px; color: gray; margin-bottom: 6px;">KYC STATUS</p>
+                    <h3 style="margin-bottom: 10px;">🟢 Verified</h3>
+                    <div class="bank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="margin-right: 10px;"
+                            viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-credit-card" aria-hidden="true">
+                            <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                            <line x1="2" x2="22" y1="10" y2="10"></line>
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="margin-right: 10px;"
+                            viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-landmark" aria-hidden="true">
+                            <path d="M10 18v-7"></path>
+                            <path
+                                d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z">
+                            </path>
+                            <path d="M14 18v-7"></path>
+                            <path d="M18 18v-7"></path>
+                            <path d="M3 22h18"></path>
+                            <path d="M6 18v-7"></path>
+                        </svg>
+                        <span style="color: gray; font-size: 19px;">UPI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fund">
+                <button id="fund_btn" onclick="showpopup_fund()"><span
+                        style="margin-right: 10px; font-size: 1.5rem;">+</span>ADD AMOUNT</button>
+            </div>
+            <div class="fund_secure">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" style="margin-right: 6px;"
+                    viewBox="0 0 24 24">
+                    <g fill="none">
+                        <path d="M3 4.65V12c0 7.35 9 10.5 9 10.5s9-3.15 9-10.5V4.65L12 1.5z" clip-rule="evenodd" />
+                        <path stroke="#ade19d" stroke-linecap="square" stroke-width="2"
+                            d="M3 4.65V12c0 7.35 9 10.5 9 10.5s9-3.15 9-10.5V4.65L12 1.5z" clip-rule="evenodd" />
+                        <path stroke="#ade19d" stroke-linecap="square" stroke-width="2"
+                            d="M8.173 11.172L11 14l5.657-5.657" />
+                    </g>
+                </svg><span style="font-size: 8px;">SECURED</span>
+            </div>
+        </div>
+    </div>
+    <div class="profile_details" style="display: flex;">
+        <div class="profile_categories">
+            <button class="information_btn profile_primery" id="information_btn" onclick="showinformation()">
+                <div class="information" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-user" aria-hidden="true">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span style="font-size: 20px;">Persnol Information</span>
+                    </svg>
+                </div>
+            </button>
+            <button class="my_orders_btn profile_primery" id="my_orders_btn" onclick="renderOrders()">
+                <div class="my_orders" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true">
+                        <path
+                            d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
+                        </path>
+                        <path d="M12 22V12"></path>
+                        <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                        <path d="m7.5 4.27 9 5.15"></path>
+                    </svg>
+                    </svg>
+                    <span style="font-size: 20px;">My Orders</span>
+                </div>
+            </button>
+            <button class="wishlist_btn profile_primery" id="wishlist_btn">
+                <div class="wishlist" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-heart" aria-hidden="true">
+                        <path
+                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
+                        </path>
+                    </svg>
+                    <span style="font-size: 20px;">Wishlist</span>
+                    </svg>
+                </div>
+            </button>
+            <button class="payment_methods_btn profile_primery">
+                <div class="payment_methods" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-credit-card" aria-hidden="true">
+                        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                        <line x1="2" x2="22" y1="10" y2="10"></line>
+                    </svg>
+                    <span style="font-size: 20px;">Payment Method</span>
+
+                </div>
+            </button>
+            <button class="notifications_btn profile_primery">
+                <div class="notifications" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-bell" aria-hidden="true">
+                        <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+                        <path
+                            d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326">
+                        </path>
+                    </svg>
+                    <span style="font-size: 20px;">Notifications</span>
+                </div>
+            </button>
+            <button class="security_vault_btn profile_primery">
+                <div class="security_vault" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-lock" aria-hidden="true">
+                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span style="font-size: 20px;">Security Vault</span>
+
+                </div>
+            </button>
+            <button class="setting_btn profile_primery">
+                <div class="setting" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                        viewBox="0 0 48 48">
+                        <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
+                            <path
+                                d="M18.284 43.171a20 20 0 0 1-8.696-5.304a6 6 0 0 0-5.182-9.838A20 20 0 0 1 4 24c0-2.09.32-4.106.916-6H5a6 6 0 0 0 5.385-8.65a20 20 0 0 1 8.267-4.627A6 6 0 0 0 24 8a6 6 0 0 0 5.348-3.277a20 20 0 0 1 8.267 4.627A6 6 0 0 0 43.084 18A20 20 0 0 1 44 24c0 1.38-.14 2.728-.406 4.03a6 6 0 0 0-5.182 9.838a20 20 0 0 1-8.696 5.303a6.003 6.003 0 0 0-11.432 0Z" />
+                            <path d="M24 31a7 7 0 1 0 0-14a7 7 0 0 0 0 14Z" />
+                        </g>
+                    </svg>
+                    <span style="font-size: 20px;">Setting</span>
+
+                </div>
+            </button>
+            <div class="border" style="border-top: 0.1mm solid #ffffff57; margin-bottom: 12px;"></div>
+            <button class="profile_logout_btn">
+                <div class="profile_logout" style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-right: 8px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-log-out" aria-hidden="true">
+                        <path d="m16 17 5-5-5-5"></path>
+                        <path d="M21 12H9"></path>
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    </svg>
+                    <span style="font-size: 21px;">Logout</span>
+                </div>
+            </button>
+        </div>
+        <div class="personal_registry" id="personal_registry">
+            <div class="personal_registry_name">
+                <h3 style="text-transform: uppercase; font-size: 1.5rem;">Personal<span
+                        style="color: #ade19d;">Registry</span></h3>
+                <div class="personal_details_name">
+                    <div id="personal_details_input_name">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide1 lucide-user"
+                            aria-hidden="true">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
+                            Full Name</p>
+                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">Aarav
+                            Sharma</p>
+                    </div>
+                </div>
+            </div>
+            <div class="personal_registry_email">
+                <div class="personal_details_email">
+                    <div id="personal_details_input_email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide2 lucide-mail"
+                            aria-hidden="true">
+                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        </svg>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
+                            Email Access</p>
+                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">
+                            user@apnashop.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="personal_registry_number">
+                <div class="personal_details_number">
+                    <div id="personal_details_input_number">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                            viewBox="0 0 512 512" class="lucide3">
+                            <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"
+                                d="M451 374c-15.88-16-54.34-39.35-73-48.76c-24.3-12.24-26.3-13.24-45.4.95c-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39s-47.34-61.62-50.53-76.48s5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3c-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160 160 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64s54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159 159 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
+                            Mobile No</p>
+                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">
+                            9876543210</p>
+                    </div>
+                </div>
+            </div>
+            <div class="personal_registry_gender">
+                <div class="personal_details_gender">
+                    <div id="personal_details_input_gender">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="padding: 0.75rem;  padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide4 lucide-badge-check"
+                            aria-hidden="true">
+                            <path
+                                d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z">
+                            </path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
+                            gender</p>
+                        <div style="display: flex;">
+                            <label class="radio-wrap" for="male">
+                                <input type="radio" name="gender" id="male" checked>
+                                <span class="custom-radio"></span>
+                                Male
+                            </label>
+
+                            <label class="radio-wrap" for="female">
+                                <input type="radio" name="gender" id="female">
+                                <span class="custom-radio"></span>
+                                Female
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="personal_registry_biometric">
+                <div class="personal_details_biometric">
+                    <div id="personal_details_input_biometric">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide5 lucide-fingerprint-pattern"
+                            aria-hidden="true">
+                            <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"></path>
+                            <path d="M14 13.12c0 2.38 0 6.38-1 8.88"></path>
+                            <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"></path>
+                            <path d="M2 12a10 10 0 0 1 18-6"></path>
+                            <path d="M2 16h.01"></path>
+                            <path d="M21.8 16c.2-2 .131-5.354 0-6"></path>
+                            <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"></path>
+                            <path d="M8.65 22c.21-.66.45-1.32.57-2"></path>
+                            <path d="M9 6.8a6 6 0 0 1 9 5.2v2"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
+                            Biometric ID</p>
+                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">
+                            RB-user-001</p>
+                    </div>
+                </div>
+            </div>
+            <div class="personal_registry_status">
+                <div class="personal_details_status">
+                    <div id="personal_details_input_status">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide6 lucide-badge-check"
+                            aria-hidden="true">
+                            <path
+                                d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z">
+                            </path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
+                            Status</p>
+                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">Active
+                            Citizen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my_order" id="my_order">
+            <div class="order_container">
+                <div id="orderHistory" class="orders">
+                    <div id="orderList" class="orders-wrap"></div>
+                </div>
+            </div>
+        </div>
+        <div id="orderPopup" class="popup">
+            <div class="popup-box">
+                <span class="close" onclick="closePopup()">✖</span>
+                <h3>Order Details</h3>
+                <div id="popupContent"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- <img src="/static/Screenshot 2026-01-26 at 5.26.03 PM.png" alt=""> -->
+    <div class="fund_box" id="fund_box">
+        <span class="close" style="font-size: 1.5rem; cursor: pointer; margin-left: auto;"
+            onclick="closePopup_fund()">x</span>
+        <div class="fund_title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                style="background: #ade19d1a; margin-right: 10px; padding: 1rem; border-radius: 1rem;"
+                viewBox="0 0 24 24" fill="none" stroke="#ade19d" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true">
+                <path d="M5 12h14"></path>
+                <path d="M12 5v14"></path>
+            </svg>
+            <h2 style="font-size: 2.5rem; text-transform: uppercase;">Inject<span style="color: #ade19d;">Credits</span>
+            </h2>
+        </div>
+        <!-- <div id="popupContent"></div> -->
+        <div class="fund_input">
+            <p style="text-transform: uppercase; color: #ffffff33; margin-bottom: 10px;">Amount (Inr)</p>
+            <input type="number" name="number" placeholder=" ₹ 0">
+        </div>
+        <div class="fix_btn">
+            <button class="fix_amount" style="margin-right: 25px;">+₹1k</button>
+            <button class="fix_amount" style="margin-right: 25px;">+₹5k</button>
+            <button class="fix_amount">+₹10k</button>
+        </div>
+        <button class="fund_submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-right: 13px;"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                <path
+                    d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                </path>
+            </svg>
+            <p style="font-size: 1.2rem;">Authorize Transaction</p>
+        </button>
+        <div id="secure_transaction">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="margin-right: 10px;"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-shield" aria-hidden="true">
+                <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                </path>
+            </svg>
+            <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.3em;">END-TO-ENd AES ENCRYPTION</span>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApnaShop</title>
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blur-bg">
+    </div>
+    <div class="main">
+        <div class="navigation" id="navigation">
+            <nav>
+                <div class="nav_logo">
+                    <a href="/">
+                        <img src="/static/logo1.png" alt="" id="logo">
+                    </a>
+                    <!-- <h2 id="logo_headind">APNASHOP</h2> -->
+                </div>
+                <ul>
+                    <div class="nav_ul" id="nav_ul">
+                        <li class="items1"><a href="/">Home</a></li>
+                        <li class="items2">
+                            <div class="dropdown">Categories
+                                <div class="dropdown-content">
+                                    <button class="dropdown_btn" id="electronics"><a
+                                            href="/Electronics.html">Electronics</a></button>
+                                    <button class="dropdown_btn" id="Sports"><a href="/Sports.html">Sports</a></button>
+                                    <button class="dropdown_btn" id="Fashion">Fashion</button>
+                                    <button class="dropdown_btn" id="Footwear">Footwear</button>
+                                    <button class="dropdown_btn" id="Kitchen">Kitchen</button>
+                                    <button class="dropdown_btn" id="Gaming">Gaming</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="items3"><a href="/">About</a></li>
+                        <li class="items9"><a href="/order.html">Orders</a></li>
+                        <li class="items4"><a href="/">Contact</a></li>
+                        <li class="items8"><button class="login_btn" id="openBtn3" onclick="showWrapper()">Sign
+                                Up</button></li>
+                    </div>
+                </ul>
+                <div class="icons" id="icons">
+                    <ul>
+                        <div id="search">
+                            <form class="example" action="/action_page.php" style="max-width:300px">
+                                <input type="text" placeholder="Search products.." name="search2">
+                                <button type="submit">
+                                    <div class="hi">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#fff"
+                                                d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                        <li class="items6">
+                            <a href="/profile.html" class="user_profile_btn" aria-label="Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M19 20.75a1 1 0 0 0 1-1v-1.246c.004-2.806-3.974-5.004-8-5.004s-8 2.198-8 5.004v1.246a1 1 0 0 0 1 1zM15.604 6.854a3.604 3.604 0 1 1-7.208 0a3.604 3.604 0 0 1 7.208 0" />
+                                </svg>
+                            </a>
+                        </li>
+
+
+
+                        <li class="items5">
+                            <button class="cart" id="openBtn">
+                                <span id="cartCount">0</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    style="margin-left: 4px; margin-top: -7px;" viewBox="0 0 16 16">
+                                    <path fill="#fff"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607L1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4a2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2a1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <li class="items7">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="margin-left: 5px; margin-top: 5px;" viewBox="0 0 24 24">
+                            <path fill="#fff"
+                                d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2m18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2m0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2" />
+                        </svg>
+                    </a>
+                </li>
+            </nav>
+            <svg width="0" height="0">
+                <defs>
+                    <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
+                        <!-- Displacement texture -->
+                        <feImage href="https://essykings.github.io/JavaScript/map.png" x="-50%" y="-50%" width="200%"
+                            height="200%" result="map" />
+                        <!-- Blur the original object -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur" />
+                        <!-- Glass distortion -->
+                        <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <h1 id="main_heading">Your World of Premium Finds, One Click Away.</h1>
+    </div>
+    <div class="deleviry">
+        <div id="truck">
+            <img src="/static/delivery.png" alt="">
+            <h3>Free Shipping</h3>
+            <h6>On all orders over $50</h6>
+        </div>
+        <div id="secure">
+            <img src="/static/shield.png" alt="">
+            <h3>Secure Payment</h3>
+            <h6>100% secure transactions</h6>
+        </div>
+        <div id="support">
+            <img src="/static/clock.png" alt="">
+            <h3>24/7 Support</h3>
+            <h6>Dedicated support team</h6>
+        </div>
+    </div>
+    <div id="categories">
+        <div id="head">
+            <h1>Shop Now</h1>
+        </div>
+        <section id="product">
+            <div class="produ1">
+                <img src="/static/watch3.png" alt="Smart Watch Series 5">
+                <p>ELECTRONICS</p>
+                <h2>Smart Watch Series 5</h2>
+                <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.9</span>
+                <h1>₹3999</h1>
+                <button class="btn1 btn-primary"
+                    onclick="addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">Add to
+                    Cart</button>
+            </div>
+            <div class="produ2">
+                <img src="/static/shoes2.png" alt="Neon Runner X">
+                <p>Footwear</p>
+                <h2>Luxury Sneakers</h2>
+                <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.0</span>
+                <h1>₹1099</h1>
+                <button class="btn2 btn-primary" onclick="addToCart('Luxury Sneakers', 1099, '/static/shoes2.png')">Add
+                    to Cart</button>
+
+            </div>
+            <div class="produ3">
+                <img src="/static/dr.png" alt="Women Dress">
+                <p>Fashion</p>
+                <h2>Women Dress</h2>
+                <span id="star"><img src="/static/star1.png" alt="">&nbsp;3.9</span>
+                <h1>₹750</h1>
+                <button class="btn3 btn-primary" onclick="addToCart('Women Dress', 750, '/static/dr.png')">Add to
+                    Cart</button>
+            </div>
+            <div class="produ4">
+                <img src="/static/bag2.png" alt="Leather Bag">
+                <p>Fashion</p>
+                <h2>Leather Bag</h2>
+                <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.3</span>
+                <h1>₹3599</h1>
+                <button class="btn4 btn-primary" onclick="addToCart('Leather Bag', 3599, '/static/bag2.png')">Add to
+                    Cart</button>
+            </div>
+        </section>
+    </div>
+    <div class="cart_sidebar" id="cart_sidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <span id="close_cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart_items">
+            <p style="text-align:center; color: var(--text-muted); margin-top: 50px;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <h3>Total: ₹<span id="total">0</span></h3>
+            </div>
+        </div>
+        <button id="checkoutBtn" class="btn btn-primary" style="width: 100%;">Checkout</button>
+    </div>
+    <div class="checkout_sidebar" id="checkout_sidebar">
+        <div class="cart-header">
+            <h2>Checkout</h2>
+        </div>
+        <div class="checkout-items" id="checkout_items"></div>
+        <div id="details" class="details">
+            <div class="cart-header">
+                <h2>Shipping Address</h2>
+            </div>
+            <!-- <div class="cart-items" id="cart_items"></div> -->
+            <div id="user_details" class="user-details">
+                <input type="text" id="name" placeholder="Full Name">
+                <input type="text" id="number" placeholder="Phone Number">
+                <input type="text" id="address" placeholder="Address Line 1">
+                <input type="text" id="city" placeholder="City">
+                <input type="text" id="pincode" placeholder="Pincode">
+                <input type="text" id="state" placeholder="State">
+            </div>
+            <div class="details-footer">
+            </div>
+            <button id="checkoutBtn" class="btn6 btn-primary" style="width: 100%;" onclick="placeOrder()">Place
+                Order</button>
+        </div>
+        <div class="checkout-footer">
+            <div class="total-row">
+                <h2>Total: ₹<span id="checkout_total">0</span></h2>
+            </div>
+            <button id="checkoutBtn2" class="btn6 btn-primary" style="width: 100%;" onclick="placeOrder()">Process To
+                Place Order</button>
+        </div>
+    </div>
+    <div id="paymentPage" class="payment">
+
+        <h2>Payment</h2>
+
+        <!-- Payment Options -->
+        <div class="payment-methods">
+            <label>
+                <input class="radio" type="radio" name="payment" value="upi" checked>
+                UPI
+            </label>
+            <label>
+                <input class="radio" type="radio" name="payment" value="card">
+                Card
+            </label>
+            <label>
+                <input class="radio" id="cash" type="radio" name="payment" value="cod">
+                Cash On delivery
+            </label>
+        </div>
+        <!-- UPI -->
+        <div id="upiBox">
+            <input class="upiBox" type="text" id="upiId" placeholder="example@upi">
+        </div>
+        <!-- Card -->
+        <div id="cardBox" style="display:none">
+            <input class="cardBox" id="card_number" type="text" placeholder="Card Number">
+            <input class="cardBox" id="number_card" type="text" placeholder="MM / YY">
+            <input class="cardBox" id="code" type="text" placeholder="CVV">
+        </div>
+
+        <button class="btn7 btn-primary" id="openbtn" onclick=payNow()>Pay Now</button>
+
+    </div>
+    <div id="successPage" class="success">
+        <div class="success-box">
+            <div class="checkmark">✓</div>
+            <h2>Payment Successful</h2>
+            <p>Your order has been placed</p>
+        </div>
+    </div>
+    <div id="confetti"></div>
+    <!-- <div class="order_container">
+        <div id="orderHistory" class="orders">
+            <h2>My Orders</h2>
+            <div id="orderList"></div>
+            <button class="btn btn-primary" style="margin-top: 10px;" onclick="renderOrders()">My Orders</button>
+        </div>
+    </div> -->
+
+    <!-- Order Details Popup -->
+    <!-- <div id="orderPopup" class="popup">
+        <div class="popup-box">
+            <span class="close" onclick="closePopup()">✖</span>
+            <h3>Order Details</h3>
+            <div id="popupContent"></div>
+        </div>
+    </div> -->
+    <div class="card">
+        <slot></slot>
+    </div>
+    <div class="wrapper" id="wrapper">
+        <div class="panel">
+            <h1>Welcome Back</h1>
+            <p style="margin-bottom: 10px;">Login to continue your journey</p>
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showSignup()">Sign Up</button>
+        </div>
+
+        <div class="forms">
+            <!-- Login -->
+            <div class="form login">
+                <h2>Login</h2>
+                <form action="/login" method="POST">
+                    <div class="input-box">
+                        <i class="fa fa-envelope"></i>
+                        <input type="emain" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="forgot">
+                        <a href="#">Forgot Password</a>
+                    </div>
+
+                    <button class="liquid-btn">
+                        <p>Login</p>
+                    </button>
+
+                    <div class="google-btn">
+                        <i class="fa-brands fa-google"></i>
+                        Continue with Google
+                    </div>
+
+                    <div class="google-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 315">
+                            <path
+                                d="M213.803 167.03c.442 47.58 41.74 63.413 42.197 63.615c-.35 1.116-6.599 22.563-21.757 44.716c-13.104 19.153-26.705 38.235-48.13 38.63c-21.05.388-27.82-12.483-51.888-12.483c-24.061 0-31.582 12.088-51.51 12.871c-20.68.783-36.428-20.71-49.64-39.793c-27-39.033-47.633-110.3-19.928-158.406c13.763-23.89 38.36-39.017 65.056-39.405c20.307-.387 39.475 13.662 51.889 13.662c12.406 0 35.699-16.895 60.186-14.414c10.25.427 39.026 4.14 57.503 31.186c-1.49.923-34.335 20.044-33.978 59.822M174.24 50.199c10.98-13.29 18.369-31.79 16.353-50.199c-15.826.636-34.962 10.546-46.314 23.828c-10.173 11.763-19.082 30.589-16.678 48.633c17.64 1.365 35.66-8.964 46.64-22.262" />
+                        </svg>
+                        Continue with Apple
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <span id="close_wrapper" onclick="closeWrapper()">&times;</span>
+        <!-- Signup -->
+        <div class="form2 signup">
+            <h2>Create Account</h2>
+            <form action="/login2" method="POST">
+                <div class="input-box">
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="name" placeholder="Username" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <button class="liquid-btn signup" style="left: 0;">
+                    <p>Sign Up</p>
+                </button>
+
+                <div class="google-btn">
+                    <i class="fa-brands fa-google"></i>
+                    Continue with Google
+                </div>
+                <div class="google-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 315">
+                        <path
+                            d="M213.803 167.03c.442 47.58 41.74 63.413 42.197 63.615c-.35 1.116-6.599 22.563-21.757 44.716c-13.104 19.153-26.705 38.235-48.13 38.63c-21.05.388-27.82-12.483-51.888-12.483c-24.061 0-31.582 12.088-51.51 12.871c-20.68.783-36.428-20.71-49.64-39.793c-27-39.033-47.633-110.3-19.928-158.406c13.763-23.89 38.36-39.017 65.056-39.405c20.307-.387 39.475 13.662 51.889 13.662c12.406 0 35.699-16.895 60.186-14.414c10.25.427 39.026 4.14 57.503 31.186c-1.49.923-34.335 20.044-33.978 59.822M174.24 50.199c10.98-13.29 18.369-31.79 16.353-50.199c-15.826.636-34.962 10.546-46.314 23.828c-10.173 11.763-19.082 30.589-16.678 48.633c17.64 1.365 35.66-8.964 46.64-22.262" />
+                    </svg>
+                    Continue with Apple
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="footer">
+        <h3>Copyright © 2026 ApnaShop.com | All rights reserved</h3>
+    </div>
+    <a href="/Electronics.html"></a>
+
+
+    <!-- Ravipatelcollege999 -->
+    <script src="/static/index.js" defer></script>
+</body>
+</html>

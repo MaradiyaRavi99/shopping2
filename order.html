@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apnashop</title>
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/order.css">
+    <!-- <link rel="stylesheet" href="/static/style.css"> -->
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navigation" id="navigation">
+            <nav>
+                <div class="nav_logo">
+                    <img src="/static/logo1.png" alt="" id="logo">
+                </div>
+                <ul>
+                    <div class="nav_ul" id="nav_ul">
+                        <li class="items1"><a href="/">Home</a></li>
+                        <li class="items2">
+                            <div class="dropdown">Categories
+                                <div class="dropdown-content">
+                                    <button class="dropdown_btn" id="electronics"><a
+                                            href="/Electronics.html">Electronics</a></button>
+                                    <button class="dropdown_btn" id="Sports"><a href="/Sports.html">Sports</a></button>
+                                    <button class="dropdown_btn" id="Fashion">Fashion</button>
+                                    <button class="dropdown_btn" id="Footwear">Footwear</button>
+                                    <button class="dropdown_btn" id="Kitchen">Kitchen</button>
+                                    <button class="dropdown_btn" id="Gaming">Gaming</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="items3"><a href="/">About</a></li>
+                        <li class="items9"><a href="/order.html">Orders</a></li>
+                        <li class="items4"><a href="/">Contact</a></li>
+                        <li class="items8"><button class="login_btn" id="openBtn2" onclick="showWrapper()">Sign Up</button>
+                        </li>
+                    </div>
+                </ul>
+                <div class="icons" id="icons">
+                    <ul>
+                        <div id="search">
+                            <form class="example" action="/action_page.php" style="max-width:300px">
+                                <input type="text" placeholder="Search products.." name="search2">
+                                <button type="submit">
+                                    <div class="hi">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#fff"
+                                                d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                        <li class="items6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="margin-left: 5px; margin-top: 3px;" viewBox="0 0 24 24">
+                                <g fill="none" stroke="#fff" stroke-width="1.5">
+                                    <path stroke-linejoin="round"
+                                        d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                                    <circle cx="12" cy="7" r="3" />
+                                </g>
+                            </svg>
+
+
+                        </li>
+                        <li class="items5">
+                            <button class="cart" id="openBtn">
+                                <span id="cartCount">0</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    style="margin-left: 4px; margin-top: -7px;" viewBox="0 0 16 16">
+                                    <path fill="#fff"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607L1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4a2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2a1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <li class="items7">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="margin-left: 5px; margin-top: 5px;" viewBox="0 0 24 24">
+                            <path fill="#fff"
+                                d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2m18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2m0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2" />
+                        </svg>
+                    </a>
+                </li>
+            </nav>
+            <svg width="0" height="0">
+                <defs>
+                    <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
+
+                        <!-- Displacement texture -->
+                        <feImage href="https://essykings.github.io/JavaScript/map.png" x="-50%" y="-50%" width="200%"
+                            height="200%" result="map" />
+
+                        <!-- Blur the original object -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+
+                        <!-- Glass distortion -->
+                        <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />
+
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <div class="order_container">
+        <div id="orderHistory" class="orders">
+            <h2 style="margin-top: 24%;">My Orders</h2>
+            <div id="orderList"></div>
+            <button class="btn btn-primary" style="margin-top: 10px;" onclick="renderOrders()">My Orders</button>
+        </div>
+    </div>
+    <div id="orderPopup" class="popup">
+        <div class="popup-box">
+            <span class="close" onclick="closePopup()">✖</span>
+            <h3>Order Details</h3>
+            <div id="popupContent"></div>
+        </div>
+    </div>
+</body>
+<script src="/static/index.js" defer></script>
+
+
+</html>
