@@ -587,7 +587,7 @@ async function renderOrders() {
                                 </svg>
                             </button>`
                         : `<span class="cancelled-text">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 512 500">
+                                <svg xmlns="http://www.w 3.org/2000/svg" width="29" height="29" viewBox="0 0 512 500">
                                     <path fill="#fff" fill-rule="evenodd"
                                     d="M420.48 121.813L390.187 91.52L256 225.92L121.813 91.52L91.52 121.813L225.92 256L91.52 390.187l30.293 30.293L256 286.08l134.187 134.4l30.293-30.293L286.08        256z" stroke-width="13" stroke="#fff" />
                                 </svg>
