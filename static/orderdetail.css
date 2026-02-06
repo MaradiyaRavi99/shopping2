@@ -429,12 +429,7 @@ nav {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-body {
-    background: #0a0a0a;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.order_page {
+/* .order_page {
     display: flex;
     gap: 20px;
     padding: 21px 21px;
@@ -472,7 +467,7 @@ body {
     border-radius: 6px;
 }
 
-.product_card img {
+.package_item img {
     width:44px;
     height:44px;
     object-fit:cover;
@@ -569,7 +564,6 @@ body {
     margin-top:20px;
 }
 
-/* header row */
 .order-head{
     color: white;
     display: flex;
@@ -584,7 +578,6 @@ body {
     margin-bottom: 3%;
 }
 
-/* order row card */
 .order-row{
     color: white;
     display:flex;
@@ -606,7 +599,6 @@ body {
     border: 1px solid #ade19d5e;
 }
 
-/* columns */
 .col-id{ width:110px; }
 .col-product{ flex:2; display:flex; align-items:center; gap:12px; }
 .col-quantity{width: 100px; font-weight: 600;}
@@ -654,7 +646,6 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
-    /* height: 20px; */
     margin-top: 9px;
 }
 
@@ -681,7 +672,6 @@ body {
     border: none;
     padding: 0px 0px;
     border-radius: 6px;
-    /* cursor: pointer; */
     margin-top: 10px;
     position: relative;
 }
@@ -698,4 +688,192 @@ body {
 
 .cancelled-text:hover .cancel_deopdown {
   display: block;
+} */
+
+.orders-wrap{
+    color: white;
+    margin-top: 7%;
+}
+
+.order_header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.status_badge{
+    background:#1f6feb;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.tracking_box{
+    display:flex;
+    justify-content:space-between;
+    background:#16181d;
+    border:1px solid #2a2d34;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.track{
+    opacity:.5;
+    font-size:13px;
+}
+
+.track.active{
+    color:#4caf50;
+    opacity:1;
+}
+
+.order_grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.package_item{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #2a2d34;
+}
+
+.package_item img{
+    width:60px;
+    height:60px;
+    border-radius:8px;
+    object-fit:cover;
+}
+
+.payment_card button{
+    width:100%;
+    margin-top:10px;
+}
+
+.order_wrapper{
+    width:86%;
+    margin:40px auto;
+}
+
+.order_header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.tracking_box{
+    display:flex;
+    justify-content:space-between;
+    background:#16181d;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #2a2d34;
+    margin-bottom:20px;
+}
+
+.order_layout{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:20px;
+}
+
+.left_section{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.right_section{
+    position:sticky;
+    top:20px;
+    height:fit-content;
+}
+
+.card{
+    background:#16181d;
+    border:1px solid #2a2d34;
+    border-radius:12px;
+    padding:20px;
+}
+
+#textarea{
+    width: 97%;
+    height: 48%;
+    background: #16181d;
+    color: white;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    /* outline-color: #a1d591; */
+    /* outline-style: groove; */
+    outline: none;
+}
+
+.review_btn{
+    margin-top: 10px;
+    width: 13%;
+    padding: 9px 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+    background: #a1d591;
+    border: none;
+    border-radius: 7px;
+}
+
+input::placeholder {
+    color: rgb(248, 0, 0);
+    font-size: 14px;
+    line-height: 10px;
+}
+
+.stars{
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.one {
+  color: rgb(255, 106, 0);
+}
+.two {
+  color: rgb(255, 106, 0);
+}
+.three {
+  color: rgb(255, 106, 0);
+}
+.four {
+  color: rgb(255, 106, 0);
+}
+.five {
+  color: rgb(255, 106, 0);
+}
+
+.card1{
+    background: #16181d;
+    border: 1px solid #2a2d34;
+    border-radius: 12px;
+    padding: 20px;
+    height: 250px;
+}
+
+.package_row{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid #2a2d34;
+}
+
+.package_row img{
+    width:60px;
+    height:60px;
+    border-radius:8px;
+    object-fit:cover;
 }
