@@ -802,8 +802,6 @@ function remove() {
     }
 }
 
-
-
 async function cancelOrder(id) {
     await fetch(`http://localhost:5500/api/orders/${id}`, {
         method: "PUT",
@@ -842,7 +840,6 @@ async function openPopup(id) {
 function closePopup() {
     document.getElementById("orderPopup").classList.remove("active");
 }
-
 
 async function removeOrder(id) {
     await fetch(`http://localhost:5500/api/orders/${id}`, {
