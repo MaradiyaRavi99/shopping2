@@ -732,23 +732,47 @@ async function renderDetails() {
         <!-- LEFT -->
         <div class="left_section">
 
-            <div class="card">
-                <h3>Customer Details</h3>
-                <p>${order.name}</p>
-                <p>${maskMobile(order.mobile)}</p>
-                <p>${order.address}</p>
+        <div class="card_details">
+                <h2>Customer Details</h2>
+                <div class="customer">
+                    <div class="customer_detail_name">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem; margin-top: 20px;margin-bottom: 20px;"
+                                viewBox="0 0 24 24" fill="none" stroke="#a1d591" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide1 lucide-user"
+                                aria-hidden="true">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <div class="customer_name">
+                            <span>${order.name}</span>
+                            </div>
+                    </div>
+                    <div class="customer_detail_phone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><path fill="none" stroke="#a1d591" stroke-linejoin="round" stroke-width="1.7" d="M7.829 16.171a20.9 20.9 0 0 1-4.846-7.614c-.573-1.564-.048-3.282 1.13-4.46l.729-.728a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.42.42a1.81 1.81 0 0 0 0 2.56l3.84 3.841a1.81 1.81 0 0 0 2.56 0l.421-.42a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.728.728c-1.178 1.179-2.896 1.704-4.46 1.131a20.9 20.9 0 0 1-7.614-4.846Z"/></svg>
+                        <p>${maskMobile(order.mobile)}</p>
+                    </div>
+                    <div class="customer_detail_address">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><g fill="none" stroke="#a1d591" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8"/></g></svg>
+                        <p>${order.address}</p>
+                    </div>
             </div>
-
+            </div>
             <div class="card">
-                <h3>Package Contents</h3>
+                <h2>Package Contents</h2>
 
                 ${order.items.map(item => `
                     <div class="package_row">
                         <img src="${item.image}">
-                        <div>
+                        <div class="product_name_price_qty">
+                        <div class="product_name_price">
                             <div>${item.name}</div>
-                            <small>Qty: ${item.qty}</small>
                             <div>₹${item.price * item.qty}</div>
+                            </div>
+                            <div class="product_qty_price">
+                            <small id="qty">Qty: ${item.qty}</small>
+                            <div>Subtotal: ₹${item.price * item.qty}</div>
+                        </div>
                         </div>
                     </div>
                 `).join("")}
@@ -772,13 +796,13 @@ async function renderDetails() {
         <!-- RIGHT -->
         <div class="right_section">
 
-            <div class="card payment_card">
-                <h3>Payment Summary</h3>
+            <div class="card_payment payment_card">
+                <h2>Payment Summary</h2>
                 <p>Items <span>${order.items.length}</span></p>
                 <p>Subtotal <span>₹${subtotal}</span></p>
                 <p>GST <span>₹${gst.toFixed(2)}</span></p>
                 <hr>
-                <h3>₹${grandTotal.toFixed(2)}</h3>
+                <h3>Total <span>₹${grandTotal.toFixed(2)}</span></h3>
 
                 <button class="track_btn">Track Order</button>
                 <button class="invoice_btn">Invoice</button>
@@ -789,8 +813,6 @@ async function renderDetails() {
     </div>
 </div>
 `;
-
-
     box.innerHTML = html;
 }
 
