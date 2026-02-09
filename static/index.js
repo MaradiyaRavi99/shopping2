@@ -406,7 +406,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://localhost:5500/api/orders", {
+    fetch("http://192.168.1.3:5500/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -418,7 +418,7 @@ function saveOrder(cartData) {
 //     const orderList = document.getElementById("orderList");
 //     if (!orderList) return;
 
-//     const res = await fetch("http://localhost:5500/api/orders");
+//     const res = await fetch("http://192.168.1.3:5500/api/orders");
 //     const orders = await res.json();
 
 //     if (!orders.length) {
@@ -514,7 +514,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://localhost:5500/api/orders");
+    const res = await fetch("http://192.168.1.3:5500/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -523,6 +523,13 @@ async function renderOrders() {
     }
 
     let html = `
+        <div class="order-filter">
+            <div class="filter">
+                <button>Panding</button>
+                <button>Cancel</button>
+                <button>complete</button>
+            </div>
+        </div>
         <div class="order-head">
             <div class="col-id">Id</div>
             <div class="col-product">Product</div>
@@ -578,7 +585,6 @@ async function renderOrders() {
                                 d="M30.94 15.66A16.69 16.69 0 0 0 16 5A16.69 16.69 0 0 0 1.06 15.66a1 1 0 0 0 0 .68A16.69 16.69 0 0 0 16 27a16.69 16.69 0 0 0 14.94-10.66a1 1 0 0 0 0-.68M16 22.5a6.5 6.5 0                 1 1 6.5-6.5a6.51 6.51 0 0 1-6.5 6.5" />
                         </svg>
                     </button>
-
                     ${order.status !== "Cancelled"
                         ? `<button class="cancel-btn" onclick="event.stopPropagation(); cancelOrder('${order._id}')">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 512 500">
@@ -609,89 +615,6 @@ function goToDetails(id) {
     window.onload = renderDetails();
 }
 
-
-// async function renderDetails() {
-//     const orderList = document.getElementById("orderList");
-//     if (!orderList) return;
-
-//     const res = await fetch("http://localhost:5500/api/orders");
-//     const orders = await res.json();
-
-//     if (!orders.length) {
-//         orderList.innerHTML = "<p>No orders found</p>";
-//         return;
-//     }
-//     let html = "";
-
-
-//     orders.reverse().forEach(order => {
-
-//         const firstItem = order.items[0];
-//         const moreCount = order.items.length - 1;
-
-//         html += `
-//         <div class="order_page">
-
-//         <!-- LEFT SIDE -->
-//         <div class="order_left">
-
-//             <div class="product_card">
-//                 <img src="${firstItem.image}">
-//                 <div class="product_info">
-//                     <div>${firstItem.name}</div>
-//                     <p class="seller">Seller: RetailNet</p>
-//                     <h3 class="price">₹${order.items.reduce((t, i) => t + i.price * i.qty, 0)}</h3>
-
-//                     <div class="timeline">
-//                         <p class="success">● Order Confirmed, Dec 16</p>
-//                         <p class="success">● Delivered, Dec 23</p>
-//                     </div>
-//                 </div>
-//             </div>
-
-//             <div class="rate_box">
-//                 <h3>Rate your experience</h3>
-//                 <div class="stars">★★★★★</div>
-//             </div>
-
-//             <div class="issue_box">
-//                 <h3>Recent Issues</h3>
-//                 <p>Issue with delivery — <span class="resolved">Resolved</span></p>
-//             </div>
-
-//         </div>
-
-//         <!-- RIGHT SIDE -->
-//         <div class="order_right">
-
-//             <div class="detail_card">
-//                 <h3>Delivery Details</h3>
-//                 <p>Jhon THe Dor From Jorden</p>
-//                 <p>Jhon The Don — 9988XXXXXX</p>
-//             </div>
-            
-//             <div class="detail_card">
-//                 <h3>Price Details</h3>
-//                 <p>Listing Price <span>₹1,299</span></p>
-//                 <p>Discount <span class="green">−₹434</span></p>
-//                 <hr>
-//                 <h4>Total ₹865</h4>
-//             </div>
-            
-//             <button class="invoice_btn">Download Invoice</button>
-            
-//         </div>
-        
-//     </div>
-//         `;
-//     });
-
-//     orderList.innerHTML = html;
-//     personal_registry.classList.remove("active");
-// }
-
-
-
 async function renderDetails() {
     const box = document.getElementById("orderList");
     if (!box) return;
@@ -699,12 +622,14 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://localhost:5500/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.3:5500/api/orders/${id}`);
     const order = await res.json();
 
-    const subtotal = order.items.reduce((t,i)=> t + i.price * i.qty, 0);
+    const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
     const gst = subtotal * 0.05;
-    const grandTotal = subtotal + gst;
+    const delivery = order.deliveryCharge || 5;
+
+    const grandTotal = subtotal + gst + delivery;
 
     let html = `
 <div class="order_wrapper">
@@ -719,23 +644,58 @@ async function renderDetails() {
     </div>
 
     <!-- TRACKING -->
-    <div class="tracking_box">
-        <div class="track active">Order Placed</div>
-        <div class="track active">Packed</div>
-        <div class="track">Shipped</div>
-        <div class="track">Out for Delivery</div>
-        <div class="track">Delivered</div>
+    <div class="tracking_card">
+
+    <div class="progress_bar"></div>
+    <div class="progress_fill"></div>
+
+    <div class="step active">
+        <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg>
+        </div>
+        <h4>Order Placed</h4>
+        <span>2026-02-09T06:05</span>
     </div>
+
+    <div class="step active">
+        <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg>
+        </div>
+        <h4>Packed</h4>
+    </div>
+
+    <div class="step current">
+        <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>
+        </div>
+        <h4>Shipped</h4>
+    </div>
+
+    <div class="step">
+        <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>
+        </div>
+        <h4>Out for Delivery</h4>
+    </div>
+
+    <div class="step">
+        <div class="circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        </div>
+        <h4>Delivered</h4>
+    </div>
+
+</div>
+
 
     <div class="order_layout">
 
         <!-- LEFT -->
         <div class="left_section">
-
-        <div class="card_details">
+            <div class="card_details">
                 <h2>Customer Details</h2>
                 <div class="customer">
-                    <div class="customer_detail_name">
+                        <div class="customer_detail_name">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
                                 style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem; margin-top: 20px;margin-bottom: 20px;"
                                 viewBox="0 0 24 24" fill="none" stroke="#a1d591" stroke-width="2"
@@ -745,19 +705,19 @@ async function renderDetails() {
                                 <circle cx="12" cy="7" r="4"></circle>
                             </svg>
                             <div class="customer_name">
-                            <span>${order.name}</span>
+                                <span>${order.name}</span>
                             </div>
-                    </div>
-                    <div class="customer_detail_phone">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><path fill="none" stroke="#a1d591" stroke-linejoin="round" stroke-width="1.7" d="M7.829 16.171a20.9 20.9 0 0 1-4.846-7.614c-.573-1.564-.048-3.282 1.13-4.46l.729-.728a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.42.42a1.81 1.81 0 0 0 0 2.56l3.84 3.841a1.81 1.81 0 0 0 2.56 0l.421-.42a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.728.728c-1.178 1.179-2.896 1.704-4.46 1.131a20.9 20.9 0 0 1-7.614-4.846Z"/></svg>
-                        <p>${maskMobile(order.mobile)}</p>
-                    </div>
-                    <div class="customer_detail_address">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><g fill="none" stroke="#a1d591" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8"/></g></svg>
-                        <p>${order.address}</p>
-                    </div>
+                        </div>
+                        <div class="customer_detail_phone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><path fill="none" stroke="#a1d591" stroke-linejoin="round" stroke-width="1.7" d="M7.829 16.171a20.9 20.9 0 0 1-4.846-7.614c-.573-1.564-.048-3.282 1.13-4.46l.729-.728a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.42.42a1.81 1.81 0 0 0 0 2.56l3.84 3.841a1.81 1.81 0 0 0 2.56 0l.421-.42a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.728.728c-1.178 1.179-2.896 1.704-4.46 1.131a20.9 20.9 0 0 1-7.614-4.846Z"/></svg>
+                            <p>${maskMobile(order.mobile)}</p>
+                        </div>
+                        <div class="customer_detail_address">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><g fill="none" stroke="#a1d591" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8"/></g></svg>
+                            <p>${order.address}</p>
+                        </div>
             </div>
-            </div>
+        </div>  
             <div class="card">
                 <h2>Package Contents</h2>
 
@@ -794,21 +754,53 @@ async function renderDetails() {
         </div>
 
         <!-- RIGHT -->
-        <div class="right_section">
 
-            <div class="card_payment payment_card">
-                <h2>Payment Summary</h2>
-                <p>Items <span>${order.items.length}</span></p>
-                <p>Subtotal <span>₹${subtotal}</span></p>
-                <p>GST <span>₹${gst.toFixed(2)}</span></p>
-                <hr>
-                <h3>Total <span>₹${grandTotal.toFixed(2)}</span></h3>
+<div class="right_section">
 
-                <button class="track_btn">Track Order</button>
-                <button class="invoice_btn">Invoice</button>
-            </div>
+    <div class="payment_card">
+        <h2 class="title">PAYMENT SUMMARY</h2>
 
+        <div class="row">
+            <span>Total Items</span>
+            <span>${order.items.length}</span>
         </div>
+
+        <div class="row">
+            <span>Subtotal</span>
+            <span>₹${subtotal}</span>
+        </div>
+
+        <div class="row">
+            <span>GST (5%)</span>
+            <span>₹${gst.toFixed(2)}</span>
+        </div>
+
+        <div class="row">
+            <span>Delivery Charges</span>
+            <span class="free">₹${delivery || 0}</span>
+        </div>
+
+        <hr>
+
+        <div class="total_row">
+            <span>Order Total</span>
+            <span class="total_price">₹${grandTotal.toFixed(2)}</span>
+        </div>
+
+        <div class="payment_method">
+            <span>PAYMENT METHOD</span>
+            <span class="method_name">APNAWALLET</span>
+        </div>
+
+        <button class="track_btn">TRACK ORDER</button>
+
+        <div class="bottom_btns">
+            <button class="invoice_btn">INVOICE</button>
+            <button class="buy_btn">BUY AGAIN</button>
+        </div>
+    </div>
+
+</div>
 
     </div>
 </div>
@@ -816,90 +808,10 @@ async function renderDetails() {
     box.innerHTML = html;
 }
 
-
-// async function renderDetails() {
-//     const box = document.getElementById("orderList");
-//     if (!box) return;
-
-//     const id = localStorage.getItem("viewOrderId");
-//     if (!id) return;
-
-//     const res = await fetch(`http://localhost:5500/api/orders/${id}`);
-//     const order = await res.json();
-
-//     const firstItem = order.items[0];
-
-//     let html = `
-//     <div class="order_page">
-
-//         <!-- LEFT SIDE -->
-//         <div class="order_left">
-
-//             ${order.items.map(item => `
-//                 <div class="product_card">
-//                     <img src="${item.image}">
-//                     <div class="product_info">
-//                         <div>${item.name}</div>
-//                         <p class="seller">Seller: RetailNet</p>
-//                         <h3 class="price">₹${item.price * item.qty}</h3>
-//                         <p>Qty: ${item.qty}</p>
-//                     </div>
-//                 </div>
-//             `).join("")}
-
-//             <div class="rate_box">
-//                 <h3>Rate your experience</h3>
-//                     <span onclick="gfg(1)" class="star">★</span>
-//                     <span onclick="gfg(2)" class="star">★</span>
-//                     <span onclick="gfg(3)" class="star">★</span>
-//                     <span onclick="gfg(4)" class="star">★</span>
-//                     <span onclick="gfg(5)" class="star">★</span>
-//             </div>
-
-//         </div>
-
-//         <!-- RIGHT SIDE -->
-//         <div class="order_right">
-
-//             <div class="detail_card">
-//                 <h3>Delivery Details</h3>
-//                     <p><strong>Name:</strong> ${order.name}</p>
-//                     <p><strong>Mobile:</strong> ${maskMobile(order.mobile)}</p>
-//                     <p><strong>Address:</strong> ${order.address}</p>
-//             </div>
-
-//             ${(() => {
-//                 const subtotal = order.items.reduce((t,i)=> t + i.price * i.qty, 0);
-//                 const gst = subtotal * 0.05;
-//                 const grandTotal = subtotal + gst;
-
-//                 return `
-//                 <div class="detail_card">
-//                     <h3>Price Details</h3>
-//                     <p>Total ID <span>${order._id}</span></p>
-//                     <p>Total Quantity <span>${order.items.reduce((t,i)=>t+i.qty,0)}</span></p>
-//                     <p>Subtotal <span>₹${subtotal.toFixed(2)}</span></p>
-//                     <p>GST (5%) <span>₹${gst.toFixed(2)}</span></p>
-//                     <hr>
-//                     <h4>Total ₹${grandTotal.toFixed(2)}</h4>
-//                 </div>
-//                 `;
-//             })()}
-            
-//             <button class="invoice_btn">Download Invoice</button>
-            
-//         </div>
-        
-//     </div>
-//     `;
-
-//     box.innerHTML = html;
-// }
-
-function maskMobile(mobile){
+function maskMobile(mobile) {
     if (!mobile || mobile.length < 4) return mobile;
-        return mobile.slice(0,3) + "XXXXXX" + mobile.slice(-1);
-    }
+    return mobile.slice(0, 3) + "XXXXXX" + mobile.slice(-1);
+}
 
 // Function to update rating
 function gfg(n) {
@@ -930,7 +842,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://localhost:5500/api/orders/${id}`, {
+    await fetch(`http://192.168.1.3:5500/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -943,7 +855,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://localhost:5500/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.3:5500/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -969,7 +881,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://localhost:5500/api/orders/${id}`, {
+    await fetch(`http://192.168.1.3:5500/api/orders/${id}`, {
         method: "DELETE"
     });
 

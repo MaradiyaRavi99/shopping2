@@ -30,6 +30,7 @@ const OrderSchema = new mongoose.Schema({
 
 const Order = mongoose.model("Order", OrderSchema);
 
+
 // EXPRESS SPECIFIC STUFF
 // app.use('/static', express.static('static')) // For serving static files
 app.use(express.json());
@@ -125,7 +126,10 @@ app.delete("/api/orders/:id", async (req, res) => {
 });
 
 // START THE SERVER
-app.listen(port, () => {
-  console.log(`The application started successfully on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`The application started successfully on port ${port}`);
+// });
 
+app.listen(port, "0.0.0.0", () => {
+  console.log("Server running on network");
+});

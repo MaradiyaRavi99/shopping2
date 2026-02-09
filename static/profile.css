@@ -1572,3 +1572,20 @@ nav {
 .cancelled-text:hover .cancel_deopdown {
   display: block;
 }
+
+.filter{
+    display: flex;
+    margin-bottom: 3%;
+}
+
+
+.filter button{
+    text-transform: uppercase;
+    background: #a0d590;
+    border: none;
+    padding: 7px 19px;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
