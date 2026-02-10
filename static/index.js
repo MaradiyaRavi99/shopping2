@@ -406,7 +406,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.3:5500/api/orders", {
+    fetch("http://192.168.1.3:8000/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -514,7 +514,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.3:5500/api/orders");
+    const res = await fetch("http://192.168.1.3:8000/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -622,7 +622,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.3:5500/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.3:8000/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -842,7 +842,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.3:5500/api/orders/${id}`, {
+    await fetch(`http://192.168.1.3:8000/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -855,7 +855,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://192.168.1.3:5500/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.3:8000/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -881,7 +881,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.3:5500/api/orders/${id}`, {
+    await fetch(`http://192.168.1.3:8000/api/orders/${id}`, {
         method: "DELETE"
     });
 

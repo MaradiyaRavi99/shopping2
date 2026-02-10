@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser')
 mongoose.connect("mongodb://127.0.0.1:27017/apnashop");
-const port = 5500;
+const port = 8000;
 const cors = require("cors");
 
 // Define mongoos schema
@@ -34,9 +34,25 @@ const Order = mongoose.model("Order", OrderSchema);
 // EXPRESS SPECIFIC STUFF
 // app.use('/static', express.static('static')) // For serving static files
 app.use(express.json());
+
+const allowedOrigins = [
+  "http://localhost:8000",
+  "http://192.168.1.3:8000"
+];
+
 app.use(cors({
-    origin: "http://localhost:5500"
+  origin: function (origin, callback) {
+    // allow requests with no origin (mobile apps, postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error("Not allowed by CORS"));
+    }
+  }
 }));
+
 app.use('/static', express.static('static'))
 app.use(express.urlencoded())
 
@@ -131,5 +147,5 @@ app.delete("/api/orders/:id", async (req, res) => {
 // });
 
 app.listen(port, "0.0.0.0", () => {
-  console.log("Server running on network");
+  console.log("Server running on network", port);
 });

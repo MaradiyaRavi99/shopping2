@@ -591,9 +591,16 @@ nav {
     justify-content: center;
     justify-self: end;
     background: #a1d591;
+    color: white;
     border: none;
     border-radius: 7px;
+    font-size: 15px;
     cursor: pointer;
+    font-weight: 600;
+}
+
+.review_btn:hover{
+    background: #4e4e4e;
 }
 
 input::placeholder {
@@ -909,12 +916,12 @@ body{
 
 /* CURRENT STEP */
 .step.current .circle{
-    border-color:#ff8c2a;
-    box-shadow:0 0 12px rgba(255,140,42,0.4);
+    border-color: #a0d590;
+    box-shadow: 0 0 12px rgb(152 198 133);
 }
 
 .step.current svg{
-    stroke:#ff8c2a;
+    stroke:#a0d590  ;
 }
 
 .step.current h4{
