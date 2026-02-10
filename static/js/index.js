@@ -632,60 +632,61 @@ async function renderDetails() {
     const grandTotal = subtotal + gst + delivery;
 
     let html = `
-<div class="order_wrapper">
+        <div class="order_wrapper">
 
-    <!-- HEADER -->
-    <div class="order_header">
-        <div>
-            <h2>Order #${order._id.slice(-8)}</h2>
-            <p>${order.date}</p>
-        </div>
-        <span class="status_badge">${order.status}</span>
-    </div>
+            <!-- HEADER -->
+            <div class="order_header">
+                <div>
+                    <h2>Order #${order._id.slice(-8)}</h2>
+                    <p>${order.date}</p>
+                </div>
+                <span class="status_badge">${order.status}</span>
+            </div>
 
-    <!-- TRACKING -->
-    <div class="tracking_card">
+            <!-- TRACKING -->
+                <div class="tracking_card">
 
-    <div class="progress_bar"></div>
-    <div class="progress_fill"></div>
+                    <div class="progress_bar"></div>
+                    <div class="progress_fill"></div>
 
-    <div class="step active">
-        <div class="circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg>
-        </div>
-        <h4>Order Placed</h4>
-        <span>2026-02-09T06:05</span>
-    </div>
+                    <div class="step active">
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"       stroke-linecap="round"stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0  21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg>
+                        </div>
+                        <h4>Order Placed</h4>
+                        <span>2026-02-09T06:05</span>
+                    </div>
 
-    <div class="step active">
-        <div class="circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg>
-        </div>
-        <h4>Packed</h4>
-    </div>
+                    <div class="step active">
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"       stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg>
+                        </div>
+                        <h4>Packed</h4>
+                        <span>2026-02-11T06:05</span>
+                    </div>
 
-    <div class="step current">
-        <div class="circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>
-        </div>
-        <h4>Shipped</h4>
-    </div>
+                    <div class="step current">
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"       stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circlecx="7" cy="18" r="2"></circle></svg>
+                        </div>
+                        <h4>Shipped</h4>
+                        <span>2026-02-14T06:05</span>
+                    </div>
 
-    <div class="step">
-        <div class="circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>
-        </div>
-        <h4>Out for Delivery</h4>
-    </div>
+                    <div class="step">
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"       stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>
+                        </div>
+                        <h4>Out for Delivery</h4>
+                    </div>
 
-    <div class="step">
-        <div class="circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-        </div>
-        <h4>Delivered</h4>
-    </div>
-
-</div>
+                    <div class="step">
+                        <div class="circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"       stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1.709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                        </div>
+                        <h4>Delivered</h4>
+                    </div>
+            </div>
 
 
     <div class="order_layout">
@@ -779,6 +780,13 @@ async function renderDetails() {
             <span>Delivery Charges</span>
             <span class="free">₹${delivery || 0}</span>
         </div>
+            
+        <div class="col-status">
+            <span>Order Status</span>
+            <span class="status-pill ${order.status === 'Cancelled' ? 'cancelled' : 'paid'}">
+                ${order.status}
+            </span>
+        </div>
 
         <hr>
 
@@ -791,8 +799,6 @@ async function renderDetails() {
             <span>PAYMENT METHOD</span>
             <span class="method_name">APNAWALLET</span>
         </div>
-
-        <button class="track_btn">TRACK ORDER</button>
 
         <div class="bottom_btns">
             <button class="invoice_btn">INVOICE</button>
