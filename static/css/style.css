@@ -89,7 +89,8 @@ form.example::after {
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    flex-direction: column;
 }
 
 .navigation {
@@ -230,8 +231,6 @@ nav {
     height: 28px;
     pointer-events: none;
 }
-
-
 
 .items7 {
     list-style: none;
@@ -414,74 +413,92 @@ nav {
     font-family: "Dosis", sans-serif;
     align-items: center;
     text-align: center;
+    margin-bottom: 19%;
 }
 
-.deleviry {
+.statistics {
     font-family: "Roboto", sans-serif;
-    width: 100%;
+    width: 78%;
     height: 100px;
     display: flex;
     align-items: center;
     color: white;
-    justify-content: space-between;
-    background-color: #555555;
+    justify-content: space-around;
+    /* background-color: #ffffff0f; */
+    background-color: #ffdddd0f;
+    backdrop-filter: blur(6px);
+    justify-self: center;
+    padding: 10px 17px;
+    border-radius: 16px;
+    margin-bottom: -3.4%;
 }
 
-#truck {
-    width: 20%;
-    margin-left: 8%;
+#users {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-#truck h3 {
-    margin-left: 25%;
-    margin-top: -16%;
-    font-size: 22px;
-    color: #afafaf;
+#users h2 {
+    color: #a0d590;
+    font-size: 2.5rem;
 }
 
-#truck h6 {
-    margin-left: 25%;
-    margin-top: 7px;
+#users h4 {
     font-size: 17px;
-    color: #0f0f0f;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
-#secure {
-    width: 20%;
+#total_order {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-#secure h3 {
-    margin-left: 25%;
-    margin-top: -16%;
-    font-size: 22px;
-    color: #afafaf;
+#total_order h2 {
+    color: #a0d590;
+    font-size: 2.5rem;
 }
 
-#secure h6 {
-    margin-left: 25%;
-    margin-top: 7px;
+#total_order h4 {
     font-size: 17px;
-    color: #0f0f0f;
-
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
-#support {
-    width: 20%;
+#states {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-#support h3 {
-    margin-left: 25%;
-    margin-top: -16%;
-    font-size: 22px;
-    color: #afafaf;
-
+#states h2 {
+    color: #a0d590;
+    font-size: 2.5rem;
 }
 
-#support h6 {
-    margin-left: 25%;
-    margin-top: 7px;
+#states h4 {
     font-size: 17px;
-    color: #0f0f0f;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+#rating{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#rating h2{
+    color: #a0d590;
+    font-size: 2.5rem;
+}
+
+#rating h4{
+    font-size: 17px;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
 #categories {
@@ -500,6 +517,7 @@ nav {
     text-align: center;
     padding-bottom: 5%;
     font-size: 3rem;
+    margin-top: 5%;
 }
 
 #product {
@@ -514,6 +532,7 @@ nav {
     width: 18%;
     border-radius: 10px;
     margin-right: 2%;
+    position: relative;
 }
 
 .produ1:hover {
@@ -559,6 +578,7 @@ nav {
     width: 18%;
     border-radius: 10px;
     margin-right: 2%;
+    position: relative;
 }
 
 .produ2:hover {
@@ -598,6 +618,7 @@ nav {
     width: 18%;
     border-radius: 10px;
     margin-right: 2%;
+    position: relative;
 }
 
 .produ3:hover {
@@ -637,6 +658,7 @@ nav {
     width: 18%;
     border-radius: 10px;
     margin-right: 2%;
+    position: relative;
 }
 
 .produ4:hover {
@@ -1674,8 +1696,10 @@ nav {
     }  
 } */
 
-
 /* @media (min-width: 1688px){
+
+
+
     #search{
         margin-left: 6%;
     }
@@ -1687,3 +1711,28 @@ nav {
     }
     
 } */
+
+
+.wishlist_btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+    background: #ffffff26;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff47;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    color: gray;
+    transition: 0.3s;
+}
+
+.wishlist_btn.active {
+    color: red;
+}

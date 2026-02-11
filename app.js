@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser')
 mongoose.connect("mongodb://127.0.0.1:27017/apnashop");
-const port = 8000;
+const port = 8800;
 const cors = require("cors");
 
 // Define mongoos schema
@@ -36,8 +36,8 @@ const Order = mongoose.model("Order", OrderSchema);
 app.use(express.json());
 
 const allowedOrigins = [
-  "http://localhost:8000",
-  "http://192.168.1.3:8000"
+  "http://localhost:8800",
+  "http://192.168.1.3:8800"
 ];
 
 app.use(cors({

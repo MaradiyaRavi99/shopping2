@@ -730,12 +730,15 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
     margin-bottom: 14px;
-    color: #bbb;
+    color: #d4d4d4;
     font-size: 15px;
 }
 
+.row span{
+    color: #808080eb;
+}
+
 .free {
-    color: #22c55e;
     font-weight: 600;
 }
 
@@ -753,14 +756,15 @@ hr {
 }
 
 .total_row span:first-child {
+    color: #808080eb;
     font-size: 18px;
     font-weight: 600;
 }
 
 .total_price {
+    color: #d4d4d4;
     font-size: 22px;
     font-weight: 700;
-    color: #a0d590;
 }
 
 .payment_method {
@@ -799,11 +803,6 @@ hr {
 .invoice_btn:hover,
 .buy_btn:hover {
     background: #4e4e4e;
-}
-
-body{
-    background:#0b0b0b;
-    font-family:system-ui;
 }
 
 .tracking_card{
@@ -1060,6 +1059,10 @@ body{
     display: flex;
     justify-content: space-between;
     color: #bbb;
+}
+
+.col-status span{
+    color: #808080eb;
 }
 
 /* .col-status.cancelled {

@@ -406,7 +406,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.3:8000/api/orders", {
+    fetch("http://192.168.1.3:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -514,7 +514,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.3:8000/api/orders");
+    const res = await fetch("http://192.168.1.3:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -608,7 +608,6 @@ async function renderOrders() {
     personal_registry.classList.remove("active");
 }
 
-
 function goToDetails(id) {
     localStorage.setItem("viewOrderId", id);
     window.location.href = "/orderdetail.html";
@@ -622,7 +621,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.3:8000/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.3:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -763,36 +762,36 @@ async function renderDetails() {
 
         <div class="row">
             <span>Total Items</span>
-            <span>${order.items.length}</span>
+            <p>${order.items.length}</p>
         </div>
 
         <div class="row">
             <span>Subtotal</span>
-            <span>₹${subtotal}</span>
+            <p>₹${subtotal}</p>
         </div>
 
         <div class="row">
             <span>GST (5%)</span>
-            <span>₹${gst.toFixed(2)}</span>
+            <p>₹${gst.toFixed(2)}</p>
         </div>
 
         <div class="row">
             <span>Delivery Charges</span>
-            <span class="free">₹${delivery || 0}</span>
+            <p class="free">₹${delivery || 0}</p>
         </div>
             
         <div class="col-status">
             <span>Order Status</span>
-            <span class="status-pill ${order.status === 'Cancelled' ? 'cancelled' : 'paid'}">
+            <p class="status-pill ${order.status === 'Cancelled' ? 'cancelled' : 'paid'}">
                 ${order.status}
-            </span>
+            </p>
         </div>
 
         <hr>
 
         <div class="total_row">
-            <span>Order Total</span>
-            <span class="total_price">₹${grandTotal.toFixed(2)}</span>
+            <span>Total</span>
+            <p class="total_price">₹${grandTotal.toFixed(2)}</p>
         </div>
 
         <div class="payment_method">
@@ -848,7 +847,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.3:8000/api/orders/${id}`, {
+    await fetch(`http://192.168.1.3:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -861,7 +860,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://192.168.1.3:8000/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.3:8800/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -887,9 +886,66 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.3:8000/api/orders/${id}`, {
+    await fetch(`http://192.168.1.3:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
     renderOrders();
+}
+
+function addToWishlist(name, price, image) {
+
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    // check already exists using name
+    let exists = wishlist.find(item => item.name === name);
+
+    if (exists) {
+        alert("Already in wishlist");
+        return;
+    }
+
+    wishlist.push({
+        name: name,
+        price: price,
+        image: image
+    });
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
+
+
+
+function loadWishlist() {
+
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const container = document.getElementById("wishlistContainer");
+
+    container.innerHTML = "";
+
+    wishlist.forEach(product => {
+        container.innerHTML += `
+            <div>
+                <img src="${product.image}" width="80">
+                <p>${product.price}</p>
+                <h3>₹${product.name}</h3>
+                <button onclick="removeFromWishlist('${product.name}')">
+                    Remove
+                </button>
+            </div>
+        `;
+    });
+}
+loadWishlist();
+
+function removeFromWishlist(name, price) {
+
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    wishlist = wishlist.filter(
+        item => !(item.name === name && item.price === price)
+    );
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    loadWishlist();
 }

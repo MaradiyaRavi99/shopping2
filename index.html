@@ -64,16 +64,13 @@
                         </div>
                         <li class="items6">
                             <a href="/profile.html" class="user_profile_btn" aria-label="Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
                                     <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="1.5"
                                         d="M19 20.75a1 1 0 0 0 1-1v-1.246c.004-2.806-3.974-5.004-8-5.004s-8 2.198-8 5.004v1.246a1 1 0 0 0 1 1zM15.604 6.854a3.604 3.604 0 1 1-7.208 0a3.604 3.604 0 0 1 7.208 0" />
                                 </svg>
                             </a>
                         </li>
-
-
-
                         <li class="items5">
                             <button class="cart" id="openBtn">
                                 <span id="cartCount">0</span>
@@ -111,22 +108,23 @@
             </svg>
         </div>
         <h1 id="main_heading">Your World of Premium Finds, One Click Away.</h1>
-    </div>
-    <div class="deleviry">
-        <div id="truck">
-            <img src="/static/delivery.png" alt="">
-            <h3>Free Shipping</h3>
-            <h6>On all orders over $50</h6>
-        </div>
-        <div id="secure">
-            <img src="/static/shield.png" alt="">
-            <h3>Secure Payment</h3>
-            <h6>100% secure transactions</h6>
-        </div>
-        <div id="support">
-            <img src="/static/clock.png" alt="">
-            <h3>24/7 Support</h3>
-            <h6>Dedicated support team</h6>
+        <div class="statistics">
+            <div id="users">
+                <h2>25k+</h2>
+                <h4>Active Users</h4>
+            </div>
+            <div id="total_order">
+                <h2>50k+</h2>
+                <h4>Order Total</h4>
+            </div>
+            <div id="states">
+                <h2>10</h2>
+                <h4>States Reached</h4>
+            </div>
+            <div id="rating">
+                <h2>4.9/5</h2>
+                <h4>Trust Rating</h4>
+            </div>
         </div>
     </div>
     <div id="categories">
@@ -136,6 +134,15 @@
         <section id="product">
             <div class="produ1">
                 <img src="/static/watch3.png" alt="Smart Watch Series 5">
+                <button class="wishlist_btn" onclick="('Smart Watch Series 5', 3999, '/static/watch3.png')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-left: 1px;" viewBox="0 0 24 24">
+                        <path fill="none" stroke="white" stroke-dasharray="30" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c0 0 0 0 -0.76 -1c-0.88 -1.16 -2.18 -2 -3.74 -2c-2.49 0 -4.5 2.01 -4.5 4.5c0 0.93 0.28 1.79 0.76 2.5c0.81 1.21 8.24 9 8.24 9M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9">
+                            <animate fill="freeze" attributeName="stroke-dashoffset" dur="1.35s" values="30;0" />
+                        </path>
+                    </svg>
+                </button>
                 <p>ELECTRONICS</p>
                 <h2>Smart Watch Series 5</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.9</span>
@@ -146,6 +153,15 @@
             </div>
             <div class="produ2">
                 <img src="/static/shoes2.png" alt="Neon Runner X">
+                <button class="wishlist_btn" onclick="addToWishlist('Luxury Sneakers', 1099, '/static/shoes2.png')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-left: 1px;" viewBox="0 0 24 24">
+                        <path fill="none" stroke="white" stroke-dasharray="30" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c0 0 0 0 -0.76 -1c-0.88 -1.16 -2.18 -2 -3.74 -2c-2.49 0 -4.5 2.01 -4.5 4.5c0 0.93 0.28 1.79 0.76 2.5c0.81 1.21 8.24 9 8.24 9M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9">
+                            <animate fill="freeze" attributeName="stroke-dashoffset" dur="1.35s" values="30;0" />
+                        </path>
+                    </svg>
+                </button>
                 <p>Footwear</p>
                 <h2>Luxury Sneakers</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.0</span>
@@ -156,6 +172,15 @@
             </div>
             <div class="produ3">
                 <img src="/static/dr.png" alt="Women Dress">
+                <button class="wishlist_btn" onclick="addToWishlist('Women Dress', 750, '/static/dr.png')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-left: 1px;" viewBox="0 0 24 24">
+                        <path fill="none" stroke="white" stroke-dasharray="30" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c0 0 0 0 -0.76 -1c-0.88 -1.16 -2.18 -2 -3.74 -2c-2.49 0 -4.5 2.01 -4.5 4.5c0 0.93 0.28 1.79 0.76 2.5c0.81 1.21 8.24 9 8.24 9M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9">
+                            <animate fill="freeze" attributeName="stroke-dashoffset" dur="1.35s" values="30;0" />
+                        </path>
+                    </svg>
+                </button>
                 <p>Fashion</p>
                 <h2>Women Dress</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;3.9</span>
@@ -165,6 +190,15 @@
             </div>
             <div class="produ4">
                 <img src="/static/bag2.png" alt="Leather Bag">
+                <button class="wishlist_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-left: 1px;" viewBox="0 0 24 24">
+                        <path fill="none" stroke="white" stroke-dasharray="30" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M12 8c0 0 0 0 -0.76 -1c-0.88 -1.16 -2.18 -2 -3.74 -2c-2.49 0 -4.5 2.01 -4.5 4.5c0 0.93 0.28 1.79 0.76 2.5c0.81 1.21 8.24 9 8.24 9M12 8c0 0 0 0 0.76 -1c0.88 -1.16 2.18 -2 3.74 -2c2.49 0 4.5 2.01 4.5 4.5c0 0.93 -0.28 1.79 -0.76 2.5c-0.81 1.21 -8.24 9 -8.24 9">
+                            <animate fill="freeze" attributeName="stroke-dashoffset" dur="1.35s" values="30;0" />
+                        </path>
+                    </svg>
+                </button>
                 <p>Fashion</p>
                 <h2>Leather Bag</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.3</span>
@@ -295,7 +329,7 @@
                 <form action="/login" method="POST">
                     <div class="input-box">
                         <i class="fa fa-envelope"></i>
-                        
+
                         <input type="emain" name="email" placeholder="Email" required>
                     </div>
 
@@ -368,13 +402,17 @@
         </div>
 
     </div>
+    <div id="wishlistContainer"></div>
     <div class="footer">
         <h3>Copyright © 2026 ApnaShop.com | All rights reserved</h3>
     </div>
+    
+
     <a href="/Electronics.html"></a>
 
 
     <!-- Ravipatelcollege999 -->
     <script src="/static/js/index.js" defer></script>
 </body>
+
 </html>

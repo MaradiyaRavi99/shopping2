@@ -61,17 +61,14 @@
                                 </form>
                             </div>
                             <li class="items6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                    style="margin-left: 5px; margin-top: 3px;" viewBox="0 0 24 24">
-                                    <g fill="none" stroke="#fff" stroke-width="1.5">
-                                        <path stroke-linejoin="round"
-                                            d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
-                                        <circle cx="12" cy="7" r="3" />
-                                    </g>
+                            <a href="/profile.html" class="user_profile_btn" aria-label="Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M19 20.75a1 1 0 0 0 1-1v-1.246c.004-2.806-3.974-5.004-8-5.004s-8 2.198-8 5.004v1.246a1 1 0 0 0 1 1zM15.604 6.854a3.604 3.604 0 1 1-7.208 0a3.604 3.604 0 0 1 7.208 0" />
                                 </svg>
-    
-    
-                            </li>
+                            </a>
+                        </li>
                             <li class="items5">
                                 <button class="cart" id="openBtn">
                                     <span id="cartCount">0</span>
@@ -287,22 +284,8 @@
             </div>
         </div>
         <div id="confetti"></div>
-
-        <div class="order_container">
-            <div id="orderHistory" class="orders">
-                <h2>My Orders</h2>
-                <div id="orderList"></div>
-                <button class="btn btn-primary" style="margin-top: 10px;" onclick="renderOrders()">My Orders</button>
-            </div>
-        </div>
-
-        <!-- Order Details Popup -->
-        <div id="orderPopup" class="popup">
-            <div class="popup-box">
-                <span class="close" onclick="closePopup()">✖</span>
-                <h3>Order Details</h3>
-                <div id="popupContent"></div>
-            </div>
+        <div class="card">
+            <slot></slot>
         </div>
 
         <div class="wrapper" id="wrapper">
