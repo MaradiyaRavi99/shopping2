@@ -237,7 +237,7 @@
                     </svg>
                 </div>
             </button>
-            <button class="my_orders_btn profile_primery" id="my_orders_btn" onclick="renderOrders()">
+            <button class="my_orders_btn profile_primery" id="my_orders_btn" onclick="showrenderOrders()">
                 <div class="my_orders" style="display: flex; align-items: center;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -253,7 +253,7 @@
                     <span style="font-size: 20px;">My Orders</span>
                 </div>
             </button>
-            <button class="wishlist_btn profile_primery" id="wishlist_btn">
+            <button class="wishlist_btn profile_primery" id="wishlist_btn" onclick="loadWishlist()">
                 <div class="wishlist" style="display: flex; align-items: center;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -330,8 +330,8 @@
                     <span style="font-size: 21px;">Logout</span>
                 </div>
             </button>
-        </div>
-        <div class="personal_registry" id="personal_registry">
+            </div>
+            <div class="personal_registry" id="personal_registry">
             <div class="personal_registry_name">
                 <h3 style="text-transform: uppercase; font-size: 1.5rem;">Personal<span
                         style="color: #ade19d;">Registry</span></h3>
@@ -481,25 +481,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="my_order" id="my_order">
-            <div class="order_container">
-                <div id="orderHistory" class="orders">
-                    <div id="orderList" class="orders-wrap">
-                        
+            </div>
+            <div class="my_order" id="my_order">
+                <div class="order_container">
+                    <div id="orderHistory" class="orders">
+                        <div id="orderList" class="orders-wrap">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="orderPopup" class="popup">
+            <div id="orderPopup" class="popup">
             <div class="popup-box">
                 <span class="close" onclick="closePopup()">✖</span>
                 <h3>Order Details</h3>
                 <div id="popupContent"></div>
             </div>
+            </div>
+            <div id="wishlistContainer"></div>
         </div>
-    </div>
     </div>
 
     <!-- <img src="/static/Screenshot 2026-01-26 at 5.26.03 PM.png" alt=""> -->

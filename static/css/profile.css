@@ -1059,8 +1059,16 @@ nav {
 .my_order{
     margin-left: 3%;
     width: 61%;
+    top: -1057px;
+    /* margin-top: 20px; */
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
+.my_order.active{
+    top: 0;
+}
 
 .btn {
     padding: 10px 24px;
@@ -1567,6 +1575,7 @@ nav {
   min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
+  margin-left: -75px;
 }
 
 .cancelled-text:hover .cancel_deopdown {
@@ -1578,7 +1587,6 @@ nav {
     margin-bottom: 3%;
 }
 
-
 .filter button{
     text-transform: uppercase;
     background: #a0d590;
@@ -1588,4 +1596,58 @@ nav {
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.wishlist_btn2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+    background: #ffffff26;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff47;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    color: gray;
+    transition: 0.3s;
+}
+
+#wishlistContainer{
+    display: flex;
+    gap: 3%;
+    color: white;
+}
+
+.wishlist_btn2.active {
+    color: red;
+}
+
+.wishlist_prodect{
+    display: flex;
+    flex-direction: column;
+    width: 62%;
+    background: #16181d;
+    border: 1px solid #2a2d34;
+    height: 74.4%;
+}
+
+.wishlist_prodect p{
+    margin-top: 7%;
+    margin-left: 7%;
+    margin-bottom: 4%;
+}
+
+.wishlist_prodect h3{
+    margin-bottom: 4%;
+    margin-left: 7%;
+}
+.wishlist_prodect img{
+    width: 100%;
+    height: 77%;
 }

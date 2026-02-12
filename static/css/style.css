@@ -1733,6 +1733,31 @@ nav {
     transition: 0.3s;
 }
 
+#wishlistContainer{
+    display: flex;
+    gap: 3%;
+    color: white;
+}
+
 .wishlist_btn.active {
     color: red;
+}
+
+.wishlist_prodect{
+    display: flex;
+    flex-direction: column;
+    width: 12%;
+    background: #16181d;
+    border: 1px solid #2a2d34;
+}
+
+.wishlist_prodect p{
+    margin-top: 7%;
+    margin-left: 7%;
+    margin-bottom: 4%;
+}
+
+.wishlist_prodect h3{
+    margin-bottom: 4%;
+    margin-left: 7%;
 }
