@@ -12,7 +12,7 @@
 }
 
 html {
-    scroll-behavior: var(--primary);
+    scroll-behavior: smooth;
 }
 
 * {
@@ -112,7 +112,7 @@ form.example::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #7a7a7a26;
+    background: #ffffff1a;
     border-radius: 12px;
     z-index: 999;
     transition: 0.5s ease;
@@ -1619,9 +1619,20 @@ nav {
 }
 
 #wishlistContainer{
-    display: flex;
+    display: none;
+    flex-direction: column;
     gap: 3%;
     color: white;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    transition: top 0.5s ease;
+    
+}
+
+#wishlistContainer.active {
+    display: flex;
+    left: 33%;
 }
 
 .wishlist_btn2.active {
@@ -1650,4 +1661,90 @@ nav {
 .wishlist_prodect img{
     width: 100%;
     height: 77%;
+}
+
+.wishlist-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.wishlist-head h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.wishlist-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    transition: 0.2s;
+    justify-content: space-between;
+}
+
+.wishlist-row:hover {
+    transform: translateY(-2px);
+    background: rgba(173, 225, 157, 0.03);
+    border: 1px solid rgba(173, 225, 157, 0.37);
+}
+
+.wishlist-product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.wishlist-product img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.wishlist-info h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.wishlist-info p {
+    color: #a0d591;
+    font-weight: 600;
+}
+
+.wishlist-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-remove {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-remove:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.btn-add-cart {
+    background: linear-gradient(45deg, #a1d591, #56bc37);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
 }

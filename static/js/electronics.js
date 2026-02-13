@@ -893,3 +893,16 @@ async function removeOrder(id) {
 
     renderOrders();
 }
+// Wishlist Functionality
+function addToWishlist(name, price, image) {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const item = wishlist.find(p => p.name === name);
+
+    if (item) {
+        alert("Product already in wishlist!");
+    } else {
+        wishlist.push({ name, price, image });
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        alert("Product added to wishlist!");
+    }
+}
