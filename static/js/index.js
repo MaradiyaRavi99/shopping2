@@ -53,19 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const btn3 = document.getElementById("wishlist_btn");
 
     btn.addEventListener("click", function () {
-        btn.classList.toggle("active");
+        btn.classList.add("active");
         showinformation();
         btn2.classList.remove("active");
         btn3.classList.remove("active");
     });
     btn2.addEventListener("click", function () {
-        btn2.classList.toggle("active");
+        btn2.classList.add("active");
         btn.classList.remove("active");
         btn3.classList.remove("active");
     });
 
     btn3.addEventListener("click", function () {
-        btn3.classList.toggle("active");
+        btn3.classList.add("active");
         btn.classList.remove("active");
         btn2.classList.remove("active");
 
@@ -650,12 +650,11 @@ async function renderDetails() {
             <!-- HEADER -->
             <div class="order_header">
                 <div>
-                    <h2>Order #${order._id.slice(-8)}</h2>
+                    <h2>Order #${order._id}</h2>
                     <p>${order.date}</p>
                 </div>
                 <span class="status_badge">${order.status}</span>
             </div>
-
             <!-- TRACKING -->
                 <div class="tracking_card">
 
@@ -709,27 +708,24 @@ async function renderDetails() {
             <div class="card_details">
                 <h2>Customer Details</h2>
                 <div class="customer">
-                        <div class="customer_detail_name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem; margin-top: 20px;margin-bottom: 20px;"
-                                viewBox="0 0 24 24" fill="none" stroke="#a1d591" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="lucide1 lucide-user"
-                                aria-hidden="true">
-                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            <div class="customer_name">
-                                <span>${order.name}</span>
-                            </div>
+                    <div class="customer_detail_name">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem; margin-top: 20px;margin-bottom: 20px;"
+                            viewBox="0 0 24 24" fill="none" stroke="#a1d591" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide1 lucide-user" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <div class="customer_name">
+                            <span>${order.name}</span>
                         </div>
-                        <div class="customer_detail_phone">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><path fill="none" stroke="#a1d591" stroke-linejoin="round" stroke-width="1.7" d="M7.829 16.171a20.9 20.9 0 0 1-4.846-7.614c-.573-1.564-.048-3.282 1.13-4.46l.729-.728a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.42.42a1.81 1.81 0 0 0 0 2.56l3.84 3.841a1.81 1.81 0 0 0 2.56 0l.421-.42a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.728.728c-1.178 1.179-2.896 1.704-4.46 1.131a20.9 20.9 0 0 1-7.614-4.846Z"/></svg>
-                            <p>${maskMobile(order.mobile)}</p>
-                        </div>
-                        <div class="customer_detail_address">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><g fill="none" stroke="#a1d591" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8"/></g></svg>
-                            <p>${order.address}</p>
-                        </div>
+                    </div>
+                    <div class="customer_detail_phone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><path fill="none" stroke="#a1d591" stroke-linejoin="round" stroke-width="1.7" d="M7.829 16.171a20.9 20.9 0 0 1-4.846-7.614c-.573-1.564-.048-3.282 1.13-4.46l.729-.728a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.42.42a1.81 1.81 0 0 0 0 2.56l3.84 3.841a1.81 1.81 0 0 0 2.56 0l.421-.42a2.11 2.11 0 0 1 2.987 0l1.707 1.707a2.11 2.11 0 0 1 0 2.987l-.728.728c-1.178 1.179-2.896 1.704-4.46 1.131a20.9 20.9 0 0 1-7.614-4.846Z"/></svg>
+                        <p>${maskMobile(order.mobile)}</p>
+                    </div>
+                    <div class="customer_detail_address">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;" viewBox="0 0 24 24"><g fill="none" stroke="#a1d591" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8"/></g></svg>
+                        <p>${order.address}</p>
+                    </div>
             </div>
         </div>  
             <div class="card">
@@ -926,9 +922,8 @@ function addToWishlist(name, price, image) {
     });
 
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    alert("Product added to wishlist!");
 }
-
-
 
 function loadWishlist() {
 
@@ -1027,15 +1022,172 @@ function removeFromWishlist(index) {
 function moveToCart(name, price, image, index) {
     addToCart(name, price, image);
     removeFromWishlist(index);
-    // Optional: Only remove if you want "Move to Cart" behavior, 
-    // usually "Add to Cart" keeps it in wishlist? 
-    // The user didn't specify, but "Move to Cart" implies moving.
-    // I'll stick to "Add to Cart" behavior + Remove for now, or just Add?
-    // Let's make it "Move to Cart" as it's cleaner for the user flow usually.
-    // Actually, let's keep it in wishlist, and just Add. 
-    // Wait, the button says "Add to Cart". 
-    // Converting to "Add to Cart" button, but implementation `moveToCart` can function as `addToCart`.
-    // Let's NOT remove it automatically, users might want to keep it in wishlist.
-    // So I will change implementation to JUST addToCart.
 }
 
+// async function productDetails() {
+//     const box = document.getElementById("orderList");
+//     if (!box) return;
+
+//     const id = localStorage.getItem("viewOrderId");
+//     if (!id) return;
+
+//     const res = await fetch(`http://192.168.1.3:8800/api/orders/${id}`);
+//     const order = await res.json();
+
+//     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
+//     const gst = subtotal * 0.05;
+//     const delivery = order.deliveryCharge || 5;
+
+//     const grandTotal = subtotal + gst + delivery;
+
+//     let html = `
+//         <div class="order_wrapper">
+//             <div class="card">
+//                 <h2>Package Contents</h2>
+
+//                 ${order.items.map(item => `
+//                 <div class="package_row">
+//                     <img src="${item.image}">
+//                     <div class="product_name_price_qty">
+//                         <div class="product_name_price">
+//                             <div class="product_name">${item.name}</div>
+//                             <div>₹${item.price * item.qty}</div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 `).join("")}
+//             </div>
+//         </div>
+//     `;
+//     box.innerHTML = html;
+// }
+
+
+async function productDetails() {
+    const box = document.getElementById("orderList");
+    if (!box) return;
+
+    const id = localStorage.getItem("viewOrderId");
+    if (!id) return;
+
+    const res = await fetch(`http://192.168.1.3:8800/api/orders/${id}`);
+    const order = await res.json();
+
+    const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
+    const gst = subtotal * 0.05;
+    const delivery = order.deliveryCharge || 5;
+
+    const grandTotal = subtotal + gst + delivery;
+
+    let html = `
+<div class="order_wrapper">
+
+${order.items.map((item, index) => `
+<div class="product_page">
+
+    <!-- LEFT : IMAGE SECTION -->
+    <div class="image_section">
+
+        <div class="main_image">
+            <img id="mainImage${index}" src="${item.image}" alt="${item.name}">
+        </div>
+
+        <div class="thumb_images">
+            <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
+            <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
+            <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT : PRODUCT DETAILS -->
+    <div class="details_section">
+
+        <h1 class="product_title">${item.name}</h1>
+
+        <div class="rating">
+            ★★★★☆ <span>(26 Reviews)</span>
+        </div>
+
+        <div class="price_box">
+            <span class="old_price">₹${item.price + 200}</span>
+            <span class="new_price">₹${item.price}</span>
+        </div>
+
+        <!-- SIZE -->
+        <div class="size_box">
+            <p>Size</p>
+            <button class="size active" onclick="selectSize(this)">S</button>
+            <button class="size" onclick="selectSize(this)">M</button>
+            <button class="size" onclick="selectSize(this)">L</button>
+            <button class="size" onclick="selectSize(this)">XL</button>
+            <button class="size" onclick="selectSize(this)">XXL</button>
+            <button class="size" onclick="selectSize(this)">3XL</button>
+            <button class="size" onclick="selectSize(this)">4XL</button>
+        </div>
+
+        <!-- USEFUL INFO -->
+        <div class="useful_box">
+            <h3>Useful In</h3>
+            <ul>
+                <li>Supporting digestion</li>
+                <li>Improving immunity</li>
+                <li>Natural detox support</li>
+            </ul>
+        </div>
+
+        <!-- QUANTITY -->
+        <div class="qty_box">
+            <p>Quantity</p>
+            <div class="qty_control">
+                <button onclick="changeQty(-1,'qty${index}')">−</button>
+                <span id="qty${index}">${item.qty}</span>
+                <button onclick="changeQty(1,'qty${index}')">+</button>
+            </div>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="action_buttons">
+            <button class="add_cart">Add to Cart</button>
+            <button class="buy_now">Buy Now</button>
+        </div>
+
+
+    </div>
+
+</div>
+`).join("")}
+
+</div>
+`;
+
+    box.innerHTML = html;
+}
+
+
+function changeImage(el, id) {
+    document.getElementById(id).src = el.src;
+}
+
+function changeQty(val, id) {
+    let qtyEl = document.getElementById(id);
+    let qty = parseInt(qtyEl.innerText);
+
+    qty += val;
+    if (qty < 1) qty = 1;
+
+    qtyEl.innerText = qty;
+}
+
+function selectSize(el) {
+
+    // find all size buttons inside same size box
+    let sizes = el.parentElement.querySelectorAll(".size");
+
+    // remove active from all
+    sizes.forEach(btn => btn.classList.remove("active"));
+
+    // add active to clicked button
+    el.classList.add("active");
+}

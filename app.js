@@ -85,6 +85,10 @@ app.get("/profile.html", (req, res) => {
   res.sendFile(path.join(__dirname, "profile.html"));
 });
 
+app.get("/productdetails.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "productdetails.html"));
+});
+
 app.post("/api/orders", async (req, res) => {
     const order = new Order(req.body);
     await order.save();
