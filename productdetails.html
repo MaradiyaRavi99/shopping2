@@ -96,7 +96,7 @@
                             height="200%" result="map" />
 
                         <!-- Blur the original object -->
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="blur"/>
 
                         <!-- Glass distortion -->
                         <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />

@@ -1085,34 +1085,62 @@ async function productDetails() {
 ${order.items.map((item, index) => `
 <div class="product_page">
 
-    <!-- LEFT : IMAGE SECTION -->
+    <!-- LEFT SIDE : IMAGE AREA -->
     <div class="image_section">
 
-        <div class="main_image">
-            <img id="mainImage${index}" src="${item.image}" alt="${item.name}">
-        </div>
-
+    <div class="main_image">
+        <img id="mainImage${index}" src="${item.image}" alt="${item.name}">
+    </div>
         <div class="thumb_images">
             <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
             <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
             <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
         </div>
 
+
+        <div class="image_buttons">
+            <button class="add_cart">ADD TO CART</button>
+            <button class="buy_now">BUY NOW</button>
+        </div>
+
     </div>
 
 
-    <!-- RIGHT : PRODUCT DETAILS -->
+    <!-- RIGHT SIDE : DETAILS -->
     <div class="details_section">
 
         <h1 class="product_title">${item.name}</h1>
 
-        <div class="rating">
-            ★★★★☆ <span>(26 Reviews)</span>
+        <div class="rating_row">
+            <span class="rating_badge">4.9 ★</span>
+            <span class="rating_text">2,845 Ratings & 364 Reviews</span>
+            <span class="best_seller">BESTSELLER</span>
         </div>
 
         <div class="price_box">
-            <span class="old_price">₹${item.price + 200}</span>
             <span class="new_price">₹${item.price}</span>
+            <span class="old_price">₹${item.price + 200}</span>
+            <span class="discount">20% off</span>
+        </div>
+
+        <!-- OFFERS -->
+        <div class="offer_box">
+            <h3>Available Offers</h3>
+            <ul>
+                <li>Bank Offer 5% Unlimited Cashback</li>
+                <li>Special Price Get extra discount</li>
+                <li>Partner Offer Gift card worth ₹100</li>
+            </ul>
+        </div>
+
+        <!-- COLOR -->
+        <div class="color_box">
+            <p>Color</p>
+            <div class="colors">
+                <span class="color active" style="background:#e91e63"></span>
+                <span class="color" style="background:#ffd600"></span>
+                <span class="color" style="background:#00c853"></span>
+            </div>
         </div>
 
         <!-- SIZE -->
@@ -1123,36 +1151,35 @@ ${order.items.map((item, index) => `
             <button class="size" onclick="selectSize(this)">L</button>
             <button class="size" onclick="selectSize(this)">XL</button>
             <button class="size" onclick="selectSize(this)">XXL</button>
-            <button class="size" onclick="selectSize(this)">3XL</button>
-            <button class="size" onclick="selectSize(this)">4XL</button>
         </div>
 
-        <!-- USEFUL INFO -->
-        <div class="useful_box">
-            <h3>Useful In</h3>
+        <!-- DELIVERY -->
+        <div class="delivery_box">
+            <p>Delivery</p>
+            <input type="text" placeholder="Enter Pincode">
+            <button>Check</button>
+            <span class="delivery_text">Delivery in 2-4 days</span>
+        </div>
+
+        <!-- HIGHLIGHTS -->
+        <div class="highlight_box">
+            <h3>Highlights</h3>
             <ul>
-                <li>Supporting digestion</li>
-                <li>Improving immunity</li>
-                <li>Natural detox support</li>
+                <li>Fabric: Pure Viscose Rayon</li>
+                <li>Type: Bollywood</li>
+                <li>Pattern: Self Design</li>
+                <li>Occasion: Party & Festive</li>
             </ul>
         </div>
 
-        <!-- QUANTITY -->
-        <div class="qty_box">
-            <p>Quantity</p>
-            <div class="qty_control">
-                <button onclick="changeQty(-1,'qty${index}')">−</button>
-                <span id="qty${index}">${item.qty}</span>
-                <button onclick="changeQty(1,'qty${index}')">+</button>
-            </div>
+        <!-- DESCRIPTION -->
+        <div class="description_box">
+            <h3>Description</h3>
+            <p>
+                A Masterpiece of Indian craftsmanship designed for modern elegance.
+                Perfect for weddings and festive occasions.
+            </p>
         </div>
-
-        <!-- BUTTONS -->
-        <div class="action_buttons">
-            <button class="add_cart">Add to Cart</button>
-            <button class="buy_now">Buy Now</button>
-        </div>
-
 
     </div>
 
@@ -1162,7 +1189,19 @@ ${order.items.map((item, index) => `
 </div>
 `;
 
+
     box.innerHTML = html;
+}
+
+
+function changeImage(el, id){
+    document.getElementById(id).src = el.src;
+}
+
+function selectSize(btn){
+    document.querySelectorAll(".size")
+        .forEach(s => s.classList.remove("active"));
+    btn.classList.add("active");
 }
 
 
