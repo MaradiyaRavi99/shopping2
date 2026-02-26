@@ -37,7 +37,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:8800",
-  "http://192.168.1.3:8800"
+  "http://192.168.1.11:8800"
 ];
 
 app.use(cors({
@@ -151,5 +151,5 @@ app.delete("/api/orders/:id", async (req, res) => {
 // });
 
 app.listen(port, "0.0.0.0", () => {
-  console.log("Server running on network", port);
+  console.log("Server running on port", port);
 });
