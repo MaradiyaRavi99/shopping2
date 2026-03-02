@@ -30,14 +30,13 @@ const OrderSchema = new mongoose.Schema({
 
 const Order = mongoose.model("Order", OrderSchema);
 
-
 // EXPRESS SPECIFIC STUFF
 // app.use('/static', express.static('static')) // For serving static files
 app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:8800",
-  "http://192.168.1.11:8800"
+  "http://192.168.1.8:8800"
 ];
 
 app.use(cors({

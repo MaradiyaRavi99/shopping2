@@ -118,6 +118,7 @@ function showinformation() {
     wishlistContainer.classList.remove("active");
 
 }
+
 function showrenderOrders() {
     my_order.classList.add("active");
     wishlistContainer.classList.remove("active");
@@ -182,6 +183,89 @@ function addToCart(name, price, image) {
     updateCartCount();
 }
 
+
+
+// function addToCart(name, price, image, btnElement) {
+
+//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+//     let existing = cart.find(item => item.name === name);
+
+//     if (existing) {
+//         existing.qty += 1;
+//     } else {
+//         cart.push({
+//             name,
+//             price,
+//             image,
+//             qty: 1
+//         });
+//     }
+
+//     localStorage.setItem("cart", JSON.stringify(cart));
+
+//     renderQuantity(name, btnElement.parentElement);
+// }
+
+
+// function renderQuantity(name, container) {
+
+//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+//     let product = cart.find(item => item.name === name);
+
+//     if (!product) return;
+
+//     container.innerHTML = `
+//         <div class="cart_qty">
+//             <button onclick="changeQty('${name}', -1, this)">-</button>
+//             <span>${product.qty}</span>
+//             <button onclick="changeQty('${name}', 1, this)">+</button>
+//         </div>
+//     `;
+// }
+
+// function changeQty(name, change, element) {
+
+//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+//     let product = cart.find(item => item.name === name);
+
+//     if (!product) return;
+
+//     product.qty += change;
+
+//     if (product.qty <= 0) {
+//         cart = cart.filter(item => item.name !== name);
+
+//         element.closest(".cart_action").innerHTML = `
+//             <button class="btn1 btn-primary"
+//                 onclick="addToCart('${name}', ${product.price}, '${product.image}', this)">
+//                 Add to Cart
+//             </button>
+//         `;
+//     }
+
+//     localStorage.setItem("cart", JSON.stringify(cart));
+
+//     updateAllQtyUI();
+// }
+
+// function updateAllQtyUI() {
+
+//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+//     cart.forEach(item => {
+//         let cards = document.querySelectorAll(".cart_action");
+
+//         cards.forEach(container => {
+//             if (container.innerHTML.includes(item.name)) {
+//                 renderQuantity(item.name, container);
+//             }
+//         });
+//     });
+// }
+
+// document.addEventListener("DOMContentLoaded", updateAllQtyUI);
 
 
 function updateCartCount() {
@@ -420,7 +504,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.11:8800/api/orders", {
+    fetch("http://192.168.1.8:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -528,7 +612,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.11:8800/api/orders");
+    const res = await fetch("http://192.168.1.8:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -635,7 +719,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.11:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.8:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -857,7 +941,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.11:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.8:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -870,7 +954,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://192.168.1.11:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.8:8800/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -896,7 +980,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.11:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.8:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
@@ -1063,43 +1147,51 @@ function moveToCart(name, price, image, index) {
 // }
 
 
-async function productDetails() {
+function openProductDetails(name, price, image) {
+
+    const product = {
+        name: name,
+        price: price,
+        image: image
+    };
+
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+    // redirect to details page
+    window.location.href = "productdetails.html";
+}
+
+function productDetails() {
+
     const box = document.getElementById("orderList");
     if (!box) return;
 
-    const id = localStorage.getItem("viewOrderId");
-    if (!id) return;
-
-    const res = await fetch(`http://192.168.1.11:8800/api/orders/${id}`);
-    const order = await res.json();
-
-    const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
-    const gst = subtotal * 0.05;
-    const delivery = order.deliveryCharge || 5;
-
-    const grandTotal = subtotal + gst + delivery;
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+    if (!product) return;
 
     let html = `
 <div class="order_wrapper">
 
-${order.items.map((item, index) => `
 <div class="product_page">
 
     <!-- LEFT SIDE : IMAGE AREA -->
     <div class="image_section">
 
-    <div class="main_image">
-        <img id="mainImage${index}" src="${item.image}" alt="${item.name}">
-    </div>
-        <div class="thumb_images">
-            <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
-            <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
-            <img src="${item.image}" onclick="changeImage(this,'mainImage${index}')">
+        <div class="main_image">
+            <img id="mainImage" src="${product.image}" alt="${product.name}">
         </div>
 
+        <div class="thumb_images">
+            <img src="${product.image}" onclick="changeImage(this,'mainImage')">
+            <img src="${product.image}" onclick="changeImage(this,'mainImage')">
+            <img src="${product.image}" onclick="changeImage(this,'mainImage')">
+        </div>
 
         <div class="image_buttons">
-            <button class="add_cart">ADD TO CART</button>
+            <button class="add_cart"
+                onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">
+                ADD TO CART
+            </button>
             <button class="buy_now">BUY NOW</button>
         </div>
 
@@ -1108,7 +1200,7 @@ ${order.items.map((item, index) => `
     <!-- RIGHT SIDE : DETAILS -->
     <div class="details_section">
 
-        <h1 class="product_title">${item.name}</h1>
+        <h1 class="product_title">${product.name}</h1>
 
         <div class="rating_row">
             <span class="rating_badge">4.9 ★</span>
@@ -1117,12 +1209,11 @@ ${order.items.map((item, index) => `
         </div>
 
         <div class="price_box">
-            <span class="new_price">₹${item.price}</span>
-            <span class="old_price">₹${item.price + 200}</span>
+            <span class="new_price">₹${product.price}</span>
+            <span class="old_price">₹${product.price + 200}</span>
             <span class="discount">20% off</span>
         </div>
 
-        <!-- OFFERS -->
         <div class="offer_box">
             <h3>Available Offers</h3>
             <ul>
@@ -1132,7 +1223,6 @@ ${order.items.map((item, index) => `
             </ul>
         </div>
 
-        <!-- COLOR -->
         <div class="color_box">
             <p>Color</p>
             <div class="colors">
@@ -1142,7 +1232,6 @@ ${order.items.map((item, index) => `
             </div>
         </div>
 
-        <!-- SIZE -->
         <div class="size_box">
             <p>Size</p>
             <button class="size active" onclick="selectSize(this)">S</button>
@@ -1152,7 +1241,6 @@ ${order.items.map((item, index) => `
             <button class="size" onclick="selectSize(this)">XXL</button>
         </div>
 
-        <!-- DELIVERY -->
         <div class="delivery_box">
             <p>Delivery</p>
             <input type="text" placeholder="Enter Pincode">
@@ -1160,38 +1248,90 @@ ${order.items.map((item, index) => `
             <span class="delivery_text">Delivery in 2-4 days</span>
         </div>
 
-        <!-- HIGHLIGHTS -->
         <div class="highlight_box">
             <h3>Highlights</h3>
             <ul>
                 <li>Fabric: Pure Viscose Rayon</li>
-                <li>Type: Bollywood</li>
+                <li>Type: Premium</li>
                 <li>Pattern: Self Design</li>
                 <li>Occasion: Party & Festive</li>
             </ul>
         </div>
 
-        <!-- DESCRIPTION -->
         <div class="description_box">
             <h3>Description</h3>
             <p>
-                A Masterpiece of Indian craftsmanship designed for modern elegance.
-                Perfect for weddings and festive occasions.
+                A premium quality product designed for modern style and comfort.
             </p>
         </div>
+
+        <div class="review_section">
+
+    <h2>Ratings & Reviews</h2>
+
+    <div class="rating_summary">
+        <div class="big_rating">
+            <h1>4.9 ★</h1>
+            <p>2,845 Ratings</p>
+        </div>
+
+        <div class="rating_bars">
+
+            <div class="bar_row">
+                <span>5 ★</span>
+                <div class="bar"><div style="width:90%"></div></div>
+            </div>
+
+            <div class="bar_row">
+                <span>4 ★</span>
+                <div class="bar"><div style="width:60%"></div></div>
+            </div>
+
+            <div class="bar_row">
+                <span>3 ★</span>
+                <div class="bar"><div style="width:20%"></div></div>
+            </div>
+
+            <div class="bar_row">
+                <span>2 ★</span>
+                <div class="bar"><div style="width:10%"></div></div>
+            </div>
+
+            <div class="bar_row">
+                <span>1 ★</span>
+                <div class="bar"><div style="width:5%"></div></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 
     </div>
 
 </div>
-`).join("")}
 
 </div>
 `;
     box.innerHTML = html;
 }
+document.addEventListener("DOMContentLoaded", productDetails);
+
+// function changeImage(el, id){
+//     document.getElementById(id).src = el.src;
+// }
 
 function changeImage(el, id){
+
+    // change main image
     document.getElementById(id).src = el.src;
+
+    // remove active from all thumbnails
+    el.parentElement.querySelectorAll("img")
+        .forEach(img => img.classList.remove("active_thumb"));
+
+    // add active to clicked
+    el.classList.add("active_thumb");
 }
 
 function selectSize(btn){
@@ -1199,7 +1339,6 @@ function selectSize(btn){
         .forEach(s => s.classList.remove("active"));
     btn.classList.add("active");
 }
-
 
 function changeImage(el, id) {
     document.getElementById(id).src = el.src;

@@ -530,17 +530,40 @@ nav {
     top:20px;
 }
 
-.main_image{
+/* .main_image{
     width:100%;
     border-radius:14px;
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
+    cursor:zoom-in;
 }
 
 .main_image img{
     width:100%;
     border-radius: 10px;
+    object-fit:contain;
+    transition:transform 0.4s ease;
+}
+
+.main_image:hover img{
+    transform:scale(1.4);
+} */
+
+
+.main_image{
+    position:relative;
+    overflow:hidden;
+    cursor:crosshair;
+}
+
+.main_image img{
+    width:100%;
+    /* height:520px; */
+    border-radius: 10px;
+    object-fit:contain;
+    transition:0.2s;
 }
 
 .thumb_images_main_image{
@@ -551,6 +574,20 @@ nav {
     width: 10%;
 }
 
+.thumb_images img{
+    width: 50%;
+    /* height:90px; */
+    object-fit:cover;
+    border-radius:8px;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:0.2s;
+}
+
+.thumb_images img.active_thumb{
+    border:2px solid #9be15d;
+}
+
 .thumb_images{
     display:flex;
     gap:12px;
@@ -559,18 +596,16 @@ nav {
     margin-top:12px;
 }
 
-.thumb_images img{
+/* .thumb_images img{
     width:50%;
     object-fit:cover;
     border-radius:8px;
     cursor:pointer;
     border:2px solid transparent;
     transition:0.2s;
-}
+} */
 
-.thumb_images img:hover{
-    border: 2px solid #a0d490;
-}
+
 
 .image_buttons{
     display:flex;
@@ -658,7 +693,7 @@ nav {
 }
 
 .offer_box{
-    background: #404040;
+    background: #3a3942;
     border-radius: 12px;
     padding: 18px;
     margin: 20px 0;
@@ -768,6 +803,55 @@ nav {
     margin-top:20px;
     color:#bbb;
     line-height:1.6;
+}
+
+.details_section{
+    position:sticky;
+    top:20px;
+    align-self:start;
+}
+
+.review_section{
+    margin-top:40px;
+    padding:20px;
+    background: #3a3942;
+    border-radius:12px;
+}
+
+.rating_summary{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    color: #929292;
+    margin-top: 10px;
+}
+
+.big_rating h1{
+    font-size:40px;
+}
+
+.rating_bars{
+    flex:1;
+}
+
+.bar_row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:8px;
+}
+
+.bar{
+    flex:1;
+    height:8px;
+    background:#212121;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.bar div{
+    height:100%;
+    background:#a0d490;
 }
 
 @media(max-width:1000px){

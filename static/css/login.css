@@ -6,7 +6,7 @@
     color: #434242;
     border-radius: 15px;
     overflow: hidden;
-    display: flex;
+    display: none;
     position: relative;
     z-index: 2;
     font-family: "Rubik", sans-serif;
@@ -18,7 +18,7 @@
 
 #wrapper {
     position: fixed;
-    top: -120%;
+    display: flex;
     right: 0;
     width: 800px;
     height: 556px;

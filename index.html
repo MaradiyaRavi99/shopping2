@@ -134,54 +134,56 @@
             <h1>Shop Now</h1>
         </div>
         <section id="product">
-            <div class="produ1">
+            <div class="produ1" onclick="openProductDetails('Smart Watch Series 5', 3999, '/static/watch3.png')">
                 <img src="/static/watch3.png" alt="Smart Watch Series 5">
-                <button class="wishlist_btn" onclick="addToWishlist('Smart Watch Series 5', 3999, '/static/watch3.png')">
+                <button class="wishlist_btn"
+                    onclick="event.stopPropagation(); addToWishlist('Smart Watch Series 5', 3999, '/static/watch3.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <p>ELECTRONICS</p>
                 <h2>Smart Watch Series 5</h2>
-                <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.9</span>
+                <span id="star"><img src="/static/star1.png">&nbsp;4.9</span>
                 <h1>₹3999</h1>
                 <button class="btn1 btn-primary"
-                    onclick="addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">Add to
-                    Cart</button>
+                    onclick="event.stopPropagation(); addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">
+                    Add to Cart
+                </button>
             </div>
-            <div class="produ2">
+            <div class="produ2" onclick="openProductDetails('Luxury Sneakers', 1099, '/static/shoes2.png')">
                 <img src="/static/shoes2.png" alt="Neon Runner X">
-                <button class="wishlist_btn" onclick="addToWishlist('Luxury Sneakers', 1099, '/static/shoes2.png')">
+                <button class="wishlist_btn" onclick="event.stopPropagation(); addToWishlist('Luxury Sneakers', 1099, '/static/shoes2.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <p>Footwear</p>
                 <h2>Luxury Sneakers</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.0</span>
                 <h1>₹1099</h1>
-                <button class="btn2 btn-primary" onclick="addToCart('Luxury Sneakers', 1099, '/static/shoes2.png')">Add
+                <button class="btn2 btn-primary" onclick="event.stopPropagation(); addToCart('Luxury Sneakers', 1099, '/static/shoes2.png')">Add
                     to Cart</button>
 
             </div>
-            <div class="produ3">
+            <div class="produ3" onclick="openProductDetails('Women Dress', 750, '/static/dr.png')">
                 <img src="/static/dr.png" alt="Women Dress">
-                <button class="wishlist_btn" onclick="addToWishlist('Women Dress', 750, '/static/dr.png')">
+                <button class="wishlist_btn" onclick="event.stopPropagation(); addToWishlist('Women Dress', 750, '/static/dr.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <p>Fashion</p>
                 <h2>Women Dress</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;3.9</span>
                 <h1>₹750</h1>
-                <button class="btn3 btn-primary" onclick="addToCart('Women Dress', 750, '/static/dr.png')">Add to
+                <button class="btn3 btn-primary" onclick="event.stopPropagation(); addToCart('Women Dress', 750, '/static/dr.png')">Add to
                     Cart</button>
             </div>
-            <div class="produ4">
+            <div class="produ4" onclick="openProductDetails('Leather Bag', 3599, '/static/bag2.png')">
                 <img src="/static/bag2.png" alt="Leather Bag">
-                <button class="wishlist_btn" onclick="addToWishlist('Leather Bag', 3599, '/static/bag2.png')">
+                <button class="wishlist_btn" onclick="event.stopPropagation(); addToWishlist('Leather Bag', 3599, '/static/bag2.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <p>Fashion</p>
                 <h2>Leather Bag</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.3</span>
                 <h1>₹3599</h1>
-                <button class="btn4 btn-primary" onclick="addToCart('Leather Bag', 3599, '/static/bag2.png')">Add to
+                <button class="btn4 btn-primary" onclick="event.stopPropagation(); addToCart('Leather Bag', 3599, '/static/bag2.png')">Add to
                     Cart</button>
             </div>
         </section>
@@ -380,11 +382,11 @@
         </div>
 
     </div>
-    
+
     <div class="footer">
         <h3>Copyright © 2026 ApnaShop.com | All rights reserved</h3>
     </div>
-    
+
 
     <a href="/Electronics.html"></a>
 
@@ -392,5 +394,6 @@
     <!-- Ravipatelcollege999 -->
     <script src="/static/js/index.js" defer></script>
 </body>
+
 
 </html>
