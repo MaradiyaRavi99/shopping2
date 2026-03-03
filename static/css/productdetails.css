@@ -555,7 +555,7 @@ nav {
 .main_image{
     position:relative;
     overflow:hidden;
-    cursor:crosshair;
+    cursor: zoom-in;
 }
 
 .main_image img{
@@ -585,7 +585,7 @@ nav {
 }
 
 .thumb_images img.active_thumb{
-    border:2px solid #9be15d;
+    border:2px solid #a0d490;
 }
 
 .thumb_images{
@@ -822,7 +822,7 @@ nav {
     display:flex;
     gap:40px;
     align-items:center;
-    color: #929292;
+    color: #aeaeae;
     margin-top: 10px;
 }
 
@@ -853,6 +853,7 @@ nav {
     height:100%;
     background:#a0d490;
 }
+
 
 @media(max-width:1000px){
     .product_page{

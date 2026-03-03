@@ -1161,6 +1161,162 @@ function openProductDetails(name, price, image) {
     window.location.href = "productdetails.html";
 }
 
+// function productDetails() {
+
+//     const box = document.getElementById("orderList");
+//     if (!box) return;
+
+//     const product = JSON.parse(localStorage.getItem("selectedProduct"));
+//     if (!product) return;
+
+//     let html = `
+//     <div class="order_wrapper">
+
+//     <div class="product_page">
+
+//         <!-- LEFT SIDE : IMAGE AREA -->
+//         <div class="image_section">
+
+//             <div class="main_image">
+//                 <img id="mainImage" src="${product.image}" alt="${product.name}">
+//             </div>
+
+//             <div class="thumb_images">
+//                 <img src="${product.image}" onclick="changeImage(this,'mainImage')">
+//                 <img src="${product.image}" onclick="changeImage(this,'mainImage')">
+//                 <img src="${product.image}" onclick="changeImage(this,'mainImage')">
+//             </div>
+
+//             <div class="image_buttons">
+//                 <button class="add_cart"
+//                     onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">
+//                     ADD TO CART
+//                 </button>
+//                 <button class="buy_now">BUY NOW</button>
+//             </div>
+
+//         </div>
+
+//         <!-- RIGHT SIDE : DETAILS -->
+//         <div class="details_section">
+
+//             <h1 class="product_title">${product.name}</h1>
+
+//             <div class="rating_row">
+//                 <span class="rating_badge">4.9 ★</span>
+//                 <span class="rating_text">2,845 Ratings & 364 Reviews</span>
+//                 <span class="best_seller">BESTSELLER</span>
+//             </div>
+
+//             <div class="price_box">
+//                 <span class="new_price">₹${product.price}</span>
+//                 <span class="old_price">₹${product.price + 200}</span>
+//                 <span class="discount">20% off</span>
+//             </div>
+
+//             <div class="offer_box">
+//                 <h3>Available Offers</h3>
+//                 <ul>
+//                     <li>Bank Offer 5% Unlimited Cashback</li>
+//                     <li>Special Price Get extra discount</li>
+//                     <li>Partner Offer Gift card worth ₹100</li>
+//                 </ul>
+//             </div>
+
+//             <div class="color_box">
+//                 <p>Color</p>
+//                 <div class="colors">
+//                         <button class="color" onclick="selectcolor(this)" style="background:#e91e63"></button>
+//                         <button class="color" onclick="selectcolor(this)" style="background:#ffd600"></button>
+//                         <button class="color" onclick="selectcolor(this)" style="background:#00c853"></button>
+//                 </div>
+//             </div>
+
+//             <div class="size_box">
+//                 <p>Size</p>
+//                 <button class="size" onclick="selectSize(this)">S</button>
+//                 <button class="size" onclick="selectSize(this)">M</button>
+//                 <button class="size" onclick="selectSize(this)">L</button>
+//                 <button class="size" onclick="selectSize(this)">XL</button>
+//                 <button class="size" onclick="selectSize(this)">XXL</button>
+//             </div>
+
+//             <div class="delivery_box">
+//                 <p>Delivery</p>
+//                 <input type="text" placeholder="Enter Pincode">
+//                 <button>Check</button>
+//                 <span class="delivery_text">Delivery in 2-4 days</span>
+//             </div>
+
+//             <div class="highlight_box">
+//                 <h3>Highlights</h3>
+//                 <ul>
+//                     <li>Fabric: Pure Viscose Rayon</li>
+//                     <li>Type: Premium</li>
+//                     <li>Pattern: Self Design</li>
+//                     <li>Occasion: Party & Festive</li>
+//                 </ul>
+//             </div>
+
+//             <div class="description_box">
+//                 <h3>Description</h3>
+//                 <p>
+//                     A premium quality product designed for modern style and comfort.
+//                 </p>
+//             </div>
+
+//             <div class="review_section">
+
+//         <h2>Ratings & Reviews</h2>
+
+//         <div class="rating_summary">
+//             <div class="big_rating">
+//                 <h1>4.9 ★</h1>
+//                 <p>2,845 Ratings</p>
+//             </div>
+
+//             <div class="rating_bars">
+
+//                 <div class="bar_row">
+//                     <span>5 ★</span>
+//                     <div class="bar"><div style="width:90%"></div></div>
+//                 </div>
+
+//                 <div class="bar_row">
+//                     <span>4 ★</span>
+//                     <div class="bar"><div style="width:60%"></div></div>
+//                 </div>
+
+//                 <div class="bar_row">
+//                     <span>3 ★</span>
+//                     <div class="bar"><div style="width:20%"></div></div>
+//                 </div>
+
+//                 <div class="bar_row">
+//                     <span>2 ★</span>
+//                     <div class="bar"><div style="width:10%"></div></div>
+//                 </div>
+
+//                 <div class="bar_row">
+//                     <span>1 ★</span>
+//                     <div class="bar"><div style="width:5%"></div></div>
+//                 </div>
+
+//             </div>
+//         </div>
+
+//     </div>
+
+//         </div>
+
+//     </div>
+
+//     </div>
+// `;
+//     box.innerHTML = html;
+// }
+
+
 function productDetails() {
 
     const box = document.getElementById("orderList");
@@ -1169,173 +1325,215 @@ function productDetails() {
     const product = JSON.parse(localStorage.getItem("selectedProduct"));
     if (!product) return;
 
+    // If no images array, convert single image into array
+    const images = product.images && product.images.length
+        ? product.images
+        : [product.image,
+            product.image,
+            product.image];
+
     let html = `
-<div class="order_wrapper">
+    <div class="order_wrapper">
 
-<div class="product_page">
+        <div class="product_page">
 
-    <!-- LEFT SIDE : IMAGE AREA -->
-    <div class="image_section">
+            <!-- LEFT SIDE -->
+            <div class="image_section">
 
-        <div class="main_image">
-            <img id="mainImage" src="${product.image}" alt="${product.name}">
-        </div>
+                <div class="main_image"
+                     onmousemove="zoomImage(event, this)"
+                     onmouseleave="resetZoom(this)">
 
-        <div class="thumb_images">
-            <img src="${product.image}" onclick="changeImage(this,'mainImage')">
-            <img src="${product.image}" onclick="changeImage(this,'mainImage')">
-            <img src="${product.image}" onclick="changeImage(this,'mainImage')">
-        </div>
+                    <img id="mainImage"
+                        src="${images[0]}"
+                        alt="${product.name}">
+                </div>
 
-        <div class="image_buttons">
-            <button class="add_cart"
-                onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">
-                ADD TO CART
-            </button>
-            <button class="buy_now">BUY NOW</button>
+                <div class="thumb_images">
+                    ${images.map((img, i) => `
+        <img src="${img}"
+             class="${i === 0 ? 'active_thumb' : ''}"
+             onclick="changeImage(this,'mainImage')">
+    `).join("")}
+                </div>
+
+                <div class="image_buttons">
+                    <button class="add_cart"
+                        onclick="animateCart(this);
+                        addToCart('${product.name}', ${product.price}, '${images[0]}')">
+                        ADD TO CART
+                    </button>
+
+                    <button class="buy_now">BUY NOW</button>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="details_section">
+
+                <h1 class="product_title">${product.name}</h1>
+
+                <div class="rating_row">
+                    <span class="rating_badge">4.9 ★</span>
+                    <span class="rating_text">2,845 Ratings & 364 Reviews</span>
+                    <span class="best_seller">BESTSELLER</span>
+                </div>
+
+                <div class="price_box">
+                    <span class="new_price">₹${product.price}</span>
+                    <span class="old_price">₹${product.price + 200}</span>
+                    <span class="discount">20% off</span>
+                </div>
+
+                <div class="offer_box">
+                    <h3>Available Offers</h3>
+                    <ul>
+                        <li>Bank Offer 5% Unlimited Cashback</li>
+                        <li>Special Price Extra Discount</li>
+                        <li>Partner Offer Gift Card ₹100</li>
+                    </ul>
+                </div>
+
+                <div class="color_box">
+                <p>Color</p>
+                <div class="colors">
+                        <button class="color" onclick="selectcolor(this)" style="background:#e91e63"></button>
+                        <button class="color" onclick="selectcolor(this)" style="background:#ffd600"></button>
+                        <button class="color" onclick="selectcolor(this)" style="background:#00c853"></button>
+                </div>
+            </div>
+
+                <div class="size_box">
+                    <p>Size</p>
+                    <button class="size" onclick="selectSize(this)">S</button>
+                    <button class="size" onclick="selectSize(this)">M</button>
+                    <button class="size" onclick="selectSize(this)">L</button>
+                    <button class="size" onclick="selectSize(this)">XL</button>
+                    <button class="size" onclick="selectSize(this)">XXL</button>
+                </div>
+
+                <div class="delivery_box">
+                <p>Delivery</p>
+                <input type="text" placeholder="Enter Pincode">
+                <button>Check</button>
+                <span class="delivery_text">Delivery in 2-4 days</span>
+            </div>
+
+            <div class="highlight_box">
+                <h3>Highlights</h3>
+                <ul>
+                    <li>Fabric: Pure Viscose Rayon</li>
+                    <li>Type: Premium</li>
+                    <li>Pattern: Self Design</li>
+                    <li>Occasion: Party & Festive</li>
+                </ul>
+            </div>
+
+                <div class="description_box">
+                    <h3>Description</h3>
+                    <p>${product.description || "Premium quality product designed for modern comfort and style."}</p>
+                </div>
+
+                <!-- REVIEWS -->
+                <div class="review_section">
+                    <h2>Ratings & Reviews</h2>
+
+                    <div class="rating_summary">
+
+                        <div class="big_rating">
+                            <h1>4.9 ★</h1>
+                            <p>2,845 Ratings</p>
+                        </div>
+
+                        <div class="rating_bars">
+
+                            ${[90,60,20,10,5].map((width, i) => `
+                                <div class="bar_row">
+                                    <span>${5-i} ★</span>
+                                    <div class="bar">
+                                        <div style="width:${width}%"></div>
+                                    </div>
+                                </div>
+                            `).join("")}
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
+    `;
 
-    <!-- RIGHT SIDE : DETAILS -->
-    <div class="details_section">
-
-        <h1 class="product_title">${product.name}</h1>
-
-        <div class="rating_row">
-            <span class="rating_badge">4.9 ★</span>
-            <span class="rating_text">2,845 Ratings & 364 Reviews</span>
-            <span class="best_seller">BESTSELLER</span>
-        </div>
-
-        <div class="price_box">
-            <span class="new_price">₹${product.price}</span>
-            <span class="old_price">₹${product.price + 200}</span>
-            <span class="discount">20% off</span>
-        </div>
-
-        <div class="offer_box">
-            <h3>Available Offers</h3>
-            <ul>
-                <li>Bank Offer 5% Unlimited Cashback</li>
-                <li>Special Price Get extra discount</li>
-                <li>Partner Offer Gift card worth ₹100</li>
-            </ul>
-        </div>
-
-        <div class="color_box">
-            <p>Color</p>
-            <div class="colors">
-                <span class="color active" style="background:#e91e63"></span>
-                <span class="color" style="background:#ffd600"></span>
-                <span class="color" style="background:#00c853"></span>
-            </div>
-        </div>
-
-        <div class="size_box">
-            <p>Size</p>
-            <button class="size active" onclick="selectSize(this)">S</button>
-            <button class="size" onclick="selectSize(this)">M</button>
-            <button class="size" onclick="selectSize(this)">L</button>
-            <button class="size" onclick="selectSize(this)">XL</button>
-            <button class="size" onclick="selectSize(this)">XXL</button>
-        </div>
-
-        <div class="delivery_box">
-            <p>Delivery</p>
-            <input type="text" placeholder="Enter Pincode">
-            <button>Check</button>
-            <span class="delivery_text">Delivery in 2-4 days</span>
-        </div>
-
-        <div class="highlight_box">
-            <h3>Highlights</h3>
-            <ul>
-                <li>Fabric: Pure Viscose Rayon</li>
-                <li>Type: Premium</li>
-                <li>Pattern: Self Design</li>
-                <li>Occasion: Party & Festive</li>
-            </ul>
-        </div>
-
-        <div class="description_box">
-            <h3>Description</h3>
-            <p>
-                A premium quality product designed for modern style and comfort.
-            </p>
-        </div>
-
-        <div class="review_section">
-
-    <h2>Ratings & Reviews</h2>
-
-    <div class="rating_summary">
-        <div class="big_rating">
-            <h1>4.9 ★</h1>
-            <p>2,845 Ratings</p>
-        </div>
-
-        <div class="rating_bars">
-
-            <div class="bar_row">
-                <span>5 ★</span>
-                <div class="bar"><div style="width:90%"></div></div>
-            </div>
-
-            <div class="bar_row">
-                <span>4 ★</span>
-                <div class="bar"><div style="width:60%"></div></div>
-            </div>
-
-            <div class="bar_row">
-                <span>3 ★</span>
-                <div class="bar"><div style="width:20%"></div></div>
-            </div>
-
-            <div class="bar_row">
-                <span>2 ★</span>
-                <div class="bar"><div style="width:10%"></div></div>
-            </div>
-
-            <div class="bar_row">
-                <span>1 ★</span>
-                <div class="bar"><div style="width:5%"></div></div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-    </div>
-
-</div>
-
-</div>
-`;
     box.innerHTML = html;
+
+    if(images.length > 1){
+    startSlider(images, "mainImage");
 }
+}
+
+
 document.addEventListener("DOMContentLoaded", productDetails);
 
 // function changeImage(el, id){
 //     document.getElementById(id).src = el.src;
 // }
-
 function changeImage(el, id){
-
-    // change main image
     document.getElementById(id).src = el.src;
 
-    // remove active from all thumbnails
-    el.parentElement.querySelectorAll("img")
+    document.querySelectorAll(".thumb_images img")
         .forEach(img => img.classList.remove("active_thumb"));
 
-    // add active to clicked
     el.classList.add("active_thumb");
+}
+
+function zoomImage(e, container){
+    const img = container.querySelector("img");
+    const rect = container.getBoundingClientRect();
+
+    let x = ((e.clientX - rect.left) / rect.width) * 100;
+    let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    img.style.transformOrigin = x + "% " + y + "%";
+    img.style.transform = "scale(2)";
+}
+
+function resetZoom(container){
+    container.querySelector("img").style.transform = "scale(1)";
+}
+
+function startSlider(images, id){
+    let i = 0;
+    setInterval(()=>{
+        i++;
+        if(i >= images.length) i = 0;
+        document.getElementById(id).src = images[i];
+    },3000);
+}
+
+function animateCart(btn){
+    btn.innerHTML = "✔ Added";
+    btn.style.background = "#16a34a";
+    btn.style.color = "#fff";
+
+    setTimeout(()=>{
+        btn.innerHTML = "ADD TO CART";
+        btn.style.background = "";
+    },2000);
 }
 
 function selectSize(btn){
     document.querySelectorAll(".size")
+        .forEach(s => s.classList.remove("active"));
+    btn.classList.add("active");
+}
+
+function selectcolor(btn){
+    document.querySelectorAll(".color")
         .forEach(s => s.classList.remove("active"));
     btn.classList.add("active");
 }

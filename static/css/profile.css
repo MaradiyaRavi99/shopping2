@@ -23,7 +23,6 @@ html {
 body {
     background: #0a0a0a;
     font-family: "Lato", sans-serif;
-    /* #121212 */
 }
 
 .blur-bg {
@@ -47,7 +46,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* icon stays right */
     width: 40px;
     height: 40px;
     background: #585858;
@@ -58,7 +56,6 @@ body {
 
 #search .example.active {
     width: 260px;
-    /* full search bar width */
     border-radius: 25px;
 }
 
@@ -898,6 +895,14 @@ nav {
     border: 1px solid #ade19d5e;
 }
 
+
+
+
+
+
+
+
+
 .personal_details_number:hover .lucide3{
     width: 35px;
     height: 35px;
@@ -1493,6 +1498,7 @@ nav {
     margin-bottom: 4%;
     margin-left: 7%;
 }
+
 .wishlist_prodect img{
     width: 100%;
     height: 77%;
