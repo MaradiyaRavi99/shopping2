@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApnaShop</title>
+    <link rel="shortcut icon" href="static/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/productdetails.css">
+    
 </head>
 
 <body onload="productDetails()">
@@ -108,6 +110,113 @@
     </div>
     <!-- <button onclick="renderDetails()">hi</button> -->
     <div id="orderList" class="orders-wrap"></div>
+
+        <div class="cart_sidebar" id="cart_sidebar">
+        <div class="cart-header">
+            <h3>Your Bag</h3>
+            <span id="close_cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart_items">
+            <p style="text-align:center; color: var(--text-muted); margin-top: 50px;">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <h3>Total: ₹<span id="total">0</span></h3>
+            </div>
+        </div>
+        <button id="checkoutBtn" class="btn btn-primary" style="width: 100%;">Checkout</button>
+    </div>
+    <div class="checkout_sidebar" id="checkout_sidebar">
+        <div class="cart-header">
+            <h2>Checkout</h2>
+        </div>
+        <div class="checkout-items" id="checkout_items"></div>
+        <div id="details" class="details">
+            <div class="cart-header">
+                <h2>Shipping Address</h2>
+            </div>
+            <!-- <div class="cart-items" id="cart_items"></div> -->
+            <div id="user_details" class="user-details">
+                <input type="text" id="name" placeholder="Full Name">
+                <input type="text" id="number" placeholder="Phone Number">
+                <input type="text" id="address" placeholder="Address Line 1">
+                <input type="text" id="city" placeholder="City">
+                <input type="text" id="pincode" placeholder="Pincode">
+                <input type="text" id="state" placeholder="State">
+            </div>
+            <div class="details-footer">
+            </div>
+            <button id="checkoutBtn" class="btn6 btn-primary" style="width: 100%;" onclick="placeOrder()">Place
+                Order</button>
+        </div>
+        <div class="checkout-footer">
+            <div class="total-row">
+                <h2>Total: ₹<span id="checkout_total">0</span></h2>
+            </div>
+            <button id="checkoutBtn2" class="btn6 btn-primary" style="width: 100%;" onclick="placeOrder()">Process To
+                Place Order</button>
+        </div>
+    </div>
+    <div id="paymentPage" class="payment">
+
+        <h2>Payment</h2>
+
+        <!-- Payment Options -->
+        <div class="payment-methods">
+            <label>
+                <input class="radio" type="radio" name="payment" value="upi" checked>
+                UPI
+            </label>
+            <label>
+                <input class="radio" type="radio" name="payment" value="card">
+                Card
+            </label>
+            <label>
+                <input class="radio" id="cash" type="radio" name="payment" value="cod">
+                Cash On delivery
+            </label>
+        </div>
+        <!-- UPI -->
+        <div id="upiBox">
+            <input class="upiBox" type="text" id="upiId" placeholder="example@upi">
+        </div>
+        <!-- Card -->
+        <div id="cardBox" style="display:none">
+            <input class="cardBox" id="card_number" type="text" placeholder="Card Number">
+            <input class="cardBox" id="number_card" type="text" placeholder="MM / YY">
+            <input class="cardBox" id="code" type="text" placeholder="CVV">
+        </div>
+
+        <button class="btn7 btn-primary" id="openbtn" onclick=payNow()>Pay Now</button>
+
+    </div>
+    <div id="successPage" class="success">
+        <div class="success-box">
+            <div class="checkmark">✓</div>
+            <h2>Payment Successful</h2>
+            <p>Your order has been placed</p>
+        </div>
+    </div>
+    <div id="confetti"></div>
+    <!-- <div class="order_container">
+        <div id="orderHistory" class="orders">
+            <h2>My Orders</h2>
+            <div id="orderList"></div>
+            <button class="btn btn-primary" style="margin-top: 10px;" onclick="renderOrders()">My Orders</button>
+        </div>
+    </div> -->
+
+    <!-- Order Details Popup -->
+    <!-- <div id="orderPopup" class="popup">
+        <div class="popup-box">
+            <span class="close" onclick="closePopup()">✖</span>
+            <h3>Order Details</h3>
+            <div id="popupContent"></div>
+        </div>
+    </div> -->
+    <div class="card">
+        <slot></slot>
+    </div>
 </body>
 <script src="/static/js/index.js"></script>
 <script>

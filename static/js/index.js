@@ -504,7 +504,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.8:8800/api/orders", {
+    fetch("http://192.168.1.18:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -612,7 +612,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.8:8800/api/orders");
+    const res = await fetch("http://192.168.1.18:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -719,7 +719,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.8:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.18:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -941,7 +941,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.8:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.18:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -954,7 +954,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://192.168.1.8:8800/api/orders/${id}`);
+    const res = await fetch(`http://18:8800/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -980,7 +980,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.8:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.18:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
@@ -1161,161 +1161,6 @@ function openProductDetails(name, price, image) {
     window.location.href = "productdetails.html";
 }
 
-// function productDetails() {
-
-//     const box = document.getElementById("orderList");
-//     if (!box) return;
-
-//     const product = JSON.parse(localStorage.getItem("selectedProduct"));
-//     if (!product) return;
-
-//     let html = `
-//     <div class="order_wrapper">
-
-//     <div class="product_page">
-
-//         <!-- LEFT SIDE : IMAGE AREA -->
-//         <div class="image_section">
-
-//             <div class="main_image">
-//                 <img id="mainImage" src="${product.image}" alt="${product.name}">
-//             </div>
-
-//             <div class="thumb_images">
-//                 <img src="${product.image}" onclick="changeImage(this,'mainImage')">
-//                 <img src="${product.image}" onclick="changeImage(this,'mainImage')">
-//                 <img src="${product.image}" onclick="changeImage(this,'mainImage')">
-//             </div>
-
-//             <div class="image_buttons">
-//                 <button class="add_cart"
-//                     onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">
-//                     ADD TO CART
-//                 </button>
-//                 <button class="buy_now">BUY NOW</button>
-//             </div>
-
-//         </div>
-
-//         <!-- RIGHT SIDE : DETAILS -->
-//         <div class="details_section">
-
-//             <h1 class="product_title">${product.name}</h1>
-
-//             <div class="rating_row">
-//                 <span class="rating_badge">4.9 ★</span>
-//                 <span class="rating_text">2,845 Ratings & 364 Reviews</span>
-//                 <span class="best_seller">BESTSELLER</span>
-//             </div>
-
-//             <div class="price_box">
-//                 <span class="new_price">₹${product.price}</span>
-//                 <span class="old_price">₹${product.price + 200}</span>
-//                 <span class="discount">20% off</span>
-//             </div>
-
-//             <div class="offer_box">
-//                 <h3>Available Offers</h3>
-//                 <ul>
-//                     <li>Bank Offer 5% Unlimited Cashback</li>
-//                     <li>Special Price Get extra discount</li>
-//                     <li>Partner Offer Gift card worth ₹100</li>
-//                 </ul>
-//             </div>
-
-//             <div class="color_box">
-//                 <p>Color</p>
-//                 <div class="colors">
-//                         <button class="color" onclick="selectcolor(this)" style="background:#e91e63"></button>
-//                         <button class="color" onclick="selectcolor(this)" style="background:#ffd600"></button>
-//                         <button class="color" onclick="selectcolor(this)" style="background:#00c853"></button>
-//                 </div>
-//             </div>
-
-//             <div class="size_box">
-//                 <p>Size</p>
-//                 <button class="size" onclick="selectSize(this)">S</button>
-//                 <button class="size" onclick="selectSize(this)">M</button>
-//                 <button class="size" onclick="selectSize(this)">L</button>
-//                 <button class="size" onclick="selectSize(this)">XL</button>
-//                 <button class="size" onclick="selectSize(this)">XXL</button>
-//             </div>
-
-//             <div class="delivery_box">
-//                 <p>Delivery</p>
-//                 <input type="text" placeholder="Enter Pincode">
-//                 <button>Check</button>
-//                 <span class="delivery_text">Delivery in 2-4 days</span>
-//             </div>
-
-//             <div class="highlight_box">
-//                 <h3>Highlights</h3>
-//                 <ul>
-//                     <li>Fabric: Pure Viscose Rayon</li>
-//                     <li>Type: Premium</li>
-//                     <li>Pattern: Self Design</li>
-//                     <li>Occasion: Party & Festive</li>
-//                 </ul>
-//             </div>
-
-//             <div class="description_box">
-//                 <h3>Description</h3>
-//                 <p>
-//                     A premium quality product designed for modern style and comfort.
-//                 </p>
-//             </div>
-
-//             <div class="review_section">
-
-//         <h2>Ratings & Reviews</h2>
-
-//         <div class="rating_summary">
-//             <div class="big_rating">
-//                 <h1>4.9 ★</h1>
-//                 <p>2,845 Ratings</p>
-//             </div>
-
-//             <div class="rating_bars">
-
-//                 <div class="bar_row">
-//                     <span>5 ★</span>
-//                     <div class="bar"><div style="width:90%"></div></div>
-//                 </div>
-
-//                 <div class="bar_row">
-//                     <span>4 ★</span>
-//                     <div class="bar"><div style="width:60%"></div></div>
-//                 </div>
-
-//                 <div class="bar_row">
-//                     <span>3 ★</span>
-//                     <div class="bar"><div style="width:20%"></div></div>
-//                 </div>
-
-//                 <div class="bar_row">
-//                     <span>2 ★</span>
-//                     <div class="bar"><div style="width:10%"></div></div>
-//                 </div>
-
-//                 <div class="bar_row">
-//                     <span>1 ★</span>
-//                     <div class="bar"><div style="width:5%"></div></div>
-//                 </div>
-
-//             </div>
-//         </div>
-
-//     </div>
-
-//         </div>
-
-//     </div>
-
-//     </div>
-// `;
-//     box.innerHTML = html;
-// }
-
 
 function productDetails() {
 
@@ -1351,10 +1196,10 @@ function productDetails() {
 
                 <div class="thumb_images">
                     ${images.map((img, i) => `
-        <img src="${img}"
-             class="${i === 0 ? 'active_thumb' : ''}"
-             onclick="changeImage(this,'mainImage')">
-    `).join("")}
+                        <img src="${img}"
+                            class="${i === 0 ? 'active_thumb' : ''}"
+                            onclick="changeImage(this,'mainImage')">
+                    `).join("")}
                 </div>
 
                 <div class="image_buttons">
@@ -1448,7 +1293,7 @@ function productDetails() {
 
                         <div class="rating_bars">
 
-                            ${[90,60,20,10,5].map((width, i) => `
+                            ${[99,80,50,24,9].map((width, i) => `
                                 <div class="bar_row">
                                     <span>${5-i} ★</span>
                                     <div class="bar">
@@ -1479,9 +1324,6 @@ function productDetails() {
 
 document.addEventListener("DOMContentLoaded", productDetails);
 
-// function changeImage(el, id){
-//     document.getElementById(id).src = el.src;
-// }
 function changeImage(el, id){
     document.getElementById(id).src = el.src;
 
@@ -1515,15 +1357,42 @@ function startSlider(images, id){
     },3000);
 }
 
+// function animateCart(btn, index, item){
+//     btn.innerHTML = "✔ Added";
+//     btn.style.background = "#a0d490";
+//     btn.style.color = "#fff";
+
+//     setTimeout(()=>{
+//         btn.innerHTML =`
+//         <div class="cart-controls">
+//             <button class="symbol1" onclick="decrease(${index})">-</button>
+//             <span class="count">${item.qty}</span>
+//             <button class="symbol1" onclick="increase(${index})">+</button>
+//         </div>`;
+//         btn.style.background = "";
+//     },2000);
+// }
+
+
 function animateCart(btn){
-    btn.innerHTML = "✔ Added";
-    btn.style.background = "#16a34a";
+    btn.innerHTML =`
+        <div class="cart-controls">
+            <button class="symbol1">-</button>
+            <span class="count">1</span>
+            <button class="symbol1">+</button>
+        </div>`;
+    btn.style.background = "#a0d490";
     btn.style.color = "#fff";
 
-    setTimeout(()=>{
-        btn.innerHTML = "ADD TO CART";
-        btn.style.background = "";
-    },2000);
+    // setTimeout(()=>{
+    //     btn.innerHTML =`
+    //     <div class="cart-controls">
+    //         <button class="symbol1">-</button>
+    //         <span class="count">1</span>
+    //         <button class="symbol1">+</button>
+    //     </div>`;
+    //     btn.style.background = "";
+    // },2000);
 }
 
 function selectSize(btn){

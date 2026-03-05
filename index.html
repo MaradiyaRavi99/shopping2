@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApnaShop</title>
-    <link rel="shortcut icon" href="/static/css/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -145,7 +145,7 @@
                 <span id="star"><img src="/static/star1.png">&nbsp;4.9</span>
                 <h1>₹3999</h1>
                 <button class="btn1 btn-primary"
-                    onclick="event.stopPropagation(); addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">
+                    onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">
                     Add to Cart
                 </button>
             </div>
@@ -160,7 +160,7 @@
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.0</span>
                 <h1>₹1099</h1>
                 <button class="btn2 btn-primary"
-                    onclick="event.stopPropagation(); addToCart('Luxury Sneakers', 1099, '/static/shoes2.png')">Add
+                    onclick="event.stopPropagation(); animateCart(this); addToCart('Luxury Sneakers', 1099, '/static/shoes2.png')">Add
                     to Cart</button>
 
             </div>
@@ -175,7 +175,7 @@
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;3.9</span>
                 <h1>₹750</h1>
                 <button class="btn3 btn-primary"
-                    onclick="event.stopPropagation(); addToCart('Women Dress', 750, '/static/dr.png')">Add to
+                    onclick="event.stopPropagation(); animateCart(this); addToCart('Women Dress', 750, '/static/dr.png')">Add to
                     Cart</button>
             </div>
             <div class="produ4" onclick="openProductDetails('Leather Bag', 3599, '/static/bag2.png')">
@@ -189,7 +189,7 @@
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.3</span>
                 <h1>₹3599</h1>
                 <button class="btn4 btn-primary"
-                    onclick="event.stopPropagation(); addToCart('Leather Bag', 3599, '/static/bag2.png')">Add to
+                    onclick="event.stopPropagation(); animateCart(this); addToCart('Leather Bag', 3599, '/static/bag2.png')">Add to
                     Cart</button>
             </div>
         </section>
