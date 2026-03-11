@@ -327,10 +327,10 @@ nav {
 }
 
 #logo {
-    width: 42%;
-    margin-left: 6%;
+    width: 18%;
+    margin-left: 3%;
     margin-top: 15px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     border-radius: 10px;
 
 }
@@ -472,6 +472,7 @@ nav {
     font-size: 17px;
     color: #ffffff;
     text-transform: uppercase;
+    font-weight: 400;
 }
 
 #total_order {
@@ -489,6 +490,7 @@ nav {
     font-size: 17px;
     color: #ffffff;
     text-transform: uppercase;
+    font-weight: 400;
 }
 
 #states {
@@ -506,6 +508,7 @@ nav {
     font-size: 17px;
     color: #ffffff;
     text-transform: uppercase;
+    font-weight: 400;
 }
 
 #rating {
@@ -523,6 +526,7 @@ nav {
     font-size: 17px;
     color: #ffffff;
     text-transform: uppercase;
+    font-weight: 400;
 }
 
 #categories {
@@ -1486,6 +1490,10 @@ nav {
     background: #353434;
     color: white;
     padding: 10px 10px;
+}
+
+#footer_logo{
+    width: 10%;
 }
 
 /* .cancel-btn {

@@ -36,7 +36,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:8800",
-  "http://192.168.1.18:8800"
+  "http://192.168.1.6:8800"
 ];
 
 app.use(cors({
@@ -60,7 +60,7 @@ app.set('view engine', 'html') // Set the template engine as pug
 app.set('views', path.join(__dirname, 'views')) // Set the views directory
 
 // ENDPOINTS
-app.get("/", (req, res) => {
+app.get("/index.html", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 

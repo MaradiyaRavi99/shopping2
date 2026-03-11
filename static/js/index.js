@@ -181,6 +181,7 @@ function addToCart(name, price, image) {
     }
     renderCart();
     updateCartCount();
+    animateCart(btn);
 }
 
 
@@ -283,6 +284,7 @@ function increase(index) {
     cart[index].qty++;
     renderCart();
     updateCartCount();
+    animateCart(btn);
 }
 
 // Decrease
@@ -291,6 +293,7 @@ function decrease(index) {
     if (cart[index].qty === 0) cart.splice(index, 1);
     renderCart();
     updateCartCount();
+    animateCart(btn);
 }
 
 // Remove
@@ -298,6 +301,7 @@ function removeItem(index) {
     cart.splice(index, 1);
     renderCart();
     updateCartCount();
+    animateCart(btn)
 }
 
 // Render Cart
@@ -504,7 +508,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.18:8800/api/orders", {
+    fetch("http://192.168.1.6:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -608,11 +612,11 @@ function saveOrder(cartData) {
 // }
 
 
-async function renderOrders() {
+async function renderOrders() { 
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.18:8800/api/orders");
+    const res = await fetch("http://192.168.1.6:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -719,7 +723,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.18:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.6:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -941,7 +945,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.18:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.6:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -980,7 +984,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.18:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.6:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
@@ -1359,7 +1363,7 @@ function startSlider(images, id){
 
 // function animateCart(btn, index, item){
 //     btn.innerHTML = "✔ Added";
-//     btn.style.background = "#a0d490";
+//     btn.style.background = "#a1d491";
 //     btn.style.color = "#fff";
 
 //     setTimeout(()=>{
