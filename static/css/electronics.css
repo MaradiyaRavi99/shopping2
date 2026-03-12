@@ -258,8 +258,8 @@ nav {
         flex-direction: column;
         position: absolute;
         top: 62px;
-        left: 61%;
-        width: 39%;
+        left: 30%;
+        width: 70%;
         background: rgba(0, 0, 0, 0.9);
         padding: 10px 0;
         align-items: baseline;
@@ -268,9 +268,9 @@ nav {
     }
 
     .nav_ul li {
-        padding: 17px 19px;
-
-    }
+    padding: 17px 19px;
+    
+}
 
     .nav_ul.responsive {
         display: flex;
@@ -278,13 +278,9 @@ nav {
 
     .icons {
         display: none;
-        /* flex-direction: column; */
         position: absolute;
-        top: 330px;
-        left: 62%;
-        /* width: 39%; */
-        /* background: rgba(0, 0, 0, 0.9); */
-        /* padding: 10px 0; */
+        top: 436px;
+        left: 35%;
     }
 
     .icons.responsive {
@@ -1736,21 +1732,9 @@ body {
 @media (max-width: 768px) {
 
     /* Navigation */
-    .navigation {
-        width: 95%;
-        padding: 10px;
-    }
-
     #logo {
         width: 60%;
         margin-left: 0;
-    }
-
-    .nav_ul {
-        left: 0;
-        width: 100%;
-        height: auto;
-        top: 60px;
     }
 
     /* Products */

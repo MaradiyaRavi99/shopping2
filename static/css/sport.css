@@ -257,8 +257,8 @@ nav {
         flex-direction: column;
         position: absolute;
         top: 62px;
-        left: 61%;
-        width: 39%;
+        left: 30%;
+        width: 70%;
         background: rgba(0, 0, 0, 0.9);
         padding: 10px 0;
         align-items: baseline;
@@ -277,13 +277,9 @@ nav {
 
     .icons {
         display: none;
-        /* flex-direction: column; */
         position: absolute;
-        top: 330px;
-        left: 62%;
-        /* width: 39%; */
-        /* background: rgba(0, 0, 0, 0.9); */
-        /* padding: 10px 0; */
+        top: 436px;
+        left: 35%;
     }
 
     .icons.responsive {
@@ -1622,3 +1618,296 @@ nav {
     transform: scale(1.1);
 }
 
+
+
+
+
+
+
+
+/* =========================
+   TABLET VIEW
+   ========================= */
+
+@media (max-width: 1024px){
+
+    #product,
+    #product1{
+        flex-wrap: wrap;
+        height: auto;
+        gap: 20px;
+    }
+
+    .produ13,
+    .produ14,
+    .produ15,
+    .produ16,
+    .produ17,
+    .produ18,
+    .produ19,
+    .produ20{
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .btn13,
+    .btn14,
+    .btn15,
+    .btn16,
+    .btn17,
+    .btn18,
+    .btn19,
+    .btn20{
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    #logo{
+        width: 140px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE VIEW
+   ========================= */
+
+@media (max-width: 768px){
+
+    .navigation{
+        width: 95%;
+    }
+
+    #head{
+        font-size: 1.8rem;
+        margin-left: 5%;
+        margin-top: 90px;
+    }
+
+    #product,
+    #product1{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .produ13,
+    .produ14,
+    .produ15,
+    .produ16,
+    .produ17,
+    .produ18,
+    .produ19,
+    .produ20{
+        width: 90%;
+    }
+
+    .produ13 img,
+    .produ14 img,
+    .produ15 img,
+    .produ16 img,
+    .produ17 img,
+    .produ18 img,
+    .produ19 img,
+    .produ20 img{
+        height: auto;
+    }
+
+    .btn13,
+    .btn14,
+    .btn15,
+    .btn16,
+    .btn17,
+    .btn18,
+    .btn19,
+    .btn20{
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    #search .example.active{
+        width: 200px;
+    }
+
+    #search .example.active input{
+        width: 120px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 480px){
+
+    #head{
+        font-size: 1.5rem;
+    }
+
+    .login_btn{
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .navigation{
+        padding: 5px;
+    }
+
+    .cart-icon{
+        font-size: 22px;
+    }
+
+    #cartCount{
+        left: 16px;
+        top: 4px;
+    }
+
+}
+
+
+/* =========================
+   TABLET (1024px)
+   ========================= */
+
+@media (max-width:1024px){
+
+#cart_sidebar,
+#checkout_sidebar,
+#details,
+#paymentPage{
+    width: 40%;
+}
+
+#checkout_sidebar.active,
+#details.active,
+#paymentPage.active{
+    right: 60%;
+}
+
+.cart-item img,
+.checkout-item img{
+    width: 80px;
+    height: 80px;
+}
+
+.user-details input{
+    width: 90%;
+}
+
+}
+
+
+/* =========================
+   MOBILE (768px)
+   ========================= */
+
+@media (max-width:768px){
+
+#cart_sidebar,
+#checkout_sidebar,
+#details,
+#paymentPage{
+    width: 88%;
+    right: -108%;
+    height: 100vh;
+}
+
+#cart_sidebar.active,
+#checkout_sidebar.active,
+#details.active,
+#paymentPage.active{
+    right: 0;
+}
+
+/* cart item layout */
+.cart-item,
+.checkout-item{
+    flex-direction: row;
+    align-items: center;
+}
+
+/* product image */
+.cart-item img,
+.checkout-item img{
+    width: 70px;
+    height: 70px;
+}
+
+/* controls */
+.cart-controls{
+    margin-left: 0;
+}
+
+/* forms */
+#name,
+#address,
+#number,
+#city,
+#pincode,
+#state{
+    width: 95%;
+    margin-left: 0;
+}
+
+/* payment buttons */
+.payment-methods{
+    flex-direction: column;
+}
+
+.btn7{
+    width: 100%;
+}
+
+}
+
+
+/* =========================
+   SMALL MOBILE (480px)
+   ========================= */
+
+@media (max-width:480px){
+
+.cart-details h4{
+    font-size: 0.8rem;
+}
+
+.count{
+    font-size: 13px;
+}
+
+.qty-btn{
+    width:18px;
+    height:18px;
+}
+
+.symbol,
+.symbol1{
+    font-size:18px;
+}
+
+.cart-item img,
+.checkout-item img{
+    width:60px;
+    height:60px;
+}
+
+/* popup */
+.popup-box{
+    width:90%;
+    font-size:1rem;
+}
+
+/* orders */
+.orders{
+    padding:10px;
+}
+
+.order-item img{
+    width:40px;
+    height:40px;
+}
+
+}

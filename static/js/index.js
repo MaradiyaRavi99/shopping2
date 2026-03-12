@@ -508,7 +508,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.6:8800/api/orders", {
+    fetch("http://192.168.1.9:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -616,7 +616,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.6:8800/api/orders");
+    const res = await fetch("http://192.168.1.9:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -723,7 +723,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.6:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -945,7 +945,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.6:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -984,7 +984,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.6:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
