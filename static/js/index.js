@@ -958,7 +958,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://18:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `

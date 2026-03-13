@@ -282,8 +282,8 @@ nav {
         display: none;
         /* flex-direction: column; */
         position: absolute;
-        top: 330px;
-        left: 62%;
+        top: 436px;
+        left: 63%;
         /* width: 39%; */
         /* background: rgba(0, 0, 0, 0.9); */
         /* padding: 10px 0; */
@@ -418,12 +418,9 @@ nav {
 
 .main_profile {
     display: flex;
-    align-items: center;
-    height: 282px;
-    width: 86%;
+    flex-direction: column;
     margin-left: 7%;
-    justify-content: space-between;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 .profile {
@@ -434,6 +431,7 @@ nav {
     border-radius: 20px;
     /* background: #ffffff1c; */
     border: 1px solid #80808047;
+    margin-bottom: 3%;
 }
 
 .profile:hover{
@@ -596,7 +594,7 @@ nav {
 
 /* profile_categories */
 .profile_categories{
-    width: 21%;
+    width: 24%;
     height: 100%;
     background: #ffffff00;
     color: white;
@@ -606,7 +604,6 @@ nav {
     display: flex;
     flex-direction: column;
     padding-bottom: 0px;
-    margin-left: 7%;
 }
 
 .profile_categories:hover{
@@ -896,13 +893,6 @@ nav {
 }
 
 
-
-
-
-
-
-
-
 .personal_details_number:hover .lucide3{
     width: 35px;
     height: 35px;
@@ -1060,6 +1050,7 @@ nav {
 /* my_order */
 .my_order{
     margin-left: 3%;
+    display: none;
     width: 61%;
     top: -1057px;
     /* margin-top: 20px; */
@@ -1070,6 +1061,7 @@ nav {
 
 .my_order.active{
     top: 0;
+    display: block;
 }
 
 .btn {
@@ -1474,8 +1466,8 @@ nav {
 
 .wishlist-content{
     display: grid;
-    grid-template-columns: auto;
-    grid-template-columns: auto auto;
+    /* grid-template-columns: auto;
+    grid-template-columns: auto auto; */
     gap: 30px;
 }
 
@@ -1527,7 +1519,6 @@ nav {
     padding: 14px 18px; 
     transition: 0.2s;
     justify-content: space-between;
-    width: 93%;
 }
 
 .wishlist-row:hover {
@@ -1594,4 +1585,324 @@ nav {
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+}
+
+
+
+
+
+
+@media (max-width:1024px){
+
+.main_profile{
+    flex-direction: column;
+    /* align-items: center; */
+    height: auto;
+    gap: 20px;
+}
+
+/* profile card */
+.profile{
+    width: 80%;
+    height: auto;
+    padding: 20px;
+}
+
+/* wallet */
+.wallet{
+    width: 90%;
+}
+
+/* wallet section */
+.about_wallet{
+    width: 100%;
+}
+
+/* profile sidebar */
+.profile_categories{
+    width: 34%;
+    margin-left: 0;
+}
+
+/* personal registry */
+.personal_registry{
+    width: 90%;
+    grid-template-columns: 1fr;
+}
+
+#personal_registry.active {
+    height: 692px;
+}
+
+#logo{
+    width: 140px;
+}
+
+}
+
+
+
+
+@media (max-width:768px){
+
+.navigation{
+    width: 95%;
+}
+
+/* profile layout */
+.main_profile{
+    margin-top: 100px;
+}
+
+/* profile card */
+.profile{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* profile image */
+.profile_icon{
+    width: 120px;
+}
+
+.profile_name{
+    width: 100%;
+    margin-left: 0;
+}
+
+/* wallet */
+.wallet{
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+}
+
+/* fund button */
+#fund_btn{
+    width: 100%;
+}
+
+/* categories sidebar */
+.profile_categories{
+    width: 34%;
+}
+
+/* personal registry */
+.personal_registry{
+    grid-template-columns: 1fr;
+    width: 95%;
+}
+
+#personal_registry.active {
+    height: 692px;
+}
+
+/* fund popup */
+#fund_box.active{
+    right: 10%;
+    top: 25%;
+}
+
+}
+
+
+
+@media (max-width:480px){
+
+.navigation{
+    width: 98%;
+}
+
+/* profile image */
+.profile_icon img{
+    width: 80px;
+}
+
+/* wallet amount */
+#amount h1{
+    font-size: 2.5rem;
+}
+
+/* buttons */
+.fix_amount{
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+/* fund popup */
+.fund_box{
+    max-width: 90%;
+}
+
+/* personal registry cards */
+.personal_details_name,
+.personal_details_email,
+.personal_details_number,
+.personal_details_gender,
+.personal_details_biometric,
+.personal_details_status{
+    padding: 14px;
+}
+
+/* navigation menu */
+.nav_ul{
+    width: 70%;
+    left: 30%;
+}
+
+}
+
+
+@media (max-width:1024px){
+
+.my_order{
+    width: 90%;
+    margin-left: 5%;
+}
+
+/* order table */
+.order-head,
+.order-row{
+    padding:12px;
+}
+
+/* columns */
+.col-id{width:90px;}
+.col-quantity{width:80px;}
+.col-date{width:120px;}
+.col-price{width:90px;}
+.col-status{width:100px;}
+.col-action{width:100px;}
+
+/* wishlist */
+#wishlistContainer.active{
+    left:5%;
+    width:54%;
+}
+
+.wishlist-content{
+    grid-template-columns:1fr;
+}
+
+.wishlist-row{
+    width: 88%;
+}
+
+}
+
+
+
+@media (max-width:768px){
+
+.my_order{
+    width:100%;
+    margin-left:0;
+}
+
+/* hide table header */
+.order-head{
+    display:none;
+}
+
+/* order rows become cards */
+.order-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding:15px;
+}
+
+/* columns full width */
+.col-id,
+.col-product,
+.col-quantity,
+.col-date,
+.col-price,
+.col-status,
+.col-action{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* product image */
+.col-product img{
+    width:40px;
+    height:40px;
+}
+
+/* filter buttons */
+.filter{
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+/* wishlist layout */
+#wishlistContainer.active{
+    left:0;
+    width:100%;
+}
+
+.wishlist-content{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.wishlist-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.wishlist-product{
+    width:100%;
+}
+
+.wishlist-actions{
+    width:100%;
+    justify-content:space-between;
+}
+
+}
+
+
+
+@media (max-width:480px){
+
+.order-row{
+    padding:12px;
+}
+
+/* smaller product images */
+.col-product img{
+    width:35px;
+    height:35px;
+}
+
+/* buttons smaller */
+.filter button{
+    padding:6px 14px;
+    font-size:12px;
+}
+
+/* wishlist image */
+.wishlist-product img{
+    width:50px;
+    height:50px;
+}
+
+/* wishlist buttons */
+.btn-add-cart,
+.btn-remove{
+    padding:6px 10px;
+    font-size:12px;
+}
+
+/* popup */
+.popup-box{
+    width:90%;
+    font-size:1.2rem;
+}
+
 }

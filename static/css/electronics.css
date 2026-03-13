@@ -31,7 +31,6 @@ html{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* icon stays right */
     width: 40px;
     height: 40px;
     background: #585858;
@@ -983,16 +982,6 @@ nav {
     right: 0;
 }
 
-
-/* #cart_items div {
-    border: 2px solid black;
-    background: black;
-    color: white;
-    padding: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-} */
-
 #openBtn {
     position: sticky;
     top: 20px;
@@ -1103,27 +1092,6 @@ nav {
 #checkout_sidebar.active {
     right: 77%;
 }
-
-/* 
-
-.checkout {
-    font-family: "Lato", sans-serif;
-    position: fixed;
-    right: 100%;
-    top: 0;
-    width: 350px;
-    height: 96vh;
-    padding: 20px;
-    color: white;
-    background: #121214;
-    border-right: var(--glass-border);
-    z-index: 2000;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.checkout.active {
-    right: 79.5%;
-} */
 
 .checkout_button{
     background: linear-gradient(45deg, #a1d591, #56bc37);
@@ -1681,10 +1649,6 @@ nav {
 
 
 
-/* ============================= */
-/* GLOBAL RESPONSIVE FIX */
-/* ============================= */
-
 img {
     max-width: 100%;
     height: auto;
@@ -1694,9 +1658,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ============================= */
-/* TABLET VIEW */
-/* ============================= */
 
 @media (max-width: 1024px) {
 
@@ -1723,19 +1684,14 @@ body {
     .navigation {
         width: 95%;
     }
+    #logo {
+        width: 140px;
+    }
 }
 
-/* ============================= */
-/* MOBILE VIEW */
-/* ============================= */
+
 
 @media (max-width: 768px) {
-
-    /* Navigation */
-    #logo {
-        width: 60%;
-        margin-left: 0;
-    }
 
     /* Products */
     #product,
@@ -1802,9 +1758,7 @@ body {
 
 }
 
-/* ============================= */
-/* SMALL MOBILE */
-/* ============================= */
+
 
 @media (max-width: 480px) {
 
@@ -1815,6 +1769,7 @@ body {
     #head {
         font-size: 1.5rem;
         margin-left: 5%;
+        margin-top: 16%;
     }
 
     .login_btn {
@@ -1823,184 +1778,3 @@ body {
     }
 
 }
-
-
-
-/* *,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.main {
-    min-height: 100vh;
-    padding-top: 120px;
-}
-
-#product {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    max-width: 1300px;
-    margin: auto;
-    height: auto;
-}
-
-
-.produ5,
-.produ6,
-.produ7,
-.produ8,
-.produ9,
-.produ10,
-.produ11,
-.produ12 {
-    width: 100%;
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.produ5:hover,
-.produ6:hover,
-.produ7:hover,
-.produ8:hover,
-.produ9:hover,
-.produ10:hover,
-.produ11:hover,
-.produ12:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-
-.btn5,
-.btn6,
-.btn7,
-.btn8,
-.btn9,
-.btn10,
-.btn11,
-.btn12 {
-    margin-left: auto;
-    margin-right: 10px;
-    display: block;
-    margin-top: 15%;
-}
-
-
-#cart_sidebar,
-#checkout_sidebar,
-#details,
-#paymentPage {
-    width: 400px !important;
-    max-width: 100%;
-    height: 100vh;
-}
-
-
-@media (max-width: 1024px) {
-
-    #product {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .main h1 {
-        font-size: 2.5rem;
-    }
-
-    .statistics {
-        width: 95%;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    #product {
-        grid-template-columns: 1fr;
-    }
-
-    .main h1 {
-        font-size: 1.8rem;
-        padding: 0 15px;
-    }
-
-    .statistics {
-        flex-direction: column;
-        gap: 15px;
-        height: auto;
-    }
-
-    .navigation {
-        width: 95%;
-        left: 2.5%;
-    }
-
-    .wishlist_prodect {
-        width: 100%;
-    }
-
-}
-
-
-@media (max-width: 1100px) {
-
-    .nav_ul {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 260px;
-        height: 100vh;
-        background: #0a0a0c;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 80px 20px;
-        gap: 20px;
-        transition: right 0.3s ease;
-        z-index: 2000;
-    }
-
-    .nav_ul.responsive {
-        right: 0;
-    }
-
-    .nav_ul li {
-        width: 100%;
-        padding: 12px 0;
-        font-size: 18px;
-    }
-
-    
-    .icons {
-        display: none;
-    }
-
-    .icons.responsive {
-        display: flex;
-        position: fixed;
-        top: 15px;
-        gap: 10px;
-        z-index: 2100;
-    }
-}
-
-.menu-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-    z-index: 1500;
-}
-
-.menu-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-} */

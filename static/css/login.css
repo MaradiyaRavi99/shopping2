@@ -78,6 +78,10 @@
     background: white;
 }
 
+.panel button.active{
+    background-color: red;
+}
+
 /* Right Forms */
 .forms {
     width: 52%;
@@ -135,7 +139,7 @@
 }
 
 .input-box input {
-    width: 85%;
+    width: 100%;
     padding: 12px 12px 12px 40px;
     border: 1px solid #ccc;
     border-radius: 50px;

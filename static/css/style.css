@@ -313,22 +313,12 @@ nav {
     color: white;
 }
 
-#logo_headind {
-    font-weight: bolder;
-    font-size: 2rem;
-    color: white;
-    font-family: "Dosis", sans-serif;
-    align-items: center;
-    text-align: center;
-}
-
 #logo {
-    width: 18%;
+    width: 75%;
     margin-left: 3%;
     margin-top: 15px;
     margin-bottom: 12px;
     border-radius: 10px;
-
 }
 
 .cart-icon {
@@ -1875,7 +1865,7 @@ img {
     }
 
     #logo {
-        width: 33%;
+        width: 140px;
     }
 
 }
@@ -1910,13 +1900,13 @@ img {
 
 }
 
-
+/* 
 @media (max-width: 1100px) {
 
     #logo {
          width: 64%;
     }
-}
+} */
 
 .menu-overlay {
     position: fixed;
