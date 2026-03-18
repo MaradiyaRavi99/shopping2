@@ -11,7 +11,7 @@
     --danger: #ff4757;
 }
 
-html{
+html {
     scroll-behavior: var(--primary);
 }
 
@@ -105,9 +105,9 @@ form.example::after {
 .navigation.scrolled {
     border: 1px solid #ffffff45;
     background: linear-gradient(135deg,
-    rgb(99 99 99 / 24%) 0%,
-    rgb(74 74 74 / 36%) 50%,
-    rgb(89 89 89 / 41%) 100%);
+            rgb(99 99 99 / 24%) 0%,
+            rgb(74 74 74 / 36%) 50%,
+            rgb(89 89 89 / 41%) 100%);
     backdrop-filter: url(#glass);
     transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 2.2);
     border-radius: 12px;
@@ -208,7 +208,7 @@ nav {
     list-style: none;
 }
 
-.user_profile_btn{
+.user_profile_btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -222,7 +222,7 @@ nav {
     margin-right: 15px;
 }
 
-.user_profile_btn svg{
+.user_profile_btn svg {
     width: 28px;
     height: 28px;
     pointer-events: none;
@@ -267,9 +267,9 @@ nav {
     }
 
     .nav_ul li {
-    padding: 17px 19px;
-    
-}
+        padding: 17px 19px;
+
+    }
 
     .nav_ul.responsive {
         display: flex;
@@ -440,7 +440,7 @@ nav {
     margin-bottom: 4%;
     margin-left: 7%;
 }
-    
+
 .produ5 h1 {
     margin-left: 7%;
 }
@@ -450,15 +450,14 @@ nav {
     margin-left: 7%;
 }
 
-.btn5{
+.btn5 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 #star {
@@ -496,7 +495,7 @@ nav {
     margin-bottom: 4%;
     margin-left: 7%;
 }
-    
+
 .produ6 h1 {
     margin-left: 7%;
 }
@@ -506,15 +505,14 @@ nav {
     margin-left: 7%;
 }
 
-.btn6{
+.btn6 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 .produ7 {
@@ -552,20 +550,19 @@ nav {
     margin-left: 7%;
 }
 
-.produ7 span{
+.produ7 span {
     margin-bottom: 3%;
     margin-left: 7%;
 }
 
-.btn7{
+.btn7 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 .produ8 {
@@ -603,20 +600,19 @@ nav {
     margin-left: 7%;
 }
 
-.produ8 span{
+.produ8 span {
     margin-bottom: 3%;
     margin-left: 7%;
 }
 
-.btn8{
+.btn8 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 .btn {
@@ -670,20 +666,19 @@ nav {
     margin-left: 7%;
 }
 
-.produ9 span{
+.produ9 span {
     margin-bottom: 3%;
     margin-left: 7%;
 }
 
-.btn9{
+.btn9 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 #star {
@@ -726,20 +721,19 @@ nav {
     margin-left: 7%;
 }
 
-.produ10 span{
+.produ10 span {
     margin-bottom: 3%;
     margin-left: 7%;
 }
 
-.btn10{
+.btn10 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 .produ11 {
@@ -777,20 +771,19 @@ nav {
     margin-left: 7%;
 }
 
-.produ11 span{
+.produ11 span {
     margin-bottom: 3%;
     margin-left: 7%;
 }
 
-.btn11{
+.btn11 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 .produ12 {
@@ -828,20 +821,19 @@ nav {
     margin-left: 7%;
 }
 
-.produ12 span{
+.produ12 span {
     margin-bottom: 3%;
     margin-left: 7%;
 }
 
-.btn12{
+.btn12 {
     padding: 10px 24px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
+    margin-right: 10px;
 }
 
 .btn-primary {
@@ -1030,7 +1022,7 @@ nav {
 
 }
 
-#trash2{
+#trash2 {
     height: 19px;
     width: 19px;
     cursor: pointer;
@@ -1093,7 +1085,7 @@ nav {
     right: 77%;
 }
 
-.checkout_button{
+.checkout_button {
     background: linear-gradient(45deg, #a1d591, #56bc37);
     color: white;
     box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
@@ -1325,7 +1317,7 @@ nav {
     margin: 15px 0;
 }
 
-.payment_button{
+.payment_button {
     width: 100%;
     padding: 12px;
     color: white;
@@ -1437,28 +1429,29 @@ nav {
 
 
 #confetti {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1000;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
 }
 
 .confetti-piece {
-  position: absolute;
-  width: 8px;
-  height: 14px;
-  opacity: 0.9;
-  animation: fall linear forwards;
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    opacity: 0.9;
+    animation: fall linear forwards;
 }
 
 @keyframes fall {
-  from {
-    transform: translateY(-10px) rotate(0deg);
-  }
-  to {
-    transform: translateY(100vh) rotate(360deg);
-  }
+    from {
+        transform: translateY(-10px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
 }
 
 .orders {
@@ -1469,7 +1462,7 @@ nav {
 }
 
 .order-card {
-   border: 2px solid #474747;
+    border: 2px solid #474747;
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 15px;
@@ -1609,15 +1602,25 @@ nav {
     margin-left: 8px;
 }
 
-.order_container{
+.order_container {
     background: #2e2e2e;
     margin-top: -1.6%;
     color: white;
     text-align: center;
 }
+
 /* Wishlist Styles */
-.produ5, .produ6, .produ7, .produ8, .produ9, .produ10, .produ11, .produ12 {
+.produ5,
+.produ6,
+.produ7,
+.produ8,
+.produ9,
+.produ10,
+.produ11,
+.produ12 {
     position: relative;
+    height: max-content;
+    padding-bottom: 1%;
 }
 
 .wishlist-btn {
@@ -1668,8 +1671,14 @@ body {
         gap: 20px;
     }
 
-    .produ5, .produ6, .produ7, .produ8,
-    .produ9, .produ10, .produ11, .produ12 {
+    .produ5,
+    .produ6,
+    .produ7,
+    .produ8,
+    .produ9,
+    .produ10,
+    .produ11,
+    .produ12 {
         width: 45%;
         margin-bottom: 20px;
     }
@@ -1684,6 +1693,7 @@ body {
     .navigation {
         width: 95%;
     }
+
     #logo {
         width: 140px;
     }
@@ -1701,18 +1711,30 @@ body {
         height: auto;
     }
 
-    .produ5, .produ6, .produ7, .produ8,
-    .produ9, .produ10, .produ11, .produ12 {
+    .produ5,
+    .produ6,
+    .produ7,
+    .produ8,
+    .produ9,
+    .produ10,
+    .produ11,
+    .produ12 {
         width: 90%;
         margin-right: 0;
     }
 
-    .btn5, .btn6, .btn7, .btn8,
-    .btn9, .btn10, .btn11, .btn12 {
+    .btn5,
+    .btn6,
+    .btn7,
+    .btn8,
+    .btn9,
+    .btn10,
+    .btn11,
+    .btn12 {
         margin-left: 55%;
         display: block;
         margin: 15px auto;
-        
+
     }
 
     /* Sidebar full width */

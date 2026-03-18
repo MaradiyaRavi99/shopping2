@@ -1498,4 +1498,48 @@ nav {
     .rating_bars{
         margin-top: 13px;
     }
+
+    #cart_sidebar,
+    #checkout_sidebar,
+    #details,
+    #paymentPage {
+        width: 90%;
+        right: -100%;
+    }
+
+    #cart_sidebar.active,
+    #checkout_sidebar.active,
+    #details.active,
+    #paymentPage.active {
+        right: 0;
+    }
+
+    /* Forms */
+    #name,
+    #address,
+    #number,
+    #city,
+    #pincode,
+    #state {
+        width: 95%;
+        margin-left: 0;
+    }
+
+    .upiBox,
+    .cardBox {
+        width: 100%;
+    }
+
+    /* Orders */
+    .orders {
+        padding: 10px;
+    }
+
+    .order-card {
+        font-size: 14px;
+    }
+
+    #logo {
+        width: 140px;
+    }
 }

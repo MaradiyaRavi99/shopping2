@@ -18,7 +18,7 @@
         <div class="navigation" id="navigation">
             <nav>
                 <div class="nav_logo">
-                    <button style="width: 23%; background: transparent; border: none;">
+                    <button id="logo_btn">
                         <a href="/index.html">
                             <img src="/static/logo1.png" alt="APNASHOP" id="logo">
                         </a>
@@ -144,11 +144,13 @@
                 <p>ELECTRONICS</p>
                 <h2>Smart Watch Series 5</h2>
                 <span id="star"><img src="/static/star1.png">&nbsp;4.9</span>
-                <h1>₹3999</h1>
-                <button class="btn1 btn-primary"
+                <div class="btn_price" style="display: flex; justify-content: space-between;">
+                    <h1>₹3999</h1>
+                    <button class="btn1 btn-primary"
                     onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">
                     Add to Cart
                 </button>
+            </div>
             </div>
             <div class="produ2" onclick="openProductDetails('Luxury Sneakers', 1099, '/static/shoes2.png')">
                 <img src="/static/shoes2.png" alt="Neon Runner X">
@@ -159,11 +161,12 @@
                 <p>Footwear</p>
                 <h2>Luxury Sneakers</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.0</span>
-                <h1>₹1099</h1>
-                <button class="btn2 btn-primary"
+                <div class="btn_price" style="display: flex; justify-content: space-between;">    
+                    <h1>₹1099</h1>
+                    <button class="btn2 btn-primary"
                     onclick="event.stopPropagation(); animateCart(this); addToCart('Luxury Sneakers', 1099, '/static/shoes2.png')">Add
                     to Cart</button>
-
+                </div>
             </div>
             <div class="produ3" onclick="openProductDetails('Women Dress', 750, '/static/dr.png')">
                 <img src="/static/dr.png" alt="Women Dress">
@@ -174,11 +177,13 @@
                 <p>Fashion</p>
                 <h2>Women Dress</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;3.9</span>
-                <h1>₹750</h1>
-                <button class="btn3 btn-primary"
+                <div class="btn_price" style="display: flex; justify-content: space-between;">
+                    <h1>₹750</h1>
+                    <button class="btn3 btn-primary"
                     onclick="event.stopPropagation(); animateCart(this); addToCart('Women Dress', 750, '/static/dr.png')">Add
                     to
                     Cart</button>
+                </div>
             </div>
             <div class="produ4" onclick="openProductDetails('Leather Bag', 3599, '/static/bag2.png')">
                 <img src="/static/bag2.png" alt="Leather Bag">
@@ -189,11 +194,13 @@
                 <p>Fashion</p>
                 <h2>Leather Bag</h2>
                 <span id="star"><img src="/static/star1.png" alt="">&nbsp;4.3</span>
-                <h1>₹3599</h1>
-                <button class="btn4 btn-primary"
+                <div class="btn_price" style="display: flex; justify-content: space-between;">
+                    <h1>₹3599</h1>
+                    <button class="btn4 btn-primary"
                     onclick="event.stopPropagation(); animateCart(this); addToCart('Leather Bag', 3599, '/static/bag2.png')">Add
                     to
                     Cart</button>
+                </div>
             </div>
         </section>
     </div>

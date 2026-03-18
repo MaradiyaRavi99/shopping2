@@ -7,7 +7,7 @@
     <title>ApnaShop</title>
     <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/profile.css">
-    <!-- <link rel="stylesheet" href="/static/order.css"> -->
+    <!-- <link rel="stylesheet" href="profile2.css"> -->
 </head>
 <script src="/static/js/index.js" defer></script>
 
@@ -96,14 +96,11 @@
                 <defs>
                     <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
 
-                        <!-- Displacement texture -->
                         <feImage href="https://essykings.github.io/JavaScript/map.png" x="-50%" y="-50%" width="200%"
                             height="200%" result="map" />
 
-                        <!-- Blur the original object -->
                         <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
 
-                        <!-- Glass distortion -->
                         <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />
 
                     </filter>
@@ -117,290 +114,282 @@
                 <div class="profile_icon_subclass">
                     <img src="/static/trainer1.jpg" alt="">
                 </div>
-                <div class="profile_btn"><button class="btn_edit">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px;" width="18" height="18"
-                            viewBox="0 0 24 24">
-                            <g fill="none">
-                                <path fill="#fff" d="m5 16l-1 4l4-1L18 9l-3-3z" opacity="0.16" />
-                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m5 16l-1 4l4-1L19.586 7.414a2 2 0 0 0 0-2.828l-.172-.172a2 2 0 0 0-2.828 0zM15 6l3 3m-5 11h8" />
-                            </g>
-                        </svg>
-                        Edit Profile</button>
-                </div>
-            </div>
-            <div class="profile_img_change">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <g fill="#a0d591" fill-rule="evenodd" clip-rule="evenodd">
-                        <path
-                            d="M5.696 5.078L5.398 6H4.5a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-.899l-.297-.922A3 3 0 0 0 11.449 3H8.55a3 3 0 0 0-2.855 2.078M4.5 8h2.354L7.6 5.693A1 1 0 0 1 8.551 5h2.898a1 1 0 0 1 .951.693L13.145 8H15.5a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
-                        <path d="M6.5 11.5a3.5 3.5 0 1 0 7 0a3.5 3.5 0 0 0-7 0m5 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0" />
-                    </g>
-                </svg>
             </div>
             <div class="profile_name">
                 <h1>AARAV SHARMA</h1>
             </div>
         </div>
-        
-    <div class="profile_details" style="display: flex;">
-        <div class="profile_categories">
-            <button class="information_btn profile_primery" id="information_btn" onclick="showinformation()">
-                <div class="information" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-user" aria-hidden="true">
-                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <span style="font-size: 20px;">Persnol Information</span>
-                    </svg>
-                </div>
-            </button>
-            <button class="my_orders_btn profile_primery" id="my_orders_btn" onclick="showrenderOrders()">
-                <div class="my_orders" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true">
-                        <path
-                            d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
-                        </path>
-                        <path d="M12 22V12"></path>
-                        <polyline points="3.29 7 12 12 20.71 7"></polyline>
-                        <path d="m7.5 4.27 9 5.15"></path>
-                    </svg>
-                    </svg>
-                    <span style="font-size: 20px;">My Orders</span>
-                </div>
-            </button>
-            <button class="wishlist_btn profile_primery" id="wishlist_btn" onclick="showwishlist()">
-                <div class="wishlist" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-heart" aria-hidden="true">
-                        <path
-                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                        </path>
-                    </svg>
-                    <span style="font-size: 20px;">Wishlist</span>
-                    </svg>
-                </div>
-            </button>
-            <button class="payment_methods_btn profile_primery">
-                <div class="payment_methods" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-credit-card" aria-hidden="true">
-                        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
-                        <line x1="2" x2="22" y1="10" y2="10"></line>
-                    </svg>
-                    <span style="font-size: 20px;">Payment Method</span>
-
-                </div>
-            </button>
-            <button class="notifications_btn profile_primery">
-                <div class="notifications" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-bell" aria-hidden="true">
-                        <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
-                        <path
-                            d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326">
-                        </path>
-                    </svg>
-                    <span style="font-size: 20px;">Notifications</span>
-                </div>
-            </button>
-            <button class="security_vault_btn profile_primery">
-                <div class="security_vault" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-lock" aria-hidden="true">
-                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                    <span style="font-size: 20px;">Security Vault</span>
-
-                </div>
-            </button>
-            <button class="setting_btn profile_primery">
-                <div class="setting" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
-                        viewBox="0 0 48 48">
-                        <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
-                            <path
-                                d="M18.284 43.171a20 20 0 0 1-8.696-5.304a6 6 0 0 0-5.182-9.838A20 20 0 0 1 4 24c0-2.09.32-4.106.916-6H5a6 6 0 0 0 5.385-8.65a20 20 0 0 1 8.267-4.627A6 6 0 0 0 24 8a6 6 0 0 0 5.348-3.277a20 20 0 0 1 8.267 4.627A6 6 0 0 0 43.084 18A20 20 0 0 1 44 24c0 1.38-.14 2.728-.406 4.03a6 6 0 0 0-5.182 9.838a20 20 0 0 1-8.696 5.303a6.003 6.003 0 0 0-11.432 0Z" />
-                            <path d="M24 31a7 7 0 1 0 0-14a7 7 0 0 0 0 14Z" />
-                        </g>
-                    </svg>
-                    <span style="font-size: 20px;">Setting</span>
-
-                </div>
-            </button>
-            <div class="border" style="border-top: 0.1mm solid #ffffff57; margin-bottom: 12px;"></div>
-            <button class="profile_logout_btn">
-                <div class="profile_logout" style="display: flex; align-items: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-right: 8px;"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-log-out" aria-hidden="true">
-                        <path d="m16 17 5-5-5-5"></path>
-                        <path d="M21 12H9"></path>
-                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    </svg>
-                    <span style="font-size: 21px;">Logout</span>
-                </div>
-            </button>
-            </div>
-            <div class="personal_registry" id="personal_registry">
-            <div class="personal_registry_name">
-                <h3 style="text-transform: uppercase; font-size: 1.5rem;">Personal<span
-                        style="color: #ade19d;">Registry</span></h3>
-                <div class="personal_details_name">
-                    <div id="personal_details_input_name">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+        <div class="profile_details" style="display: flex;">
+            <div class="profile_categories">
+                <button class="information_btn profile_primery" id="information_btn" onclick="showinformation()">
+                    <div class="information" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide1 lucide-user"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"
                             aria-hidden="true">
                             <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
-                    </div>
-                    <div>
-                        <p
-                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
-                            Full Name</p>
-                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">Aarav
-                            Sharma</p>
-                    </div>
-                </div>
-            </div>
-            <div class="personal_registry_email">
-                <div class="personal_details_email">
-                    <div id="personal_details_input_email">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide2 lucide-mail"
-                            aria-hidden="true">
-                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
-                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <span style="font-size: 20px;">Persnol Information</span>
                         </svg>
                     </div>
-                    <div>
-                        <p
-                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
-                            Email Access</p>
-                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">
-                            user@apnashop.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="personal_registry_number">
-                <div class="personal_details_number">
-                    <div id="personal_details_input_number">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
-                            viewBox="0 0 512 512" class="lucide3">
-                            <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"
-                                d="M451 374c-15.88-16-54.34-39.35-73-48.76c-24.3-12.24-26.3-13.24-45.4.95c-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39s-47.34-61.62-50.53-76.48s5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3c-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160 160 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64s54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159 159 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374Z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <p
-                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
-                            Mobile No</p>
-                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">
-                            9876543210</p>
-                    </div>
-                </div>
-            </div>
-            <div class="personal_registry_gender">
-                <div class="personal_details_gender">
-                    <div id="personal_details_input_gender">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                            style="padding: 0.75rem;  padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                </button>
+                <button class="my_orders_btn profile_primery" id="my_orders_btn" onclick="showrenderOrders()">
+                    <div class="my_orders" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide4 lucide-badge-check"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package"
                             aria-hidden="true">
                             <path
-                                d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z">
+                                d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
                             </path>
-                            <path d="m9 12 2 2 4-4"></path>
+                            <path d="M12 22V12"></path>
+                            <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                            <path d="m7.5 4.27 9 5.15"></path>
+                        </svg>
+                        </svg>
+                        <span style="font-size: 20px;">My Orders</span>
+                    </div>
+                </button>
+                <button class="wishlist_btn profile_primery" id="wishlist_btn" onclick="showwishlist()">
+                    <div class="wishlist" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"
+                            aria-hidden="true">
+                            <path
+                                d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
+                            </path>
+                        </svg>
+                        <span style="font-size: 20px;">Wishlist</span>
                         </svg>
                     </div>
-                    <div>
-                        <p
-                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
-                            gender</p>
-                        <div style="display: flex;">
-                            <label class="radio-wrap" for="male">
-                                <input type="radio" name="gender" id="male" checked>
-                                <span class="custom-radio"></span>
-                                Male
-                            </label>
+                </button>
+                <button class="payment_methods_btn profile_primery">
+                    <div class="payment_methods" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card"
+                            aria-hidden="true">
+                            <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                            <line x1="2" x2="22" y1="10" y2="10"></line>
+                        </svg>
+                        <span style="font-size: 20px;">Payment Method</span>
 
-                            <label class="radio-wrap" for="female">
-                                <input type="radio" name="gender" id="female">
-                                <span class="custom-radio"></span>
-                                Female
-                            </label>
+                    </div>
+                </button>
+                <button class="notifications_btn profile_primery">
+                    <div class="notifications" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"
+                            aria-hidden="true">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0"></path>
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326">
+                            </path>
+                        </svg>
+                        <span style="font-size: 20px;">Notifications</span>
+                    </div>
+                </button>
+                <button class="security_vault_btn profile_primery">
+                    <div class="security_vault" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock"
+                            aria-hidden="true">
+                            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span style="font-size: 20px;">Security Vault</span>
+
+                    </div>
+                </button>
+                <button class="setting_btn profile_primery">
+                    <div class="setting" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="margin-right: 8px;"
+                            viewBox="0 0 48 48">
+                            <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
+                                <path
+                                    d="M18.284 43.171a20 20 0 0 1-8.696-5.304a6 6 0 0 0-5.182-9.838A20 20 0 0 1 4 24c0-2.09.32-4.106.916-6H5a6 6 0 0 0 5.385-8.65a20 20 0 0 1 8.267-4.627A6 6 0 0 0 24 8a6 6 0 0 0 5.348-3.277a20 20 0 0 1 8.267 4.627A6 6 0 0 0 43.084 18A20 20 0 0 1 44 24c0 1.38-.14 2.728-.406 4.03a6 6 0 0 0-5.182 9.838a20 20 0 0 1-8.696 5.303a6.003 6.003 0 0 0-11.432 0Z" />
+                                <path d="M24 31a7 7 0 1 0 0-14a7 7 0 0 0 0 14Z" />
+                            </g>
+                        </svg>
+                        <span style="font-size: 20px;">Setting</span>
+
+                    </div>
+                </button>
+                <div class="border" style="border-top: 0.1mm solid #ffffff57; margin-bottom: 12px;"></div>
+                <button class="profile_logout_btn">
+                    <div class="profile_logout" style="display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="margin-right: 8px;"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"
+                            aria-hidden="true">
+                            <path d="m16 17 5-5-5-5"></path>
+                            <path d="M21 12H9"></path>
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        </svg>
+                        <span style="font-size: 21px;">Logout</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="personal_registry" id="personal_registry">
+
+                <div class="personal_registry_name">
+                    <h3 class="personal_registry_title">Personal<span style="color: #ade19d;">Registry</span></h3>
+                    <div class="personal_details_name">
+                        <div id="personal_details_input_name">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide1 lucide-user"
+                                aria-hidden="true">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
                         </div>
+                        <div>
+                            <p class="input_name_p_title">
+                                Full Name</p>
+                            <p class="input_name_p_name">Aarav
+                                Sharma</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal_registry_email">
+                    <div class="personal_details_email">
+                        <div id="personal_details_input_email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide2 lucide-mail"
+                                aria-hidden="true">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="input_email_p_title">
+                                Email Access</p>
+                            <p class="input_email_p_name">
+                                user@apnashop.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal_registry_number">
+                    <div class="personal_details_number">
+                        <div id="personal_details_input_number">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                                viewBox="0 0 512 512" class="lucide3">
+                                <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"
+                                    d="M451 374c-15.88-16-54.34-39.35-73-48.76c-24.3-12.24-26.3-13.24-45.4.95c-12.74 9.47-21.21 17.93-36.12 14.75s-47.31-21.11-75.68-49.39s-47.34-61.62-50.53-76.48s5.41-23.23 14.79-36c13.22-18 12.22-21 .92-45.3c-8.81-18.9-32.84-57-48.9-72.8C119.9 44 119.9 47 108.83 51.6A160 160 0 0 0 83 65.37C67 76 58.12 84.83 51.91 98.1s-9 44.38 23.07 102.64s54.57 88.05 101.14 134.49S258.5 406.64 310.85 436c64.76 36.27 89.6 29.2 102.91 23s22.18-15 32.83-31a159 159 0 0 0 13.8-25.8C465 391.17 468 391.17 451 374Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="input_number_p_title">
+                                Mobile No</p>
+                            <p class="input_number_p_number">
+                                9876543210</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal_registry_gender">
+                    <div class="personal_details_gender">
+                        <div id="personal_details_input_gender">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="padding: 0.75rem;  padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide4 lucide-badge-check"
+                                aria-hidden="true">
+                                <path
+                                    d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z">
+                                </path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="input_gender_p_title">
+                                gender</p>
+                            <div class="input_gender_p_radio">
+                                <label class="radio-wrap" for="male">
+                                    <input type="radio" name="gender" id="male" checked>
+                                    <span class="custom-radio"></span>
+                                    Male
+                                </label>
 
+                                <label class="radio-wrap" for="female">
+                                    <input type="radio" name="gender" id="female">
+                                    <span class="custom-radio"></span>
+                                    Female
+                                </label>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="personal_registry_biometric">
-                <div class="personal_details_biometric">
-                    <div id="personal_details_input_biometric">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide5 lucide-fingerprint-pattern"
-                            aria-hidden="true">
-                            <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"></path>
-                            <path d="M14 13.12c0 2.38 0 6.38-1 8.88"></path>
-                            <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"></path>
-                            <path d="M2 12a10 10 0 0 1 18-6"></path>
-                            <path d="M2 16h.01"></path>
-                            <path d="M21.8 16c.2-2 .131-5.354 0-6"></path>
-                            <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"></path>
-                            <path d="M8.65 22c.21-.66.45-1.32.57-2"></path>
-                            <path d="M9 6.8a6 6 0 0 1 9 5.2v2"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <p
-                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
-                            Biometric ID</p>
-                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">
-                            RB-user-001</p>
-                    </div>
-                </div>
-            </div>
-            <div class="personal_registry_status">
-                <div class="personal_details_status">
-                    <div id="personal_details_input_status">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                            style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide6 lucide-badge-check"
-                            aria-hidden="true">
-                            <path
-                                d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z">
-                            </path>
-                            <path d="m9 12 2 2 4-4"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <p
-                            style="font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; opacity: 0.3; margin-top: -2px;">
-                            Status</p>
-                        <p style="font-weight: 600; font-size: 1.475rem; line-height: 1.25rem; margin-top: 7px;">Active
-                            Citizen</p>
+                <div class="personal_registry_biometric">
+                    <div class="personal_details_biometric">
+                        <div id="personal_details_input_biometric">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide5 lucide-fingerprint-pattern" aria-hidden="true">
+                                <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"></path>
+                                <path d="M14 13.12c0 2.38 0 6.38-1 8.88"></path>
+                                <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"></path>
+                                <path d="M2 12a10 10 0 0 1 18-6"></path>
+                                <path d="M2 16h.01"></path>
+                                <path d="M21.8 16c.2-2 .131-5.354 0-6"></path>
+                                <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"></path>
+                                <path d="M8.65 22c.21-.66.45-1.32.57-2"></path>
+                                <path d="M9 6.8a6 6 0 0 1 9 5.2v2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="input_biometric_p_title">
+                                Biometric ID</p>
+                            <p class="input_biometric_p_id">
+                                RB-user-001</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="personal_registry_status">
+                    <div class="personal_details_status">
+                        <div id="personal_details_input_status">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                style="padding: 0.75rem; background-color: #ffffff0d; border-radius: 1rem;"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide6 lucide-badge-check"
+                                aria-hidden="true">
+                                <path
+                                    d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z">
+                                </path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="input_status_p_title">
+                                Status</p>
+                            <p class="input_status_p_status">Active
+                                Citizen</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile_btn"><button class="btn_edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px;" width="18" height="18"
+                                viewBox="0 0 24 24">
+                                <g fill="none">
+                                    <path fill="#fff" d="m5 16l-1 4l4-1L18 9l-3-3z" opacity="0.16" />
+                                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="m5 16l-1 4l4-1L19.586 7.414a2 2 0 0 0 0-2.828l-.172-.172a2 2 0 0 0-2.828 0zM15 6l3 3m-5 11h8" />
+                                </g>
+                            </svg>
+                            Edit Profile</button>
+                    </div>
             </div>
             <div class="my_order" id="my_order">
                 <div class="order_container">
@@ -411,17 +400,16 @@
                 </div>
             </div>
             <div id="orderPopup" class="popup">
-            <div class="popup-box">
-                <span class="close" onclick="closePopup()">✖</span>
-                <h3>Order Details</h3>
-                <div id="popupContent"></div>
-            </div>
+                <div class="popup-box">
+                    <span class="close" onclick="closePopup()">✖</span>
+                    <h3>Order Details</h3>
+                    <div id="popupContent"></div>
+                </div>
             </div>
             <div id="wishlistContainer"></div>
         </div>
     </div>
 
-    <!-- <img src="/static/Screenshot 2026-01-26 at 5.26.03 PM.png" alt=""> -->
     <div class="fund_box" id="fund_box">
         <span class="close" style="font-size: 1.5rem; cursor: pointer; margin-left: auto;"
             onclick="closePopup_fund()">x</span>
@@ -436,7 +424,6 @@
             <h2 style="font-size: 2.5rem; text-transform: uppercase;">Inject<span style="color: #ade19d;">Credits</span>
             </h2>
         </div>
-        <!-- <div id="popupContent"></div> -->
         <div class="fund_input">
             <p style="text-transform: uppercase; color: #ffffff33; margin-bottom: 10px;">Amount (Inr)</p>
             <input type="number" name="number" placeholder=" ₹ 0">
@@ -470,6 +457,3 @@
 </body>
 
 </html>
-
-
-

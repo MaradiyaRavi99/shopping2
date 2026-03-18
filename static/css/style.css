@@ -313,6 +313,12 @@ nav {
     color: white;
 }
 
+#logo_btn{
+        width: 23%;
+        background: transparent;
+        border: none;
+    }
+
 #logo {
     width: 75%;
     margin-left: 3%;
@@ -715,8 +721,6 @@ nav {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
 }
 
 .btn2 {
@@ -726,8 +730,6 @@ nav {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
 }
 
 .btn3 {
@@ -737,8 +739,6 @@ nav {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
 }
 
 .btn4 {
@@ -748,8 +748,6 @@ nav {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-    margin-left: 59%;
-    margin-top: 8%;
 }
 
 .btn {
@@ -1819,6 +1817,8 @@ img {
     width: 100%;
     transition: 0.3s ease;
     cursor: pointer;
+    height: max-content;
+    padding-bottom: 5%;
 }
 
 .produ1:hover,
@@ -1833,10 +1833,10 @@ img {
 .btn2,
 .btn3,
 .btn4 {
-    margin-left: auto;
+    /* margin-left: auto; */
     margin-right: 10px;
     display: block;
-    margin-top: 15%;
+    /* margin-top: 15%; */
 }
 
 
@@ -1866,6 +1866,10 @@ img {
 
     #logo {
         width: 140px;
+    }
+    
+    #logo_btn{
+        width: 100%;
     }
 
 }

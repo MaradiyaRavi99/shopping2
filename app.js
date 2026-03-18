@@ -106,10 +106,10 @@ app.post("/login", async (req, res) => {
     await myData.save();
 
     // Redirect instead of sendFile
-    return res.redirect("/");
+    return res.redirect("/index.html");
 
   } catch (err) {
-    return res.status(400).send("Item was not saved to the database");
+    return res.status(400).send("You are already exist in this site.");
   }
 });
 
@@ -119,10 +119,10 @@ app.post("/login2", async (req, res) => {
     await myData.save();
 
     // Redirect instead of sendFile
-    return res.redirect("/");
+    return res.redirect("/index.html");
 
   } catch (err) {
-    return res.status(400).send("You are Already Login in this site");
+    return res.status(400).send("You are Already Login in this site.");
   }
 });
 
