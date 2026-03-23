@@ -41,6 +41,10 @@ const information_btn = document.getElementById("information_btn");
 const profile_primery = document.getElementById("profile_primery");
 const my_order = document.getElementById("my_order");
 const wishlistContainer = document.getElementById("wishlistContainer");
+const users = document.querySelector("#users h2");
+const orders = document.querySelector("#total_order h2");
+const states = document.querySelector("#states h2");
+const rating = document.querySelector("#rating h2");
 
 let cart = [];
 let total = 0;
@@ -612,7 +616,7 @@ function saveOrder(cartData) {
 // }
 
 
-async function renderOrders() { 
+async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
@@ -626,11 +630,7 @@ async function renderOrders() {
 
     let html = `
         <div class="order-filter">
-            <div class="filter">
-                <button>Panding</button>
-                <button>Cancel</button>
-                <button>complete</button>
-            </div>
+            <h2>Order <span style="color: #ade19d;">Status</span></h2>
         </div>
         <div class="order-head">
             <div class="col-id">Id</div>
@@ -890,11 +890,6 @@ async function renderDetails() {
         <div class="total_row">
             <span>Total</span>
             <p class="total_price">₹${grandTotal.toFixed(2)}</p>
-        </div>
-
-        <div class="payment_method">
-            <span>PAYMENT METHOD</span>
-            <span class="method_name">APNAWALLET</span>
         </div>
 
         <div class="bottom_btns">
@@ -1178,8 +1173,8 @@ function productDetails() {
     const images = product.images && product.images.length
         ? product.images
         : [product.image,
-            product.image,
-            product.image];
+        product.image,
+        product.image];
 
     let html = `
     <div class="order_wrapper">
@@ -1297,9 +1292,9 @@ function productDetails() {
 
                         <div class="rating_bars">
 
-                            ${[99,80,50,24,9].map((width, i) => `
+                            ${[97, 80, 50, 24, 9].map((width, i) => `
                                 <div class="bar_row">
-                                    <span>${5-i} ★</span>
+                                    <span>${5 - i} ★</span>
                                     <div class="bar">
                                         <div style="width:${width}%"></div>
                                     </div>
@@ -1320,15 +1315,15 @@ function productDetails() {
 
     box.innerHTML = html;
 
-    if(images.length > 1){
-    startSlider(images, "mainImage");
-}
+    if (images.length > 1) {
+        startSlider(images, "mainImage");
+    }
 }
 
 
 document.addEventListener("DOMContentLoaded", productDetails);
 
-function changeImage(el, id){
+function changeImage(el, id) {
     document.getElementById(id).src = el.src;
 
     document.querySelectorAll(".thumb_images img")
@@ -1337,7 +1332,7 @@ function changeImage(el, id){
     el.classList.add("active_thumb");
 }
 
-function zoomImage(e, container){
+function zoomImage(e, container) {
     const img = container.querySelector("img");
     const rect = container.getBoundingClientRect();
 
@@ -1348,17 +1343,17 @@ function zoomImage(e, container){
     img.style.transform = "scale(2)";
 }
 
-function resetZoom(container){
+function resetZoom(container) {
     container.querySelector("img").style.transform = "scale(1)";
 }
 
-function startSlider(images, id){
+function startSlider(images, id) {
     let i = 0;
-    setInterval(()=>{
+    setInterval(() => {
         i++;
-        if(i >= images.length) i = 0;
+        if (i >= images.length) i = 0;
         document.getElementById(id).src = images[i];
-    },3000);
+    }, 3000);
 }
 
 // function animateCart(btn, index, item){
@@ -1378,8 +1373,8 @@ function startSlider(images, id){
 // }
 
 
-function animateCart(btn){
-    btn.innerHTML =`
+function animateCart(btn) {
+    btn.innerHTML = `
         <div class="cart-controls">
             <button class="symbol1">-</button>
             <span class="count">1</span>
@@ -1399,13 +1394,13 @@ function animateCart(btn){
     // },2000);
 }
 
-function selectSize(btn){
+function selectSize(btn) {
     document.querySelectorAll(".size")
         .forEach(s => s.classList.remove("active"));
     btn.classList.add("active");
 }
 
-function selectcolor(btn){
+function selectcolor(btn) {
     document.querySelectorAll(".color")
         .forEach(s => s.classList.remove("active"));
     btn.classList.add("active");
@@ -1436,3 +1431,57 @@ function selectSize(el) {
     // add active to clicked button
     el.classList.add("active");
 }
+
+
+
+
+
+function animateCount(el, target, duration, suffix = "") {
+    let start = 0;
+    let startTime = null;
+
+    function update(currentTime) {
+        if (!startTime) startTime = currentTime;
+        let progress = currentTime - startTime;
+
+        let value = Math.floor((progress / duration) * target);
+        if (value > target) value = target;
+
+        el.innerText = value.toLocaleString() + suffix;
+
+        if (progress < duration) {
+            requestAnimationFrame(update);
+        }
+    }
+
+    requestAnimationFrame(update);
+}
+
+// Run animation
+animateCount(users, 25000, 1000, "+");
+animateCount(orders, 50000, 1000, "+");
+animateCount(states, 10, 1000);
+
+// Special case for rating (decimal)
+function animateRating(el, target, duration) {
+    let start = 0;
+    let startTime = null;
+
+    function update(currentTime) {
+        if (!startTime) startTime = currentTime;
+        let progress = currentTime - startTime;
+
+        let value = (progress / duration) * target;
+        if (value > target) value = target;
+
+        el.innerText = value.toFixed(1) + "/5";
+
+        if (progress < duration) {
+            requestAnimationFrame(update);
+        }
+    }
+
+    requestAnimationFrame(update);
+}
+
+animateRating(rating, 4.9, 1000);

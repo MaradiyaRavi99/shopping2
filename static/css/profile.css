@@ -260,8 +260,8 @@ nav {
         flex-direction: column;
         position: absolute;
         top: 62px;
-        left: 61%;
-        width: 39%;
+        left: 30%;
+        width: 70%;
         background: rgba(0, 0, 0, 0.9);
         padding: 10px 0;
         align-items: baseline;
@@ -280,13 +280,9 @@ nav {
 
     .icons {
         display: none;
-        /* flex-direction: column; */
         position: absolute;
         top: 436px;
-        left: 63%;
-        /* width: 39%; */
-        /* background: rgba(0, 0, 0, 0.9); */
-        /* padding: 10px 0; */
+        left: 35%;
     }
 
     .icons.responsive {
@@ -304,13 +300,20 @@ nav {
 }
 
 #logo {
-    width: 18%;
+    width: 75%;
     margin-left: 3%;
     margin-top: 15px;
     margin-bottom: 12px;
     border-radius: 10px;
 
 }
+
+#logo_btn {
+    width: 23%;
+    background: transparent;
+    border: none;
+}
+
 
 .cart-icon {
     position: relative;
@@ -850,13 +853,12 @@ nav {
     color: #ade19d;
 }
 
-.personal_registry_number {
+/* .personal_registry_number {
     color: #ffffffe6;
-    /* border: 1px solid #80808047; */
     border-radius: 20px;
     padding: 1px 1px;
     margin-left: 3%;
-}
+} */
 
 .personal_details_number {
     display: flex;
@@ -1277,6 +1279,10 @@ nav {
     margin-bottom: 3%;
 }
 
+.order-filter {
+    display: flex;
+}
+
 /* order row card */
 .order-row {
     display: flex;
@@ -1647,6 +1653,10 @@ nav {
         width: 140px;
     }
 
+    #logo_btn {
+        width: 100%;
+    }
+
 }
 
 
@@ -1705,7 +1715,7 @@ nav {
 
     #personal_registry.active {
         height: 692px;
-        width: 77%;
+        width: 78%;
     }
 
 
@@ -1823,7 +1833,7 @@ nav {
 @media (max-width:768px) {
 
     .my_order {
-        width: 79%;
+        width: 78%;
         margin-left: 0;
     }
 
@@ -1868,7 +1878,7 @@ nav {
 
     #wishlistContainer.active {
         left: 33px;
-        width: 71%;
+        width: 78%;
         /* top: 104%; */
     }
 
@@ -1936,19 +1946,6 @@ nav {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* MAIN PROFILE */
 
 .main_profile {
@@ -1994,10 +1991,10 @@ nav {
     font-weight: 600;
 }
 
-.profile_name h1 {
-    /* font-size: 28px;
-    margin-top: 10px; */
-}
+/* .profile_name h1 {
+    font-size: 28px;
+    margin-top: 10px;
+} */
 
 /* PROFILE LAYOUT */
 
@@ -2030,7 +2027,7 @@ nav {
 }
 
 .profile_primery:hover {
-    background: #a0d490;
+    background: #e0ffd61c;
 }
 
 /* RIGHT CONTENT */
@@ -2060,11 +2057,10 @@ nav {
 .personal_registry_gender,
 .personal_registry_biometric,
 .personal_registry_status {
-    /* background: #2a2a30; */
     padding: 18px;
     border-radius: 10px;
-    /* width: 41%; */
     margin: 0;
+    color: #ffffffe6;
 }
 
 /* DETAILS ROW */
@@ -2446,6 +2442,9 @@ nav {
         width: 100%;
         margin-left: -12%;
         margin-top: 0;
+        cursor: pointer;
+        border-radius: 1.25rem;
+        border: 1px solid #303030;
     }
 
 }

@@ -401,6 +401,12 @@ nav {
     height: 580px;
 }
 
+.btn_price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .produ13 {
     background-color: #232327;
     width: 18%;
@@ -422,22 +428,17 @@ nav {
 }
 
 .produ13 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ13 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ13 h1 {
-    margin-left: 7%;
-}
-
-.produ13 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -449,11 +450,6 @@ nav {
     font-weight: 600;
     transition: all 0.3s ease;
     margin-right: 10px;
-}
-
-#star {
-    display: flex;
-    width: 15px;
 }
 
 .produ14 {
@@ -477,22 +473,17 @@ nav {
 }
 
 .produ14 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ14 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ14 h1 {
-    margin-left: 7%;
-}
-
-.produ14 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -527,22 +518,17 @@ nav {
 }
 
 .produ15 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ15 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ15 h1 {
-    margin-left: 7%;
-}
-
-.produ15 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -577,22 +563,17 @@ nav {
 }
 
 .produ16 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ16 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ16 h1 {
-    margin-left: 7%;
-}
-
-.produ16 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -643,22 +624,17 @@ nav {
 }
 
 .produ17 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ17 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ17 h1 {
-    margin-left: 7%;
-}
-
-.produ17 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -674,7 +650,14 @@ nav {
 
 #star {
     display: flex;
-    width: 15px;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+.category_rating {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
 .produ18 {
@@ -698,22 +681,17 @@ nav {
 }
 
 .produ18 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ18 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ18 h1 {
-    margin-left: 7%;
-}
-
-.produ18 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -748,22 +726,17 @@ nav {
 }
 
 .produ19 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ19 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ19 h1 {
-    margin-left: 7%;
-}
-
-.produ19 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -798,22 +771,17 @@ nav {
 }
 
 .produ20 p {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
     margin-top: 7%;
 }
 
 .produ20 h2 {
-    margin-bottom: 4%;
+    margin-bottom: 8%;
     margin-left: 7%;
 }
 
 .produ20 h1 {
-    margin-left: 7%;
-}
-
-.produ20 span {
-    margin-bottom: 3%;
     margin-left: 7%;
 }
 
@@ -1622,10 +1590,6 @@ nav {
 }
 
 
-
-
-
-
 @media (max-width: 1024px) {
 
     #product,
@@ -1664,7 +1628,6 @@ nav {
     }
 
 }
-
 
 
 @media (max-width: 768px) {
@@ -1719,6 +1682,7 @@ nav {
     .btn20 {
         margin-left: auto;
         margin-right: 15px;
+        font-size: 10px;
     }
 
     #search .example.active {
@@ -1730,7 +1694,6 @@ nav {
     }
 
 }
-
 
 
 @media (max-width: 480px) {
@@ -1758,7 +1721,6 @@ nav {
     }
 
 }
-
 
 
 @media (max-width:1024px) {
