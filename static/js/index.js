@@ -45,6 +45,10 @@ const users = document.querySelector("#users h2");
 const orders = document.querySelector("#total_order h2");
 const states = document.querySelector("#states h2");
 const rating = document.querySelector("#rating h2");
+const slides = document.getElementById("slides");
+const cards = document.querySelectorAll(".review-card");
+const slider = document.getElementById("slider");
+const faqItems = document.querySelectorAll(".faq-item");
 
 let cart = [];
 let total = 0;
@@ -98,7 +102,7 @@ function showSignup() {
 
 function showWrapper() {
     wrapper.classList.add("active");
-    blurBg.style.opacity = "1";   // 🔥 blur ON
+    blurBg.style.opacity = "1";
 }
 
 function closeWrapper() {
@@ -1432,10 +1436,6 @@ function selectSize(el) {
     el.classList.add("active");
 }
 
-
-
-
-
 function animateCount(el, target, duration, suffix = "") {
     let start = 0;
     let startTime = null;
@@ -1485,3 +1485,54 @@ function animateRating(el, target, duration) {
 }
 
 animateRating(rating, 4.9, 1000);
+
+let index = 0;
+
+function getVisibleCards() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+}
+
+function showSlide() {
+    const cardWidth = cards[0].offsetWidth + 20; // include margin
+    slides.style.transform = `translateX(-${index * cardWidth}px)`;
+}
+
+function nextSlide() {
+    const visible = getVisibleCards();
+    if (index < cards.length - visible) {
+        index++;
+        showSlide();
+    }
+}
+
+function prevSlide() {
+    if (index > 0) {
+        index--;
+        showSlide();
+    }
+}
+
+/* Swipe Gesture */
+let startX = 0;
+
+slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", e => {
+    let diff = startX - e.changedTouches[0].clientX;
+
+    if (diff > 50) nextSlide();
+    if (diff < -50) prevSlide();
+});
+
+/* Fix on resize */
+window.addEventListener("resize", showSlide);
+
+faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});

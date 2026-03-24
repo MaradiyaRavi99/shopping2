@@ -401,7 +401,7 @@ nav {
     height: 580px;
 }
 
-.btn_price{
+.btn_price {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1487,12 +1487,20 @@ nav {
 }
 
 .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2rem;
     text-align: center;
     background: #353434;
     color: white;
     padding: 10px 10px;
+}
+
+.link_icon {
+    color: white;
+    text-decoration: none;
 }
 
 .cancel-btn {
@@ -1806,6 +1814,14 @@ nav {
 
     .btn7 {
         width: 100%;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+
+    #icon {
+        display: flex;
     }
 
 }
