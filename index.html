@@ -132,17 +132,30 @@
     </div>
     <div id="categories">
         <div id="head">
-            <h1>Shop Now</h1>
+            <h1>Trending Products</h1>
+        </div>
+
+        <div class="filter">
+            <div class="filter_button">
+                <button class="filter_btn active" data-filter="all">ALL</button>
+                <button class="filter_btn" data-filter="electronics">ELECTRONICS</button>
+                <button class="filter_btn" data-filter="sports">SPORTS</button>
+                <button class="filter_btn" data-filter="fashion">FASHION</button>
+                <button class="filter_btn" data-filter="footwear">Footwear</button>
+                <button class="filter_btn" data-filter="kitchen">Kitchen</button>
+                <button class="filter_btn" data-filter="gaming">Gaming</button>
+            </div>
         </div>
         <section id="product">
-            <div class="produ1" onclick="openProductDetails('Smart Watch Series 5', 3999, '/static/watch3.png')">
+            <div class="produ1 product-item" data-category="electronics"
+                onclick="openProductDetails('Smart Watch Series 5', 3999, '/static/watch3.png')">
                 <img src="/static/watch3.png" alt="Smart Watch Series 5">
                 <button class="wishlist_btn"
                     onclick="event.stopPropagation(); addToWishlist('Smart Watch Series 5', 3999, '/static/watch3.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="category_rating">
-                    <p>ELECTRONICS</p>
+                    <p>electronics</p>
                     <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
                             <path fill="#ffce31"
                                 d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
@@ -157,14 +170,15 @@
                     </button>
                 </div>
             </div>
-            <div class="produ2" onclick="openProductDetails('Luxury Sneakers', 1099, '/static/shoes2.png')">
+            <div class="produ2 product-item" data-category="footwear"
+                onclick="openProductDetails('Luxury Sneakers', 1099, '/static/shoes2.png')">
                 <img src="/static/shoes2.png" alt="Neon Runner X">
                 <button class="wishlist_btn"
                     onclick="event.stopPropagation(); addToWishlist('Luxury Sneakers', 1099, '/static/shoes2.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="category_rating">
-                    <p>Footwear</p>
+                    <p>footwear</p>
                     <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
                             <path fill="#ffce31"
                                 d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
@@ -178,14 +192,15 @@
                         to Cart</button>
                 </div>
             </div>
-            <div class="produ3" onclick="openProductDetails('Women Dress', 750, '/static/dr.png')">
+            <div class="produ3 product-item" data-category="fashion"
+                onclick="openProductDetails('Women Dress', 750, '/static/dr.png')">
                 <img src="/static/dr.png" alt="Women Dress">
                 <button class="wishlist_btn"
                     onclick="event.stopPropagation(); addToWishlist('Women Dress', 750, '/static/dr.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="category_rating">
-                    <p>Fashion</p>
+                    <p>fashion</p>
                     <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
                             <path fill="#ffce31"
                                 d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
@@ -200,14 +215,15 @@
                         Cart</button>
                 </div>
             </div>
-            <div class="produ4" onclick="openProductDetails('Leather Bag', 3599, '/static/bag2.png')">
+            <div class="produ4 product-item" data-category="fashion"
+                onclick="openProductDetails('Leather Bag', 3599, '/static/bag2.png')">
                 <img src="/static/bag2.png" alt="Leather Bag">
                 <button class="wishlist_btn"
                     onclick="event.stopPropagation(); addToWishlist('Leather Bag', 3599, '/static/bag2.png')">
                     <i class="fa-regular fa-heart"></i>
                 </button>
                 <div class="category_rating">
-                    <p>Fashion</p>
+                    <p>fashion</p>
                     <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
                             <path fill="#ffce31"
                                 d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
@@ -220,6 +236,96 @@
                         onclick="event.stopPropagation(); animateCart(this); addToCart('Leather Bag', 3599, '/static/bag2.png')">Add
                         to
                         Cart</button>
+                </div>
+            </div>
+
+            <div class="produ5 product-item" data-category="electronics"
+                onclick="openProductDetails('Sony ULT Wear Headphones', 12999, '/static/sony1.png')">
+                <img src="/static/sony1.png" alt="Sony ULT Wear Headphones">
+                <button class="wishlist_btn"
+                    onclick="event.stopPropagation(); addToWishlist('Sony ULT Wear Headphones', 12999, '/static/sony1.png')">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="category_rating">
+                    <p>electronics</p>
+                    <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
+                            <path fill="#ffce31"
+                                d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                        </svg>&nbsp;4.7</span>
+                </div>
+                <h2>Sony ULT Wear Headphones</h2>
+                <div class="btn_price">
+                    <h1>₹12999</h1>
+                    <button class="btn1 btn-primary"
+                        onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Sony ULT Wear Headphones', 12999, '/static/sony1.png')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="produ6 product-item" data-category="electronics"
+                onclick="openProductDetails('Apple Watch Series 11', 48403, '/static/applewatch.png')">
+                <img src="/static/applewatch.png" alt="Apple watch">
+                <button class="wishlist_btn"
+                    onclick="event.stopPropagation(); addToWishlist('Apple Watch Series 11', 48403, '/static/applewatch.png')">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="category_rating">
+                    <p>electronics</p>
+                    <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
+                            <path fill="#ffce31"
+                                d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                        </svg>&nbsp;4.4</span>
+                </div>
+                <h2>Apple Watch Series 11</h2>
+                <div class="btn_price">
+                    <h1>₹48403</h1>
+                    <button class="btn2 btn-primary"
+                        onclick="event.stopPropagation(); animateCart(this); addToCart('Apple Watch Series 11', 48403, '/static/applewatch.png')">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="produ7 product-item" data-category="fashion"
+                onclick="openProductDetails('Women Top', 550, '/static/womentop.png')">
+                <img src="/static/womentop.png" alt="Women Top">
+                <button class="wishlist_btn"
+                    onclick="event.stopPropagation(); addToWishlist('Women Top', 550, '/static/womentop.png')">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="category_rating">
+                    <p>fashion</p>
+                    <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
+                            <path fill="#ffce31"
+                                d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                        </svg>&nbsp;4.1</span>
+                </div>
+                <h2>Women Top</h2>
+                <div class="btn_price">
+                    <h1>₹550</h1>
+                    <button class="btn3 btn-primary"
+                        onclick="event.stopPropagation(); animateCart(this); addToCart('Women Top', 550, '/static/womentop.png')">Add
+                        to Cart</button>
+                </div>
+            </div>
+            <div class="produ8 product-item" data-category="fashion"
+                onclick="openProductDetails('Premium Bag', 6699, '/static/womenbag.png')">
+                <img src="/static/womenbag.png" alt="Premium Bag">
+                <button class="wishlist_btn"
+                    onclick="event.stopPropagation(); addToWishlist('Premium Bag', 6699, '/static/womenbag.png')">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <div class="category_rating">
+                    <p>fashion</p>
+                    <span id="star"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 64 64">
+                            <path fill="#ffce31"
+                                d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                        </svg>&nbsp;4.5</span>
+                </div>
+                <h2>Premium Bag</h2>
+                <div class="btn_price">
+                    <h1>₹6699</h1>
+                    <button class="btn4 btn-primary"
+                        onclick="event.stopPropagation(); animateCart(this); addToCart('Premium Bag', 6699, '/static/womenbag.png')">Add
+                        to Cart</button>
                 </div>
             </div>
         </section>
@@ -453,8 +559,8 @@
 
         <div class="slider" id="slider">
 
-            <button class="btn prev" onclick="prevSlide()">❮</button>
-            <button class="btn next" onclick="nextSlide()">❯</button>
+            <button class="btn_review prev" onclick="prevSlide()">❮</button>
+            <button class="btn_review next" onclick="nextSlide()">❯</button>
 
             <div class="slides" id="slides">
 
@@ -565,23 +671,42 @@
         </div>
     </section>
 
-    <div class="footer">
-        <h3>© 2026 ApnaShop Inc. All rights reserved.</h3>
-        <div id="icon">
-            <a href="index.html" class="link_icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
-                </svg>
-            </a>
-            <a href="index.html" class="link_icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
-                </svg>
-            </a>
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <img src="/static/logo1.png" alt="">
+                <p>Your one-stop shop for all products.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#faq-container">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Newsletter</h3>
+                <input type="email" placeholder="Enter email">
+                <button>Subscribe</button>
+            </div>
+
         </div>
-    </div>
+
+        <div class="footer-bottom">
+            © 2026 ApnaShop | All Rights Reserved
+        </div>
+    </footer>
 
 
     <!-- Ravipatelcollege999 -->
