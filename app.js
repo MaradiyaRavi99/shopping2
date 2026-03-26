@@ -36,7 +36,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:8800",
-  "http://192.168.1.9:8800"
+  "http://192.168.1.7:8800"
 ];
 
 app.use(cors({

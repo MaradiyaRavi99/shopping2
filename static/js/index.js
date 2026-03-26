@@ -41,6 +41,7 @@ const information_btn = document.getElementById("information_btn");
 const profile_primery = document.getElementById("profile_primery");
 const my_order = document.getElementById("my_order");
 const wishlistContainer = document.getElementById("wishlistContainer");
+const main_payment_section = document.getElementById("main_payment_section");
 const users = document.querySelector("#users h2");
 const orders = document.querySelector("#total_order h2");
 const states = document.querySelector("#states h2");
@@ -59,21 +60,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("information_btn");
     const btn2 = document.getElementById("my_orders_btn");
     const btn3 = document.getElementById("wishlist_btn");
+    const btn4 = document.getElementById("payment_methods_btn");
 
     btn.addEventListener("click", function () {
         btn.classList.add("active");
         showinformation();
         btn2.classList.remove("active");
         btn3.classList.remove("active");
+        btn4.classList.remove("active");
     });
     btn2.addEventListener("click", function () {
         btn2.classList.add("active");
         btn.classList.remove("active");
         btn3.classList.remove("active");
+        btn4.classList.remove("active");
     });
 
     btn3.addEventListener("click", function () {
         btn3.classList.add("active");
+        btn.classList.remove("active");
+        btn2.classList.remove("active");
+        btn4.classList.remove("active");
+
+
+    });
+
+    btn4.addEventListener("click", function () {
+        btn4.classList.add("active");
+        btn3.classList.remove("active");
         btn.classList.remove("active");
         btn2.classList.remove("active");
 
@@ -124,18 +138,29 @@ function showinformation() {
     personal_registry.classList.add("active");
     my_order.classList.remove("active");
     wishlistContainer.classList.remove("active");
+    main_payment_section.classList.remove("active");
 
 }
 
 function showrenderOrders() {
     my_order.classList.add("active");
     wishlistContainer.classList.remove("active");
+    main_payment_section.classList.remove("active");
     renderOrders();
 }
 
 function showwishlist() {
     wishlistContainer.classList.add("active");
     personal_registry.classList.remove("active");
+    my_order.classList.remove("active");
+    main_payment_section.classList.remove("active");
+    loadWishlist();
+}
+
+function showpayment() {
+    main_payment_section.classList.add("active");
+    personal_registry.classList.remove("active");
+    wishlistContainer.classList.remove("active");
     my_order.classList.remove("active");
     loadWishlist();
 }
@@ -516,7 +541,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.9:8800/api/orders", {
+    fetch("http://192.168.1.7:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -624,7 +649,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.9:8800/api/orders");
+    const res = await fetch("http://192.168.1.7:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -727,7 +752,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.7:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -944,7 +969,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.7:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -957,7 +982,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.7:8800/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -983,7 +1008,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.7:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
@@ -1537,7 +1562,7 @@ faqItems.forEach(item => {
     });
 });
 
-
+// Product Filter
 document.addEventListener("DOMContentLoaded", function () {
 
   const buttons = document.querySelectorAll('.filter_btn');

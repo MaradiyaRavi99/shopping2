@@ -11,6 +11,23 @@
     --danger: #ff4757;
 }
 
+/* Full scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #3e3e3e;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+    background: #a0d591;
+    border-radius: 10px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -545,14 +562,21 @@ nav {
     align-items: center;
 }
 
-.filter{
+.filter {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0px 0px 30px;
 }
 
-.filter_btn{
+.filter_button {
+    display: flex;
+    overflow-y: hidden;
+    gap: 14px;
+    padding: 10px 10px;
+}
+
+.filter_btn {
     border: 1px solid #ffffff30;
     padding: 10px 40px;
     background: transparent;
@@ -560,12 +584,13 @@ nav {
     border-radius: 9px;
     cursor: pointer;
     font-weight: 900;
-    margin-right: 10px;
 }
 
-.filter_btn.active{
+.filter_btn.active {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
+    transition: 0.4s;
+    transform: scale(1.08);
 }
 
 #product {
@@ -733,7 +758,6 @@ nav {
     margin-left: 7%;
 }
 
-
 .produ5 {
     background-color: #232327;
     /* width: 18%; */
@@ -840,7 +864,7 @@ nav {
     margin-left: 7%;
 }
 
-.produ7 h1 {  
+.produ7 h1 {
     margin-left: 7%;
 }
 
@@ -879,16 +903,6 @@ nav {
 .produ8 h1 {
     margin-left: 7%;
 }
-
-
-
-
-
-
-
-
-
-
 
 .btn1 {
     padding: 10px 24px;
@@ -1552,7 +1566,6 @@ nav {
     }
 }
 
-
 /* Section */
 .review-section {
     padding: 60px 20px;
@@ -1688,7 +1701,6 @@ nav {
     transform: scale(1.2);
 }
 
-
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -1698,7 +1710,6 @@ nav {
         transform: translateX(-50%);
     }
 }
-
 
 /* Section */
 .faq-section {
@@ -1768,7 +1779,6 @@ nav {
     transform: rotate(45deg);
 }
 
-
 .footer {
     background: #181818;
     color: #fff;
@@ -1781,7 +1791,7 @@ nav {
     gap: 30px;
 }
 
-.footer-box img{
+.footer-box img {
     width: 50%;
 }
 
@@ -1803,17 +1813,23 @@ nav {
 }
 
 .footer-box input {
-    width: 100%;
-    padding: 8px;
+    width: 60%;
+    padding: 7px;
     margin: 10px 0;
+    border-radius: 7px;
+    border: 1px solid #ffffff3d;
+    background: transparent;
+    outline: none;
+    color: white;
 }
 
 .footer-box button {
-    padding: 8px 15px;
+    padding: 8px 21px;
     background: linear-gradient(45deg, #a1d591, #56bc37);
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
     color: #fff;
+    cursor: pointer;
 }
 
 .footer-bottom {
@@ -1927,8 +1943,8 @@ img {
 .produ3,
 .produ4,
 .produ5,
-.produ6, 
-.produ7, 
+.produ6,
+.produ7,
 .produ8 {
     width: 100%;
     transition: 0.3s ease;
@@ -1940,10 +1956,10 @@ img {
 .produ1:hover,
 .produ2:hover,
 .produ3:hover,
-.produ4:hover ,
-.produ5:hover ,
-.produ6:hover ,
-.produ7:hover ,
+.produ4:hover,
+.produ5:hover,
+.produ6:hover,
+.produ7:hover,
 .produ8:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
@@ -1966,6 +1982,20 @@ img {
     width: 400px !important;
     max-width: 100%;
     height: 100vh;
+}
+
+@media (max-width: 1128px) {
+
+    .filter_button {
+        border: 1px solid #ffffff5e;
+        border-radius: 16px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #3e3e3e;
+        border-radius: 10px;
+    }
+
 }
 
 @media (max-width: 1024px) {
