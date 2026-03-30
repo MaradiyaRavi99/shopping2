@@ -5,7 +5,7 @@
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: 1px solid rgba(255, 255, 255, 0.08);
     --primary: #7000ff;
-    --accent: #00f2ff;
+    --accent: #a0d591;
     --text-main: #ffffff;
     --text-muted: #888888;
     --danger: #ff4757;
@@ -24,7 +24,7 @@
 
 /* Thumb */
 ::-webkit-scrollbar-thumb {
-    background: #a0d591;
+    background: var(--accent);
     border-radius: 10px;
 }
 
@@ -195,7 +195,7 @@ nav {
 
 .items1 a:hover {
     text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
 }
 
 .items3 a {
@@ -204,7 +204,7 @@ nav {
 
 .items3 a:hover {
     text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
 }
 
 .items4 a {
@@ -213,7 +213,7 @@ nav {
 
 .items4 a:hover {
     text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
 }
 
 .items5 {
@@ -265,7 +265,7 @@ nav {
 }
 
 .login_btn:hover {
-    color: #a1d591;
+    color: var(--accent);
 }
 
 @media screen and (max-width: 1100px) {
@@ -350,7 +350,7 @@ nav {
 
 .dropdown:hover {
     text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
 }
 
 .dropdown_btn {
@@ -813,7 +813,7 @@ nav {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #a1d591, #56bc37);
+    background: linear-gradient(45deg, var(--accent), #56bc37);
     color: white;
 }
 
@@ -1045,7 +1045,7 @@ nav {
 
 
 .btn6 {
-    background: linear-gradient(45deg, #a1d591, #56bc37);
+    background: linear-gradient(45deg, var(--accent), #56bc37);
     color: white;
     box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
     padding: 10px 24px;
@@ -1549,7 +1549,7 @@ nav {
 
 .footer-box button {
     padding: 8px 21px;
-    background: linear-gradient(45deg, #a1d591, #56bc37);
+    background: linear-gradient(45deg, var(--accent), #56bc37);
     border-radius: 8px;
     border: none;
     color: #fff;

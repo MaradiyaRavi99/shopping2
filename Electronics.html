@@ -119,10 +119,10 @@
             </div>
             <section id="product">
                 <!-- produ5 -->
-                <div class="produ5">
+                <div class="produ5" onclick="openProductDetails('Smart Watch Series 5', 3999, '/static/watch3.png')">
                     <img src="/static/watch3.png" alt="Smart Watch Series 5">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Smart Watch Series 5', 3999, '/static/watch3.png')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Smart Watch Series 5', 3999, '/static/watch3.png')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -136,15 +136,15 @@
                     <div class="btn_price">
                         <h1>₹3,999</h1>
                         <button class="btn5 btn-primary"
-                            onclick="addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Smart Watch Series 5', 3999, '/static/watch3.png')">Add to
                             Cart</button>
                     </div>
                 </div>
                 <!-- produ6 -->
-                <div class="produ6">
+                <div class="produ6" onclick="openProductDetails('Galaxy s25 ultra', 129999, '/static/galaxy.png')">
                     <img src="/static/galaxy.png" alt="Galaxy s25 ultra">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Galaxy s25 ultra', 129999, '/static/galaxy.png')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Galaxy s25 ultra', 129999, '/static/galaxy.png')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -158,15 +158,15 @@
                     <div class="btn_price">
                         <h1>₹1,29,999</h1>
                         <button class="btn6 btn-primary"
-                            onclick="addToCart('Galaxy s25 ultra', 129999, '/static/galaxy.png')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Galaxy s25 ultra', 129999, '/static/galaxy.png')">Add to
                             Cart</button>
                     </div>
                 </div>
                 <!-- produ7 -->
-                <div class="produ7">
+                <div class="produ7" onclick="openProductDetails('Samsung 55(inch)Crystal uhd tv', 49500, '/static/TV.png')">
                     <img src="/static/TV.png" alt="Samsung Smart TV">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Samsung 55(inch)Crystal uhd tv', 49500, '/static/TV.png')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Samsung 55(inch)Crystal uhd tv', 49500, '/static/TV.png')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -180,14 +180,14 @@
                     <div class="btn_price">
                         <h1>₹49,500</h1>
                         <button class="btn7 btn-primary"
-                            onclick="addToCart('Samsung 55(inch)Crystal uhd tv', 49500, '/static/TV.png')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Samsung 55(inch)Crystal uhd tv', 49500, '/static/TV.png')">Add to
                             Cart</button>
                     </div>
                 </div>
                 <!-- produ8 -->
-                <div class="produ8">
+                <div class="produ8" onclick="openProductDetails('JBL Flip 5', 5499, '/static/jbl.png')">
                     <img src="/static/jbl.png" alt="JBL Flip 5">
-                    <button class="wishlist-btn" onclick="addToWishlist('JBL Flip 5', 5499, '/static/jbl.png')"><i
+                    <button class="wishlist-btn" onclick="event.stopPropagation(); addToWishlist('JBL Flip 5', 5499, '/static/jbl.png')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -200,7 +200,7 @@
                     <h2>JBL Flip 5</h2>
                     <div class="btn_price">
                         <h1>₹5,499</h1>
-                        <button class="btn8 btn-primary" onclick="addToCart('JBL Flip 5', 5499, '/static/jbl.png')">Add
+                        <button class="btn8 btn-primary" onclick="event.stopPropagation(); animateCart(this, 0); addToCart('JBL Flip 5', 5499, '/static/jbl.png')">Add
                             to
                             Cart</button>
                     </div>
@@ -208,10 +208,10 @@
             </section>
             <section id="product1">
                 <!-- produ9 -->
-                <div class="produ9">
+                <div class="produ9" onclick="openProductDetails('LG 21 L Convection Microwave Oven', 12690, '/static/oven.jpg')">
                     <img src="/static/oven.jpg" alt="LG Microwave Oven">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('LG 21 L Convection Microwave Oven', 12690, '/static/oven.jpg')"><i
+                        onclick="event.stopPropagation(); addToWishlist('LG 21 L Convection Microwave Oven', 12690, '/static/oven.jpg')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -225,15 +225,15 @@
                     <div class="btn_price">
                         <h1>₹12,690</h1>
                         <button class="btn9 btn-primary"
-                            onclick="addToCart('LG 21 L Convection Microwave Oven', 12690, '/static/oven.jpg')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('LG 21 L Convection Microwave Oven', 12690, '/static/oven.jpg')">Add to
                             Cart</button>
                     </div>
                 </div>
                 <!-- produ10 -->
-                <div class="produ10">
+                <div class="produ10" onclick="openProductDetails('Portable Mini Projector', 2999, '/static/projector.webp')">
                     <img src="/static/projector.webp" alt="Portable Mini Projector">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Portable Mini Projector', 2999, '/static/projector.webp')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Portable Mini Projector', 2999, '/static/projector.webp')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -247,14 +247,14 @@
                     <div class="btn_price">
                         <h1>₹2,999</h1>
                         <button class="btn10 btn-primary"
-                            onclick="addToCart('Portable Mini Projector', 2999, '/static/projector.webp')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Portable Mini Projector', 2999, '/static/projector.webp')">Add to
                             Cart</button>
                     </div>
                 </div>
                 <!-- produ11 -->
-                <div class="produ11">
+                <div class="produ11" onclick="openProductDetails('LG Monitor', 13999, '/static/monitor.jpg')">
                     <img src="/static/monitor.jpg" alt="LG Monitor">
-                    <button class="wishlist-btn" onclick="addToWishlist('LG Monitor', 13999, '/static/monitor.jpg')"><i
+                    <button class="wishlist-btn" onclick="event.stopPropagation(); addToWishlist('LG Monitor', 13999, '/static/monitor.jpg')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -268,15 +268,15 @@
                     <div class="btn_price">
                         <h1>₹13,999</h1>
                         <button class="btn11 btn-primary"
-                            onclick="addToCart('LG Monitor', 13999, '/static/monitor.jpg')">Add
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('LG Monitor', 13999, '/static/monitor.jpg')">Add
                             to Cart</button>
                     </div>
                 </div>
                 <!-- produ12 -->
-                <div class="produ12">
+                <div class="produ12" onclick="openProductDetails('Wireless Game Controller', 749, '/static/controller.png')">
                     <img src="/static/controller.png" alt="Wireless Game Controller">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Wireless Game Controller', 749, '/static/controller.png')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Wireless Game Controller', 749, '/static/controller.png')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>ELECTRONICS</p>
@@ -290,7 +290,7 @@
                     <div class="btn_price">
                         <h1>₹749</h1>
                         <button class="btn12 btn-primary"
-                            onclick="addToCart('Wireless Game Controller', 749, '/static/controller.png')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Wireless Game Controller', 749, '/static/controller.png')">Add to
                             Cart</button>
                     </div>
                 </div>

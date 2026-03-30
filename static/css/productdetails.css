@@ -5,7 +5,7 @@
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: 1px solid rgba(255, 255, 255, 0.08);
     --primary: #7000ff;
-    --accent: #00f2ff;
+    --accent: #a0d591;
     --text-main: #ffffff;
     --text-muted: #888888;
     --danger: #ff4757;
@@ -1260,7 +1260,7 @@ nav {
 }
 
 .thumb_images img.active_thumb {
-    border: 2px solid #a0d490;
+    border: 2px solid var(--accent);
 }
 
 .thumb_images {
@@ -1302,7 +1302,7 @@ nav {
 .buy_now {
     flex: 1;
     height: 48px;
-    background: #a0d490;
+    background: var(--accent);
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -1426,7 +1426,7 @@ nav {
 }
 
 .size.active {
-    background: #a0d490;
+    background: var(--accent);
     color: #ffffff;
     font-weight: 500;
     border: none;
@@ -1449,7 +1449,7 @@ nav {
     padding: 10px 16px;
     border: none;
     border-radius: 6px;
-    background: #a0d490;
+    background: var(--accent);
     font-weight: 600;
     color: white;
     cursor: pointer;
@@ -1458,7 +1458,7 @@ nav {
 .delivery_text {
     display: block;
     margin-top: 8px;
-    color: #a0d490;
+    color: var(--accent);
 }
 
 .highlight_box {
@@ -1527,7 +1527,7 @@ nav {
 
 .bar div {
     height: 100%;
-    background: #a0d490;
+    background: var(--accent);
 }
 
 

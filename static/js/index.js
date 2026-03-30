@@ -541,7 +541,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.7:8800/api/orders", {
+    fetch("http://192.168.1.9:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -649,7 +649,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.7:8800/api/orders");
+    const res = await fetch("http://192.168.1.9:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -752,7 +752,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.7:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -969,7 +969,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.7:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -982,7 +982,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://192.168.1.7:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -1008,7 +1008,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.7:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
@@ -1351,7 +1351,7 @@ function productDetails() {
 
 
 document.addEventListener("DOMContentLoaded", productDetails);
-
+    
 function changeImage(el, id) {
     document.getElementById(id).src = el.src;
 
@@ -1489,27 +1489,30 @@ animateCount(states, 10, 1000);
 
 // Special case for rating (decimal)
 function animateRating(el, target, duration) {
-    let start = 0;
-    let startTime = null;
+    if (!el) return;
 
+    let startTime = null;
+    
     function update(currentTime) {
         if (!startTime) startTime = currentTime;
         let progress = currentTime - startTime;
-
+        
         let value = (progress / duration) * target;
         if (value > target) value = target;
-
+        
         el.innerText = value.toFixed(1) + "/5";
-
+        
         if (progress < duration) {
             requestAnimationFrame(update);
         }
     }
-
+    
     requestAnimationFrame(update);
 }
 
-animateRating(rating, 4.9, 1000);
+document.addEventListener("DOMContentLoaded", () => {
+    animateRating(rating, 4.9, 1000);
+});
 
 let index = 0;
 

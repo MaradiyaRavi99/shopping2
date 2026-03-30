@@ -5,7 +5,7 @@
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: 1px solid rgba(255, 255, 255, 0.08);
     --primary: #7000ff;
-    --accent: #00f2ff;
+    --accent: #a0d591;
     --text-main: #ffffff;
     --text-muted: #888888;
     --danger: #ff4757;
@@ -24,7 +24,7 @@
 
 /* Thumb */
 ::-webkit-scrollbar-thumb {
-    background: #a0d591;
+    background: var(--accent);
     border-radius: 10px;
 }
 
@@ -557,7 +557,7 @@ nav {
     padding: 12px 6px;
     border-radius: 15px;
     cursor: pointer;
-    background: #ade19d;
+    background: var(--accent);
     border: none;
     font-size: 1rem;
     align-items: center;
@@ -574,7 +574,7 @@ nav {
 }
 
 .fund_secure {
-    border: 1px solid #ade19d;
+    border: 1px solid var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -594,7 +594,7 @@ nav {
 .active_apna {
     display: flex;
     align-items: center;
-    border: 1px solid #ade19d;
+    border: 1px solid var(--accent);
     width: 32%;
     padding: 3px 7px;
     border-radius: 10px;
@@ -636,25 +636,25 @@ nav {
 }
 
 #information_btn.active {
-    background-color: #a0d490;
+    background-color: var(--accent);
     color: #000000b0;
     font-weight: 500;
 }
 
 #my_orders_btn.active {
-    background-color: #a0d490;
+    background-color: var(--accent);
     color: #000000b0;
     font-weight: 500;
 }
 
 #wishlist_btn.active {
-    background-color: #a0d490;
+    background-color: var(--accent);
     color: #000000b0;
     font-weight: 500;
 }
 
 #payment_methods_btn.active {
-    background-color: #a0d490;
+    background-color: var(--accent);
     color: #000000b0;
     font-weight: 500;
 }
@@ -757,7 +757,7 @@ nav {
 }
 
 .fix_amount:hover {
-    background: #ade19d;
+    background: var(--accent);
     color: black;
 }
 
@@ -770,7 +770,7 @@ nav {
     border-radius: 1rem;
     cursor: pointer;
     margin-bottom: 10%;
-    background: #ade19d;
+    background: var(--accent);
     text-transform: uppercase;
     font-weight: bolder;
 }
@@ -838,7 +838,7 @@ nav {
 }
 
 #personal_details_input_name {
-    color: #ade19d;
+    color: var(--accent);
 }
 
 .personal_registry_email {
@@ -873,7 +873,7 @@ nav {
 }
 
 #personal_details_input_email {
-    color: #ade19d;
+    color: var(--accent);
 }
 
 /* .personal_registry_number {
@@ -908,7 +908,7 @@ nav {
 }
 
 #personal_details_input_number {
-    color: #ade19d;
+    color: var(--accent);
 }
 
 .personal_registry_gender {
@@ -943,7 +943,7 @@ nav {
 }
 
 #personal_details_input_gender {
-    color: #ade19d;
+    color: var(--accent);
 }
 
 .personal_registry_biometric {
@@ -978,7 +978,7 @@ nav {
 }
 
 #personal_details_input_biometric {
-    color: #ade19d;
+    color: var(--accent);
 }
 
 .personal_registry_status {
@@ -1013,7 +1013,7 @@ nav {
 }
 
 #personal_details_input_status {
-    color: #ade19d;
+    color: var(--accent);
 }
 
 .radio-wrap {
@@ -1236,7 +1236,7 @@ nav {
     color: green;
     border: none;
     padding: 10px 10px;
-    background: #a0d591;
+    background: var(--accent);
     border-radius: 10px;
 }
 
@@ -1244,7 +1244,7 @@ nav {
     color: green;
     border: none;
     padding: 7px 10px;
-    background: #a0d591;
+    background: var(--accent);
     border-radius: 10px;
 }
 
@@ -1588,7 +1588,7 @@ nav {
 }
 
 .wishlist-info p {
-    color: #a0d591;
+    color: var(--accent);
     font-weight: 600;
 }
 
@@ -2117,13 +2117,13 @@ nav {
 .custom-radio {
     width: 14px;
     height: 14px;
-    border: 2px solid #a0d490;
+    border: 2px solid var(--accent);
     border-radius: 50%;
     display: inline-block;
 }
 
 .radio-wrap input:checked+.custom-radio {
-    background: #a0d490;
+    background: var(--accent);
 }
 
 /* ORDERS */
@@ -2216,7 +2216,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #a0d490;
+    background: var(--accent);
     border: none;
     padding: 12px;
     border-radius: 8px;
@@ -2426,7 +2426,7 @@ nav {
 .payment_number span {
     font-size: 14px;
     letter-spacing: 1px;
-    color: #a0d591;
+    color: var(--accent);
     font-weight: bolder;
     text-transform: uppercase;
 }
