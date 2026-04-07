@@ -11,18 +11,15 @@
     --danger: #ff4757;
 }
 
-/* Full scrollbar */
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 4px;
     height: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #3e3e3e;
 }
 
-/* Thumb */
 ::-webkit-scrollbar-thumb {
     background: var(--accent);
     border-radius: 10px;
@@ -35,6 +32,7 @@ html {
 * {
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -211,6 +209,15 @@ nav {
     color: #a1d591;
 }
 
+.items2 a {
+    padding: 0px 8px;
+}
+
+.items2 a:hover {
+    text-decoration: underline;
+    color: #a1d591;
+}
+
 .items3 a {
     padding: 0px 8px;
 }
@@ -331,7 +338,6 @@ nav {
     border: none;
 }
 
-
 .cart-icon {
     position: relative;
     font-size: 28px;
@@ -349,47 +355,6 @@ nav {
     width: 12px;
     height: 12px;
     padding-top: 1px;
-    display: block;
-}
-
-.dropdown {
-    position: relative;
-    cursor: pointer;
-    padding: 0px 8px;
-}
-
-.dropdown:hover {
-    text-decoration: underline;
-    color: #a1d591;
-}
-
-.dropdown_btn {
-    width: 100%;
-    padding: 5px 42px;
-    margin-top: 10px;
-    background: #555555;
-    color: white;
-    border: 1px solid #504e4b8c;
-    cursor: pointer;
-}
-
-.dropdown_btn:hover {
-    background: #333333;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #4b49498c;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    min-width: 130px;
-    padding: 12px 16px;
-    font-family: "Luxurious Roman", serif;
-    text-align: justify;
-}
-
-.dropdown:hover .dropdown-content {
     display: block;
 }
 
@@ -448,7 +413,6 @@ nav {
     display: flex;
     align-items: start;
     border-radius: 20px;
-    /* background: #ffffff1c; */
     border: 1px solid #80808047;
     margin-bottom: 3%;
 }
@@ -459,8 +423,6 @@ nav {
 }
 
 .profile_icon {
-    /* border: 2px solid #000000; */
-    /* padding: 8px 9px; */
     text-align: center;
     width: 40%;
     border-radius: 50px;
@@ -520,7 +482,6 @@ nav {
     border-radius: 20px;
     display: flex;
     border: 1px solid #80808047;
-    /* flex-direction: column; */
     margin-left: 3%;
     width: 70%;
     justify-content: space-between;
@@ -534,7 +495,6 @@ nav {
 
 .wallet_icon {
     display: flex;
-    /* align-items: center; */
     margin-left: 7%;
     margin-top: 2%;
 }
@@ -782,13 +742,9 @@ nav {
     justify-content: center;
 }
 
-
-
 #personal_registry.active {
     animation: pop 5s ease;
-    /* top: 40%; */
     height: max-content;
-    /* right: 6.6%; */
     display: grid;
 }
 
@@ -843,7 +799,6 @@ nav {
 
 .personal_registry_email {
     color: #ffffffe6;
-    /* border: 1px solid #80808047; */
     border-radius: 20px;
     padding: 1px 1px;
     margin-left: 3%;
@@ -876,13 +831,6 @@ nav {
     color: var(--accent);
 }
 
-/* .personal_registry_number {
-    color: #ffffffe6;
-    border-radius: 20px;
-    padding: 1px 1px;
-    margin-left: 3%;
-} */
-
 .personal_details_number {
     display: flex;
     gap: 18px;
@@ -901,7 +849,6 @@ nav {
     border: 1px solid #ade19d5e;
 }
 
-
 .personal_details_number:hover .lucide3 {
     width: 35px;
     height: 35px;
@@ -913,7 +860,6 @@ nav {
 
 .personal_registry_gender {
     color: #ffffffe6;
-    /* border: 1px solid #80808047; */
     border-radius: 20px;
     padding: 1px 1px;
     margin-left: 3%;
@@ -948,7 +894,6 @@ nav {
 
 .personal_registry_biometric {
     color: #ffffffe6;
-    /* border: 1px solid #80808047; */
     border-radius: 20px;
     padding: 1px 1px;
     margin-left: 3%;
@@ -983,7 +928,6 @@ nav {
 
 .personal_registry_status {
     color: #ffffffe6;
-    /* border: 1px solid #80808047; */
     border-radius: 20px;
     padding: 1px 1px;
     margin-left: 6%;
@@ -1027,30 +971,25 @@ nav {
     cursor: pointer;
 }
 
-/* hide native radio */
 .radio-wrap input {
     display: none;
 }
 
-/* green border */
 .custom-radio {
     width: 13px;
     height: 13px;
     border: 2px solid #ffffff6d;
-    /* GREEN BORDER */
     border-radius: 50%;
     margin-right: 6px;
     position: relative;
     background: white;
 }
 
-/* black inner dot */
 .radio-wrap input:checked+.custom-radio::after {
     content: "";
     width: 10px;
     height: 10px;
     background: #000;
-    /* BLACK DOT */
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -1058,12 +997,9 @@ nav {
     transform: translate(-50%, -50%);
 }
 
-/* my_order */
 .my_order {
     display: none;
     width: 61%;
-    top: -1057px;
-    /* margin-top: 20px; */
     overflow: hidden;
     position: relative;
     z-index: 2;
@@ -1118,7 +1054,7 @@ nav {
 #orderList h2 {
     text-transform: uppercase;
     text-align: left;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 /* .orders {
@@ -1539,7 +1475,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     color: white;
 }
 
@@ -2063,7 +1999,7 @@ nav {
     padding: 25px;
     background: #1f1f23;
     border-radius: 12px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     padding-left: 23px;
 }
 
@@ -2127,7 +2063,6 @@ nav {
 }
 
 /* ORDERS */
-
 .orders-wrap {
     margin-top: 25px;
 }
@@ -2148,7 +2083,6 @@ nav {
 }
 
 /* POPUP */
-
 .popup {
     position: fixed;
     inset: 0;
@@ -2173,7 +2107,6 @@ nav {
 }
 
 /* FUND BOX */
-
 .fund_box {
     position: fixed;
     top: 50%;
@@ -2225,7 +2158,6 @@ nav {
 }
 
 /* MOBILE RESPONSIVE */
-
 @media(max-width:1614px) {
 
     .profile_details {
@@ -2398,7 +2330,13 @@ nav {
     border: 1px solid #80808047;
     border-radius: 14px;
     padding: 15px 15px;
-    margin-bottom: 15px;    
+    margin-bottom: 15px;
+}
+
+.payment_method_section:hover {
+    transform: translateY(-2px);
+    background: rgba(173, 225, 157, 0.03);
+    border: 1px solid rgba(173, 225, 157, 0.37);
 }
 
 .logo_cardnumber {
@@ -2505,10 +2443,12 @@ nav {
     border-top: 1px solid #333;
     padding-top: 10px;
     color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 @media(max-width:1126px) {
-    
+
     .methos_delet {
         text-align: center;
         width: 6%;
@@ -2516,7 +2456,7 @@ nav {
 }
 
 @media(max-width:800px) {
-    
+
     .methos_delet {
         text-align: center;
         width: 10%;
@@ -2525,7 +2465,6 @@ nav {
 }
 
 /* SMALL MOBILE */
-
 @media(max-width:600px) {
 
     .main_profile {
@@ -2619,6 +2558,11 @@ nav {
         cursor: pointer;
         border-radius: 1.25rem;
         border: 1px solid #303030;
+    }
+
+    .wishlist-head,
+    #orderList h2 {
+        margin-bottom: 20px;
     }
 
     .main_payment_section {

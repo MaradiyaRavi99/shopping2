@@ -996,7 +996,7 @@ async function openPopup(id) {
                 <strong>₹${item.price * item.qty}</strong>
             </div>
         `).join("")}
-        <hr>
+        <hr style="margin-bottom: 10px;">
         <strong>Total: ₹${order.total}</strong>
     `;
 
@@ -1213,13 +1213,8 @@ function productDetails() {
             <!-- LEFT SIDE -->
             <div class="image_section">
 
-                <div class="main_image"
-                     onmousemove="zoomImage(event, this)"
-                     onmouseleave="resetZoom(this)">
-
-                    <img id="mainImage"
-                        src="${images[0]}"
-                        alt="${product.name}">
+                <div class="main_image" onmousemove="zoomImage(event, this)" onmouseleave="resetZoom(this)">
+                    <img id="mainImage" src="${images[0]}" alt="${product.name}">
                 </div>
 
                 <div class="thumb_images">
@@ -1236,10 +1231,8 @@ function productDetails() {
                         addToCart('${product.name}', ${product.price}, '${images[0]}')">
                         ADD TO CART
                     </button>
-
                     <button class="buy_now">BUY NOW</button>
                 </div>
-
             </div>
 
             <!-- RIGHT SIDE -->
@@ -1269,13 +1262,13 @@ function productDetails() {
                 </div>
 
                 <div class="color_box">
-                <p>Color</p>
-                <div class="colors">
+                    <p>Color</p>
+                    <div class="colors">
                         <button class="color" onclick="selectcolor(this)" style="background:#e91e63"></button>
                         <button class="color" onclick="selectcolor(this)" style="background:#ffd600"></button>
                         <button class="color" onclick="selectcolor(this)" style="background:#00c853"></button>
+                    </div>
                 </div>
-            </div>
 
                 <div class="size_box">
                     <p>Size</p>
@@ -1285,43 +1278,35 @@ function productDetails() {
                     <button class="size" onclick="selectSize(this)">XL</button>
                     <button class="size" onclick="selectSize(this)">XXL</button>
                 </div>
-
                 <div class="delivery_box">
-                <p>Delivery</p>
-                <input type="text" placeholder="Enter Pincode">
-                <button>Check</button>
-                <span class="delivery_text">Delivery in 2-4 days</span>
-            </div>
-
-            <div class="highlight_box">
-                <h3>Highlights</h3>
-                <ul>
-                    <li>Fabric: Pure Viscose Rayon</li>
-                    <li>Type: Premium</li>
-                    <li>Pattern: Self Design</li>
-                    <li>Occasion: Party & Festive</li>
-                </ul>
-            </div>
-
+                    <p>Delivery</p>
+                    <input type="text" placeholder="Enter Pincode">
+                    <button>Check</button>
+                    <span class="delivery_text">Delivery in 2-4 days</span>
+                </div>
+                <div class="highlight_box">
+                    <h3>Highlights</h3>
+                    <ul>
+                        <li>Fabric: Pure Viscose Rayon</li>
+                        <li>Type: Premium</li>
+                        <li>Pattern: Self Design</li>
+                        <li>Occasion: Party & Festive</li>
+                    </ul>
+                </div>
                 <div class="description_box">
                     <h3>Description</h3>
                     <p>${product.description || "Premium quality product designed for modern comfort and style."}</p>
                 </div>
-
                 <!-- REVIEWS -->
                 <div class="review_section">
                     <h2>Ratings & Reviews</h2>
-
                     <div class="rating_summary">
-
                         <div class="big_rating">
                             <h1>4.9 ★</h1>
                             <p>2,845 Ratings</p>
                         </div>
-
                         <div class="rating_bars">
-
-                            ${[97, 80, 50, 24, 9].map((width, i) => `
+                            ${[95, 88, 25, 8, 3].map((width, i) => `
                                 <div class="bar_row">
                                     <span>${5 - i} ★</span>
                                     <div class="bar">
@@ -1329,16 +1314,11 @@ function productDetails() {
                                     </div>
                                 </div>
                             `).join("")}
-
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
     `;
 

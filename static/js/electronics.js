@@ -840,7 +840,6 @@ function addToWishlist(name, price, image) {
     }
 }
 
-
 function openProductDetails(name, price, image) {
 
     const product = {
@@ -854,7 +853,6 @@ function openProductDetails(name, price, image) {
     // redirect to details page
     window.location.href = "productdetails.html";
 }
-
 
 function productDetails() {
 
@@ -1015,7 +1013,6 @@ function productDetails() {
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", productDetails);
 
 function changeImage(el, id) {
@@ -1041,8 +1038,6 @@ function zoomImage(e, container) {
 function resetZoom(container) {
     container.querySelector("img").style.transform = "scale(1)";
 }
-
-
 
 function animateCart(btn) {
     btn.innerHTML = `

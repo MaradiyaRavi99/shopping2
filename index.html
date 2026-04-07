@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    <div class="blur-bg">
-    </div>
+    <div class="blur-bg"></div>
+
     <div class="main">
         <div class="navigation" id="navigation">
             <nav>
@@ -27,21 +27,8 @@
                 <ul>
                     <div class="nav_ul" id="nav_ul">
                         <li class="items1"><a href="/index.html">Home</a></li>
-                        <li class="items2">
-                            <div class="dropdown">Categories
-                                <div class="dropdown-content">
-                                    <button class="dropdown_btn" id="electronics"><a
-                                            href="/Electronics.html">Electronics</a></button>
-                                    <button class="dropdown_btn" id="Sports"><a href="/Sports.html">Sports</a></button>
-                                    <button class="dropdown_btn" id="Fashion">Fashion</button>
-                                    <button class="dropdown_btn" id="Footwear">Footwear</button>
-                                    <button class="dropdown_btn" id="Kitchen">Kitchen</button>
-                                    <button class="dropdown_btn" id="Gaming">Gaming</button>
-                                </div>
-                            </div>
-                        </li>
+                        <li class="items2"><a href="/categories.html">Categories</a></li>
                         <li class="items3"><a href="/">About</a></li>
-                        <li class="items9"><a href="/order.html">Orders</a></li>
                         <li class="items4"><a href="/">Contact</a></li>
                         <li class="items8"><button class="login_btn" id="openBtn3" onclick="showWrapper()">Sign
                                 Up</button></li>
@@ -57,7 +44,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
                                             viewBox="0 0 24 24">
                                             <path fill="#fff"
-                                                d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
+                                                d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"/>
                                         </svg>
                                     </div>
                                 </button>
@@ -95,7 +82,6 @@
                 </li>
             </nav>
             <div class="menu-overlay" id="menuOverlay"></div>
-
             <svg width="0" height="0">
                 <defs>
                     <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
@@ -106,11 +92,14 @@
                         <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur" />
                         <!-- Glass distortion -->
                         <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />
+                        <!-- <feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/> -->
                     </filter>
                 </defs>
             </svg>
         </div>
+
         <h1 id="main_heading">Your World of Premium Finds, One Click Away.</h1>
+
         <div class="statistics">
             <div id="users">
                 <h2>25k+</h2>
@@ -130,11 +119,11 @@
             </div>
         </div>
     </div>
+
     <div id="categories">
         <div id="head">
             <h1>Trending Products</h1>
         </div>
-
         <div class="filter">
             <div class="filter_button">
                 <button class="filter_btn active" data-filter="all">ALL</button>
@@ -335,6 +324,7 @@
             </div>
         </section>
     </div>
+
     <!-- cart_sidebar -->
     <div class="cart_sidebar" id="cart_sidebar">
         <div class="cart-header">
@@ -351,6 +341,7 @@
         </div>
         <button id="checkoutBtn" class="btn btn-primary" style="width: 100%;">Checkout</button>
     </div>
+
     <div class="checkout_sidebar" id="checkout_sidebar">
         <div class="cart-header">
             <h2>Checkout</h2>
@@ -382,6 +373,7 @@
                 Place Order</button>
         </div>
     </div>
+
     <div id="paymentPage" class="payment">
 
         <h2>Payment</h2>
@@ -415,6 +407,7 @@
         <button class="btn7 btn-primary" id="openbtn" onclick=payNow()>Pay Now</button>
 
     </div>
+
     <div id="successPage" class="success">
         <div class="success-box">
             <div class="checkmark">✓</div>
@@ -422,24 +415,8 @@
             <p>Your order has been placed</p>
         </div>
     </div>
+
     <div id="confetti"></div>
-
-    <!-- <div class="order_container">
-        <div id="orderHistory" class="orders">
-            <h2>My Orders</h2>
-            <div id="orderList"></div>
-            <button class="btn btn-primary" style="margin-top: 10px;" onclick="renderOrders()">My Orders</button>
-        </div>
-    </div> -->
-
-    <!-- Order Details Popup -->
-    <!-- <div id="orderPopup" class="popup">
-        <div class="popup-box">
-            <span class="close" onclick="closePopup()">✖</span>
-            <h3>Order Details</h3>
-            <div id="popupContent"></div>
-        </div>
-    </div> -->
 
     <div class="card">
         <slot></slot>
@@ -581,7 +558,8 @@
 
                 <div class="review-card">
                     <div class="profile">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+                        <img
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fit=crop&w=150&h=150&q=80">
                         <h4>Mary</h4>
                     </div>
                     <div class="stars">★★★★☆</div>
@@ -593,16 +571,16 @@
                         <img src="https://randomuser.me/api/portraits/men/13.jpg">
                         <h4>Jhon</h4>
                     </div>
-                    <div class="stars">★★★★★</div>
+                    <div class="stars">★★★★☆</div>
                     <p>Fast delivery!</p>
                 </div>
 
                 <div class="review-card">
                     <div class="profile">
-                        <img src="https://randomuser.me/api/portraits/women/49.jpg">
+                        <img src="https://randomuser.me/api/portraits/women/79.jpg">
                         <h4>Grace</h4>
                     </div>
-                    <div class="stars">★★★★★</div>
+                    <div class="stars">★★★☆☆</div>
                     <p>Great support!</p>
                 </div>
 
@@ -611,16 +589,17 @@
                         <img src="https://randomuser.me/api/portraits/women/19.jpg">
                         <h4>Elena</h4>
                     </div>
-                    <div class="stars">★★★★★</div>
+                    <div class="stars">★★★★☆</div>
                     <p>Loved it!</p>
                 </div>
 
                 <div class="review-card">
                     <div class="profile">
-                        <img src="https://randomuser.me/api/portraits/women/59.jpg">
+                        <img
+                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=150&h=150&q=80">
                         <h4>Sofia</h4>
                     </div>
-                    <div class="stars">★★★★★</div>
+                    <div class="stars">★★★★☆</div>
                     <p>Product was exactly as shown. Happy with my purchase!</p>
                 </div>
 
@@ -628,6 +607,51 @@
         </div>
     </section>
 
+    <div class="why_choose">
+        <div class="whychoos_heading">
+            <h1>Why Choose ApnaShop</h1>
+            <p>We don't just sell products — we create a seamless shopping experience by combining quality,
+                affordability, fast delivery, and trusted service to ensure every purchase brings value and
+                satisfaction.</p>
+        </div>
+        <div class="our_future">
+            <div class="support">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M11 20h8M3 13h26m-6 7h2M5 7C4 7 3 8 3 9v14c0 1 1 2 2 2h22c1 0 2-1 2-2V9c0-1-1-2-2-2z" />
+                </svg>
+                <h2>Multiple Payment Options</h2>
+                <span>ApnaShop gives you complete flexibility at checkout. Whether you prefer UPI, cards, digital
+                    wallets, or net banking, we ensure a smooth, secure, and hassle-free payment experience every
+                    time.</span>
+            </div>
+            <div class="support">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g fill="none">
+                        <path d="M3 4.65V12c0 7.35 9 10.5 9 10.5s9-3.15 9-10.5V4.65L12 1.5z" clip-rule="evenodd" />
+                        <path stroke="currentColor" stroke-linecap="square" stroke-width="2"
+                            d="M3 4.65V12c0 7.35 9 10.5 9 10.5s9-3.15 9-10.5V4.65L12 1.5z" clip-rule="evenodd" />
+                        <path stroke="currentColor" stroke-linecap="square" stroke-width="2"
+                            d="M8.173 11.172L11 14l5.657-5.657" />
+                    </g>
+                </svg>
+                <h2>Secure Payment</h2>
+                <span>At ApnaShop, your security is our priority. We use advanced encryption and trusted payment
+                    gateways to ensure every transaction is safe, private, and worry-free.</span>
+            </div>
+            <div class="support">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M12 2C6.49 2 2 6.49 2 12v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-5c0-.55-.45-1-1-1H4.07C4.56 7.06 7.93 4 12 4s7.44 3.06 7.93 7H18c-.55 0-1 .45-1 1v5c0 .55.45 1 1 1h2v1c0 .55-.45 1-1 1h-4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h9c1.65 0 3-1.35 3-3v-7c0-5.51-4.49-10-10-10" />
+                </svg>
+                <h2>24/7 Support</h2>
+                <span>At ApnaShop, your satisfaction never sleeps. Our dedicated support team is available round the
+                    clock to resolve your queries, guide your purchases, and ensure a smooth shopping experience —
+                    anytime you need us.</span>
+            </div>
+        </div>
+    </div>
 
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
@@ -688,8 +712,8 @@
             <div class="footer-box">
                 <h3>Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Shop</a></li>
                 </ul>
             </div>
 
@@ -714,9 +738,8 @@
         </div>
     </footer>
 
-    <!-- Ravipatelcollege999 -->
+    <!-- Ravipatelcollege999. ifconfig -->
     <script src="/static/js/index.js" defer></script>
 </body>
-
 
 </html>

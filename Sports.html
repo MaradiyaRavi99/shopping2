@@ -24,22 +24,8 @@
                     <ul>
                         <div class="nav_ul" id="nav_ul">
                             <li class="items1"><a href="/index.html">Home</a></li>
-                            <li class="items2">
-                                <div class="dropdown">Categories
-                                    <div class="dropdown-content">
-                                        <button class="dropdown_btn" id="electronics"><a
-                                                href="/Electronics.html">Electronics</a></button>
-                                        <button class="dropdown_btn" id="Sports"><a
-                                                href="/Sports.html">Sports</a></button>
-                                        <button class="dropdown_btn" id="Fashion">Fashion</button>
-                                        <button class="dropdown_btn" id="Footwear">Footwear</button>
-                                        <button class="dropdown_btn" id="Kitchen">Kitchen</button>
-                                        <button class="dropdown_btn" id="Gaming">Gaming</button>
-                                    </div>
-                                </div>
-                            </li>
+                            <li class="items2"><a href="/categories.html">Categories</a></li>
                             <li class="items3"><a href="/">About</a></li>
-                            <li class="items9"><a href="/">Orders</a></li>
                             <li class="items4"><a href="/">Contact</a></li>
                             <li class="items8"><button class="login_btn" id="openBtn2" onclick="showWrapper()">Sign
                                     Up</button></li>
@@ -95,18 +81,14 @@
                 <svg width="0" height="0">
                     <defs>
                         <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
-
                             <!-- Displacement texture -->
                             <feImage href="https://essykings.github.io/JavaScript/map.png" x="-50%" y="-50%"
                                 width="200%" height="200%" result="map" />
-
                             <!-- Blur the original object -->
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
-
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur" />
                             <!-- Glass distortion -->
                             <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R"
                                 yChannelSelector="G" />
-
                         </filter>
                     </defs>
                 </svg>
@@ -120,10 +102,10 @@
             </div>
             <section id="product">
                 <!-- produ13 -->
-                <div class="produ13">
+                <div class="produ13" onclick="openProductDetails('Scooper Single Cut Bat', 1796, '/static/bat.png')">
                     <img src="/static/bat.png" alt="Scooper Single Cut Bat">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Scooper Single Cut Bat', 1796, '/static/bat.png')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Scooper Single Cut Bat', 1796, '/static/bat.png')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -137,14 +119,15 @@
                     <div class="btn_price">
                         <h1>₹1,796</h1>
                         <button class="btn13 btn-primary"
-                            onclick="addToCart('Scooper Single Cut Bat', 1796, '/static/bat.png')">Add to Cart</button>
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Scooper Single Cut Bat', 1796, '/static/bat.png')">Add
+                            to Cart</button>
                     </div>
                 </div>
                 <!-- produ14 -->
-                <div class="produ14">
+                <div class="produ14" onclick="openProductDetails('Premium Yoga Mat-5.5 MM', 3998, '/static/yoga.webp')">
                     <img src="/static/yoga.webp" alt="Yoga mat">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Premium Yoga Mat-5.5 MM', 3998, '/static/yoga.webp')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Premium Yoga Mat-5.5 MM', 3998, '/static/yoga.webp')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -158,15 +141,17 @@
                     <div class="btn_price">
                         <h1>₹3,998</h1>
                         <button class="btn14 btn-primary"
-                            onclick="addToCart('Premium Yoga Mat-5.5 MM', 3998, '/static/yoga.webp')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Premium Yoga Mat-5.5 MM', 3998, '/static/yoga.webp')">Add
+                            to
                             Cart</button>
                     </div>
                 </div>
                 <!-- produ15 -->
-                <div class="produ15">
+                <div class="produ15"
+                    onclick="openProductDetails('Stopwatch, Digital Timer', 500, '/static/stopwatches.webp')">
                     <img src="/static/stopwatches.webp" alt="Stopwatch">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Stopwatch, Digital Timer', 500, '/static/stopwatches.webp')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Stopwatch, Digital Timer', 500, '/static/stopwatches.webp')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -180,15 +165,16 @@
                     <div class="btn_price">
                         <h1>₹500</h1>
                         <button class="btn15 btn-primary"
-                            onclick="addToCart('Stopwatch, Digital Timer', 500, '/static/stopwatches.webp')">Add
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Stopwatch, Digital Timer', 500, '/static/stopwatches.webp')">Add
                             to Cart</button>
                     </div>
                 </div>
                 <!-- produ16 -->
-                <div class="produ16">
+                <div class="produ16"
+                    onclick="openProductDetails('SS Gold Edition Gloves', 2730, '/static/gloves.webp')">
                     <img src="/static/gloves.webp" alt="Batting Gloves">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('SS Gold Edition Gloves', 2730, '/static/gloves.webp')"><i
+                        onclick="event.stopPropagation(); addToWishlist('SS Gold Edition Gloves', 2730, '/static/gloves.webp')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -202,17 +188,17 @@
                     <div class="btn_price">
                         <h1>₹2,730</h1>
                         <button class="btn16 btn-primary"
-                            onclick="addToCart('SS Gold Edition Gloves', 2730, '/static/gloves.webp')">Add
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('SS Gold Edition Gloves', 2730, '/static/gloves.webp')">Add
                             to Cart</button>
                     </div>
                 </div>
             </section>
             <section id="product1">
                 <!-- produ17 -->
-                <div class="produ17">
+                <div class="produ17" onclick="openProductDetails('MRF Champ Kit Bag', 9500, '/static/kit.webp')">
                     <img src="/static/kit.webp" alt="MRF Champ Kit Bag">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('MRF Champ Kit Bag', 9500, '/static/kit.webp')"><i
+                        onclick="event.stopPropagation(); addToWishlist('MRF Champ Kit Bag', 9500, '/static/kit.webp')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -226,15 +212,16 @@
                     <div class="btn_price">
                         <h1>₹9,500</h1>
                         <button class="btn17 btn-primary"
-                            onclick="addToCart('MRF Champ Kit Bag', 9500, '/static/kit.webp')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('MRF Champ Kit Bag', 9500, '/static/kit.webp')">Add
+                            to
                             Cart</button>
                     </div>
                 </div>
                 <!-- produ18 -->
-                <div class="produ18">
+                <div class="produ18" onclick="openProductDetails('Nivia Storm Football', 359, '/static/ball.webp')">
                     <img src="/static/ball.webp" alt="Nivia Storm Football">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Nivia Storm Football', 359, '/static/ball.webp')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Nivia Storm Football', 359, '/static/ball.webp')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -248,13 +235,15 @@
                     <div class="btn_price">
                         <h1>₹359</h1>
                         <button class="btn18 btn-primary"
-                            onclick="addToCart('Nivia Storm Football', 359, '/static/ball.webp')">Add to Cart</button>
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Nivia Storm Football', 359, '/static/ball.webp')">Add
+                            to Cart</button>
                     </div>
                 </div>
                 <!-- produ19 -->
-                <div class="produ19">
+                <div class="produ19" onclick="openProductDetails('Dumbbells', 259, '/static/dumbbell2.jpg')">
                     <img src="/static/dumbbell2.jpg" alt="Dumbbells">
-                    <button class="wishlist-btn" onclick="addToWishlist('Dumbbells', 259, '/static/dumbbell2.jpg')"><i
+                    <button class="wishlist-btn"
+                        onclick="event.stopPropagation(); addToWishlist('Dumbbells', 259, '/static/dumbbell2.jpg')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -268,15 +257,16 @@
                     <div class="btn_price">
                         <h1>₹259</h1>
                         <button class="btn19 btn-primary"
-                            onclick="addToCart('Dumbbells', 259, '/static/dumbbell2.jpg')">Add
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Dumbbells', 259, '/static/dumbbell2.jpg')">Add
                             to Cart</button>
                     </div>
                 </div>
                 <!-- produ20 -->
-                <div class="produ20">
+                <div class="produ20"
+                    onclick="openProductDetails('Nivia Strike Football Shoes', 1237, '/static/Nivia.webp')">
                     <img src="/static/Nivia.webp" alt="Football Shoes">
                     <button class="wishlist-btn"
-                        onclick="addToWishlist('Nivia Strike Football Shoes', 1237, '/static/Nivia.webp')"><i
+                        onclick="event.stopPropagation(); addToWishlist('Nivia Strike Football Shoes', 1237, '/static/Nivia.webp')"><i
                             class="fa-regular fa-heart"></i></button>
                     <div class="category_rating">
                         <p>SPORTS</p>
@@ -290,7 +280,8 @@
                     <div class="btn_price">
                         <h1>₹1,237</h1>
                         <button class="btn20 btn-primary"
-                            onclick="addToCart('Nivia Strike Football Shoes', 1237, '/static/Nivia.webp')">Add to
+                            onclick="event.stopPropagation(); animateCart(this, 0); addToCart('Nivia Strike Football Shoes', 1237, '/static/Nivia.webp')">Add
+                            to
                             Cart</button>
                     </div>
                 </div>
@@ -488,8 +479,8 @@
                 <div class="footer-box">
                     <h3>Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Shop</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Shop</a></li>
                     </ul>
                 </div>
 

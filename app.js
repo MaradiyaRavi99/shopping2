@@ -15,17 +15,17 @@ const loginSchema = new mongoose.Schema({
   password: String,
 });
 
-const Login = mongoose.model('Login', loginSchema); 
+const Login = mongoose.model('Login', loginSchema);
 
 const OrderSchema = new mongoose.Schema({
 
-    name: String,
-    mobile: String,
-    address: String,
-    date: String,
-    items: Array,
-    total: Number,
-    status: String
+  name: String,
+  mobile: String,
+  address: String,
+  date: String,
+  items: Array,
+  total: Number,
+  status: String
 });
 
 const Order = mongoose.model("Order", OrderSchema);
@@ -36,21 +36,22 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:8800",
-  "http://192.168.1.9:8800"
+  "http://192.168.1.9:8800/index.html"
 ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (mobile apps, postman)
-    if (!origin) return callback(null, true);
+app.use(cors());
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     // allow requests with no origin (mobile apps, postman)
+//     if (!origin) return callback(null, true);
 
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      return callback(new Error("Not allowed by CORS"));
-    }
-  }
-}));
+//     if (allowedOrigins.includes(origin)) {
+//       return callback(null, true);
+//     } else {
+//       return callback(new Error("Not allowed by CORS"));
+//     }
+//   }
+// }));
 
 app.use('/static', express.static('static'))
 app.use(express.urlencoded())
@@ -72,8 +73,8 @@ app.get("/Sports.html", (req, res) => {
   res.sendFile(path.join(__dirname, "Sports.html"));
 });
 
-app.get("/order.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "order.html"));
+app.get("/categories.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "categories.html"));
 });
 
 app.get("/orderdetail.html", (req, res) => {
@@ -89,15 +90,15 @@ app.get("/productdetails.html", (req, res) => {
 });
 
 app.post("/api/orders", async (req, res) => {
-    const order = new Order(req.body);
-    await order.save();
-    res.json({ message: "Order saved to MongoDB" });
+  const order = new Order(req.body);
+  await order.save();
+  res.json({ message: "Order saved to MongoDB" });
 });
 
 /* ===== 4. STEP 5 — GET API (FETCH ORDERS) ===== */
 app.get("/api/orders", async (req, res) => {
-    const orders = await Order.find().sort({ _id: -1 });
-    res.json(orders);
+  const orders = await Order.find().sort({ _id: -1 });
+  res.json(orders);
 });
 
 app.post("/login", async (req, res) => {
@@ -128,26 +129,21 @@ app.post("/login2", async (req, res) => {
 
 // Get single order
 app.get("/api/orders/:id", async (req, res) => {
-    const order = await Order.findById(req.params.id);
-    res.json(order);
+  const order = await Order.findById(req.params.id);
+  res.json(order);
 });
 
 // Update order status
 app.put("/api/orders/:id", async (req, res) => {
-    await Order.findByIdAndUpdate(req.params.id, req.body);
-    res.json({ message: "Updated" });
+  await Order.findByIdAndUpdate(req.params.id, req.body);
+  res.json({ message: "Updated" });
 });
 
 // Delete order
 app.delete("/api/orders/:id", async (req, res) => {
-    await Order.findByIdAndDelete(req.params.id);
-    res.json({ message: "Deleted" });
+  await Order.findByIdAndDelete(req.params.id);
+  res.json({ message: "Deleted" });
 });
-
-// START THE SERVER
-// app.listen(port, () => {
-//   console.log(`The application started successfully on port ${port}`);
-// });
 
 app.listen(port, "0.0.0.0", () => {
   console.log("Server running on port", port);

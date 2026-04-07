@@ -168,8 +168,6 @@ function addToCart(name, price, image) {
     updateCartCount();
 }
 
-
-
 function updateCartCount() {
     let count = 0;
 
@@ -413,103 +411,6 @@ function saveOrder(cartData) {
     });
 }
 
-
-// async function renderOrders() {
-//     const orderList = document.getElementById("orderList");
-//     if (!orderList) return;
-
-//     const res = await fetch("http://192.168.1.3:5500/api/orders");
-//     const orders = await res.json();
-
-//     if (!orders.length) {
-//         orderList.innerHTML = "<p>No orders found</p>";
-//         return;
-//     }
-
-//     let html = `
-//         <div class="order-head">
-//             <div class="col-id">Id</div>
-//             <div class="col-product">Product</div>
-//             <div class="col-quantity">Quantity</div>
-//             <div class="col-date">Date</div>
-//             <div class="col-price">Price</div>
-//             <div class="col-status">Status</div>
-//             <div class="col-action">Action</div>
-//         </div>
-//     `;
-
-//     orders.reverse().forEach(order => {
-
-//     const firstItem = order.items[0];
-//     const moreCount = order.items.length - 1;
-
-//     html += `
-//     <a class="order_detail_link" href="/orderdetail.html">
-//     <div class="order-row">
-
-//         <div class="col-id">#${order._id.slice(-5)}</div>
-
-//         <div class="col-product">
-//             <img src="${firstItem.image}">
-//             <div class="col-product_detail">
-//                 <div>${firstItem.name}</div>
-//                 ${
-//                     moreCount > 0
-//                     ? `<small class="more-items">+ ${moreCount} more item(s)</small>`
-//                     : ``
-//                 }
-//             </div>
-//         </div>
-
-//         <div class="col-quantity">
-//             ${order.items.reduce((t, i) => t + i.qty, 0)}
-//         </div>
-
-//         <div class="col-date">${order.date}</div>
-
-//         <div class="col-price">
-//             ₹${order.items.reduce((t, i) => t + i.price * i.qty, 0)}
-//         </div>
-
-//         <div class="col-status">
-//             <span class="status-pill ${order.status === 'Cancelled' ? 'cancelled' : 'paid'}">
-//                 ${order.status}
-//             </span>
-//         </div>
-
-//         <div class="col-action action-wrap">
-//                 <button class="view-btn2" onclick="openPopup('${order._id}')">
-//                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 32 32">
-//                         <circle cx="16" cy="16" r="4" fill="#fff" />
-//                         <path fill="#fff" d="M30.94 15.66A16.69 16.69 0 0 0 16 5A16.69 16.69 0 0 0 1.06 15.66a1 1 0 0 0 0 .68A16.69 16.69 0 0 0 16 27a16.69 16.69 0 0 0 14.94-10.66a1 1 0 0 0 0-.68M16 22.5a6.5 6.5 0 1 1 6.5-6.5a6.51 6.51 0 0 1-6.5 6.5" />
-//                      </svg>
-//                 </button>
-
-//                 ${order.status !== "Cancelled"
-//                 ? `<button class="cancel-btn" onclick="cancelOrder('${order._id}')">
-//                         <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 512 500">
-//                             <path fill="#fff" fill-rule="evenodd"
-//                             d="M420.48 121.813L390.187 91.52L256 225.92L121.813 91.52L91.52 121.813L225.92 256L91.52 390.187l30.293 30.293L256 286.08l134.187 134.4l30.293-30.293L286.08 256z" stroke-width="13" stroke="#fff" />
-//                         </svg>
-//                     </button>`
-//                 :`<span class="cancelled-text">
-//                         <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 512 500">
-//                             <path fill="#fff" fill-rule="evenodd"
-//                             d="M420.48 121.813L390.187 91.52L256 225.92L121.813 91.52L91.52 121.813L225.92 256L91.52 390.187l30.293 30.293L256 286.08l134.187 134.4l30.293-30.293L286.08 256z" stroke-width="13" stroke="#fff" />
-//                         </svg>
-//                         <div class="cancel_deopdown">You are already cancel order.</div>
-//                 </span>`
-//                 }
-//         </div>
-//     </div>
-//     </a>
-//     `;
-// });
-//     orderList.innerHTML = html;
-//     personal_registry.classList.remove("active");
-// }
-
-
 async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
@@ -586,20 +487,20 @@ async function renderOrders() {
                         </svg>
                     </button>
                     ${order.status !== "Cancelled"
-                        ? `<button class="cancel-btn" onclick="event.stopPropagation(); cancelOrder('${order._id}')">
+                ? `<button class="cancel-btn" onclick="event.stopPropagation(); cancelOrder('${order._id}')">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 512 500">
                                     <path fill="#fff" fill-rule="evenodd"
                                     d="M420.48 121.813L390.187 91.52L256 225.92L121.813 91.52L91.52 121.813L225.92 256L91.52 390.187l30.293 30.293L256 286.08l134.187 134.4l30.293-30.293L286.08        256z" stroke-width="13" stroke="#fff" />
                                 </svg>
                             </button>`
-                        : `<span class="cancelled-text">
+                : `<span class="cancelled-text">
                                 <svg xmlns="http://www.w 3.org/2000/svg" width="29" height="29" viewBox="0 0 512 500">
                                     <path fill="#fff" fill-rule="evenodd"
                                     d="M420.48 121.813L390.187 91.52L256 225.92L121.813 91.52L91.52 121.813L225.92 256L91.52 390.187l30.293 30.293L256 286.08l134.187 134.4l30.293-30.293L286.08        256z" stroke-width="13" stroke="#fff" />
                                 </svg>
                                 <div class="cancel_deopdown">You are already cancel order.</div>
                             </span>`
-                    }
+            }
             </div>
         </div>
         `;
@@ -607,7 +508,6 @@ async function renderOrders() {
     orderList.innerHTML = html;
     personal_registry.classList.remove("active");
 }
-
 
 function goToDetails(id) {
     localStorage.setItem("viewOrderId", id);
@@ -905,4 +805,259 @@ function addToWishlist(name, price, image) {
         localStorage.setItem("wishlist", JSON.stringify(wishlist));
         alert("Product added to wishlist!");
     }
+}
+
+function openProductDetails(name, price, image) {
+
+    const product = {
+        name: name,
+        price: price,
+        image: image
+    };
+
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+    // redirect to details page
+    window.location.href = "productdetails.html";
+}
+
+function productDetails() {
+
+    const box = document.getElementById("orderList");
+    if (!box) return;
+
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+    if (!product) return;
+
+    // If no images array, convert single image into array
+    const images = product.images && product.images.length
+        ? product.images
+        : [product.image,
+        product.image,
+        product.image];
+
+    let html = `
+    <div class="order_wrapper">
+
+        <div class="product_page">
+
+            <!-- LEFT SIDE -->
+            <div class="image_section">
+
+                <div class="main_image"
+                     onmousemove="zoomImage(event, this)"
+                     onmouseleave="resetZoom(this)">
+
+                    <img id="mainImage"
+                        src="${images[0]}"
+                        alt="${product.name}">
+                </div>
+
+                <div class="thumb_images">
+                    ${images.map((img, i) => `
+                        <img src="${img}"
+                            class="${i === 0 ? 'active_thumb' : ''}"
+                            onclick="changeImage(this,'mainImage')">
+                    `).join("")}
+                </div>
+
+                <div class="image_buttons">
+                    <button class="add_cart"
+                        onclick="animateCart(this);
+                        addToCart('${product.name}', ${product.price}, '${images[0]}')">
+                        ADD TO CART
+                    </button>
+
+                    <button class="buy_now">BUY NOW</button>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="details_section">
+
+                <h1 class="product_title">${product.name}</h1>
+
+                <div class="rating_row">
+                    <span class="rating_badge">4.9 ★</span>
+                    <span class="rating_text">2,845 Ratings & 364 Reviews</span>
+                    <span class="best_seller">BESTSELLER</span>
+                </div>
+
+                <div class="price_box">
+                    <span class="new_price">₹${product.price}</span>
+                    <span class="old_price">₹${product.price + 200}</span>
+                    <span class="discount">20% off</span>
+                </div>
+
+                <div class="offer_box">
+                    <h3>Available Offers</h3>
+                    <ul>
+                        <li>Bank Offer 5% Unlimited Cashback</li>
+                        <li>Special Price Extra Discount</li>
+                        <li>Partner Offer Gift Card ₹100</li>
+                    </ul>
+                </div>
+
+                <div class="color_box">
+                <p>Color</p>
+                <div class="colors">
+                        <button class="color" onclick="selectcolor(this)" style="background:#e91e63"></button>
+                        <button class="color" onclick="selectcolor(this)" style="background:#ffd600"></button>
+                        <button class="color" onclick="selectcolor(this)" style="background:#00c853"></button>
+                </div>
+            </div>
+
+                <div class="size_box">
+                    <p>Size</p>
+                    <button class="size" onclick="selectSize(this)">S</button>
+                    <button class="size" onclick="selectSize(this)">M</button>
+                    <button class="size" onclick="selectSize(this)">L</button>
+                    <button class="size" onclick="selectSize(this)">XL</button>
+                    <button class="size" onclick="selectSize(this)">XXL</button>
+                </div>
+
+                <div class="delivery_box">
+                <p>Delivery</p>
+                <input type="text" placeholder="Enter Pincode">
+                <button>Check</button>
+                <span class="delivery_text">Delivery in 2-4 days</span>
+            </div>
+
+            <div class="highlight_box">
+                <h3>Highlights</h3>
+                <ul>
+                    <li>Fabric: Pure Viscose Rayon</li>
+                    <li>Type: Premium</li>
+                    <li>Pattern: Self Design</li>
+                    <li>Occasion: Party & Festive</li>
+                </ul>
+            </div>
+
+                <div class="description_box">
+                    <h3>Description</h3>
+                    <p>${product.description || "Premium quality product designed for modern comfort and style."}</p>
+                </div>
+
+                <!-- REVIEWS -->
+                <div class="review_section">
+                    <h2>Ratings & Reviews</h2>
+
+                    <div class="rating_summary">
+
+                        <div class="big_rating">
+                            <h1>4.9 ★</h1>
+                            <p>2,845 Ratings</p>
+                        </div>
+
+                        <div class="rating_bars">
+
+                            ${[97, 80, 50, 24, 9].map((width, i) => `
+                                <div class="bar_row">
+                                    <span>${5 - i} ★</span>
+                                    <div class="bar">
+                                        <div style="width:${width}%"></div>
+                                    </div>
+                                </div>
+                            `).join("")}
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    `;
+
+    box.innerHTML = html;
+
+    if (images.length > 1) {
+        startSlider(images, "mainImage");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", productDetails);
+
+function changeImage(el, id) {
+    document.getElementById(id).src = el.src;
+
+    document.querySelectorAll(".thumb_images img")
+        .forEach(img => img.classList.remove("active_thumb"));
+
+    el.classList.add("active_thumb");
+}
+
+function zoomImage(e, container) {
+    const img = container.querySelector("img");
+    const rect = container.getBoundingClientRect();
+
+    let x = ((e.clientX - rect.left) / rect.width) * 100;
+    let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    img.style.transformOrigin = x + "% " + y + "%";
+    img.style.transform = "scale(2)";
+}
+
+function resetZoom(container) {
+    container.querySelector("img").style.transform = "scale(1)";
+}
+
+function animateCart(btn) {
+    btn.innerHTML = `
+        <div class="cart-controls">
+            <button class="symbol1">-</button>
+            <span class="count">1</span>
+            <button class="symbol1">+</button>
+        </div>`;
+    btn.style.background = "#a0d490";
+    btn.style.color = "#fff";
+
+    // setTimeout(()=>{
+    //     btn.innerHTML =`
+    //     <div class="cart-controls">
+    //         <button class="symbol1">-</button>
+    //         <span class="count">1</span>
+    //         <button class="symbol1">+</button>
+    //     </div>`;
+    //     btn.style.background = "";
+    // },2000);
+}
+
+function selectSize(btn) {
+    document.querySelectorAll(".size")
+        .forEach(s => s.classList.remove("active"));
+    btn.classList.add("active");
+}
+
+function selectcolor(btn) {
+    document.querySelectorAll(".color")
+        .forEach(s => s.classList.remove("active"));
+    btn.classList.add("active");
+}
+
+function changeImage(el, id) {
+    document.getElementById(id).src = el.src;
+}
+
+function changeQty(val, id) {
+    let qtyEl = document.getElementById(id);
+    let qty = parseInt(qtyEl.innerText);
+
+    qty += val;
+    if (qty < 1) qty = 1;
+
+    qtyEl.innerText = qty;
+}
+
+function selectSize(el) {
+
+    let sizes = el.parentElement.querySelectorAll(".size");
+
+    sizes.forEach(btn => btn.classList.remove("active"));
+
+    el.classList.add("active");
 }
