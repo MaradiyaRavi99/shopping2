@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApnaShop Contact</title>
+    <link rel="stylesheet" href="static/css/contact.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="navigation" id="navigation">
+            <nav>
+                <div class="nav_logo">
+                    <img src="/static/logo1.png" alt="" id="logo">
+                </div>
+                <ul>
+                    <div class="nav_ul" id="nav_ul">
+                        <li class="items1"><a href="/index.html">Home</a></li>
+                        <li class="items2"><a href="/categories.html">Categories</a></li>
+                        <li class="items3"><a href="/aboutus.html">About US</a></li>
+                        <li class="items4"><a href="/contact.html">Contact</a></li>
+                        <li class="items8"><button class="login_btn" id="openBtn3" onclick="showWrapper()">Sign
+                                Up</button></li>
+                    </div>
+                </ul>
+                <div class="icons" id="icons">
+                    <ul>
+                        <div id="search">
+                            <form class="example" action="/action_page.php" style="max-width:300px">
+                                <input type="text" placeholder="Search products.." name="search2">
+                                <button type="submit">
+                                    <div class="hi">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#fff"
+                                                d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                        <li class="items6">
+                            <a href="/profile.html" class="user_profile_btn" aria-label="Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M19 20.75a1 1 0 0 0 1-1v-1.246c.004-2.806-3.974-5.004-8-5.004s-8 2.198-8 5.004v1.246a1 1 0 0 0 1 1zM15.604 6.854a3.604 3.604 0 1 1-7.208 0a3.604 3.604 0 0 1 7.208 0" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="items5">
+                            <button class="cart" id="openBtn">
+                                <span id="cartCount">0</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    style="margin-left: 4px; margin-top: -7px;" viewBox="0 0 16 16">
+                                    <path fill="#fff"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607L1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4a2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2a1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <li class="items7">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="margin-left: 5px; margin-top: 5px;" viewBox="0 0 24 24">
+                            <path fill="#fff"
+                                d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2m18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2m0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2" />
+                        </svg>
+                    </a>
+                </li>
+            </nav>
+            <div class="menu-overlay" id="menuOverlay"></div>
+            <svg width="0" height="0">
+                <defs>
+                    <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
+                        <!-- Displacement texture -->
+                        <feImage href="https://essykings.github.io/JavaScript/map.png" x="-50%" y="-50%" width="200%"
+                            height="200%" result="map" />
+                        <!-- Blur the original object -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur" />
+                        <!-- Glass distortion -->
+                        <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />
+                        <!-- <feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/> -->
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <div class="contactus">
+        <h1 class="gradient-text">Contact Us</h1>
+        <p>Connect with the curators of atmosphere. Whether it's a bespoke inquiry or a simple greeting, we are here to
+            assist your journey.</p>
+    </div>
+
+    <div class="contact_form">
+        <div class="left_side">
+            <form action="/action_page.php">
+                <div class="first_email">
+                    <div class="lable">
+                        <label for="fname">First name</label>
+                        <input type="text" id="fname" name="fname" placeholder="Julian Vane">
+                    </div>
+                    <div class="lable">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="julian@obsidian.com">
+                    </div>
+                </div>
+                <div class="phone_subject">
+                    <div class="lable">
+                        <label for="phone">Phone</label>
+                        <input type="number" id="phone" name="phone" placeholder="+91 9087654321" style="width: 98%;">
+                    </div>
+                    <div class="lable" style="margin-left: 44px;">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="General Inquiry">
+                    </div>
+                </div>
+                <div>
+                    <label for="textarea">Message</label><br>
+                    <textarea id="textarea" name="textarea" rows="4" cols="67"
+                        placeholder="Tell us about your vision..."></textarea><br><br>
+                </div>
+
+                <button id="send_message">Send Message</button>
+            </form>
+        </div>
+        <div class="right_side">
+            <div class="main_contact_location">
+                <div class="contact_location">
+                    <div id="contact_location_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                            <g fill="none" stroke="#90D792" stroke-linejoin="round" stroke-width="2">
+                                <path d="M13 9a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z" />
+                                <path
+                                    d="M17.5 9.5c0 3.038-2 6.5-5.5 10.5c-3.5-4-5.5-7.462-5.5-10.5a5.5 5.5 0 1 1 11 0Z" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="input_name_p_title">Our Atelier</p>
+                        <p class="input_name_p_name">42nd Celestial Ave, Design District, NY 10013</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main_contact_call">
+                <div class="contact_call">
+                    <div id="contact_call_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                            <path fill="#E9C400"
+                                d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3M6.025 9l1.65-1.65L7.25 5H5.025q.125 1.025.35 2.025T6.025 9m8.95 8.95q.975.425 1.988.675T19 18.95v-2.2l-2.35-.475zm0 0" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="input_name_p_title">Direct Line</p>
+                        <p class="input_name_p_name">+91 9087654321</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main_contact_email">
+                <div class="contact_email">
+                    <div id="contact_email_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="#FFB4AC"
+                                d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="input_name_p_title">Email Concierge</p>
+                        <p class="input_name_p_name">concierge@apnashop.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact_btn">
+                <button class="live_chat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m22 22l-4-4H8q-.825 0-1.412-.587T6 16v-1h11q.825 0 1.413-.587T19 13V6h1q.825 0 1.413.588T22 8zM4 12.175L5.175 11H15V4H4zM2 17V4q0-.825.588-1.412T4 2h11q.825 0 1.413.588T17 4v7q0 .825-.587 1.413T15 13H6zm2-6V4z"/></svg>
+                    <p>Live Chat</p>
+                </button>
+                <button class="whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 20V4l19 8zm2-3l11.85-5L5 7v3.5l6 1.5l-6 1.5zm0 0V7z"/></svg>
+                    <p>WhatsApp</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

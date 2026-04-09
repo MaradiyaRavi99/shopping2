@@ -204,37 +204,109 @@ nav {
 
 .items1 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.items1 a:hover {
-    text-decoration: underline;
+.items1 a:hover{
+    color: var(--accent);
+}
+
+.items1 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items1 a:hover::after {
+    width: 81%;
     color: var(--accent);
 }
 
 .items2 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.items2 a:hover {
-    text-decoration: underline;
+.items2 a:hover{
+    color: var(--accent);
+}
+
+.items2 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items2 a:hover::after {
+    width: 90%;
     color: var(--accent);
 }
 
 .items3 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.items3 a:hover {
-    text-decoration: underline;
+.items3 a:hover{
+    color: var(--accent);
+}
+
+.items3 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items3 a:hover::after {
+    width: 87%;
     color: var(--accent);
 }
 
 .items4 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.items4 a:hover {
-    text-decoration: underline;
+.items4 a:hover{
+    color: var(--accent);
+}
+
+.items4 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items4 a:hover::after {
+    width: 88%;
     color: var(--accent);
 }
 
@@ -888,7 +960,6 @@ hr {
     color:#fff;
 }
 
-/* CURRENT STEP */
 .step.current .circle{
     border-color: var(--accent);
     box-shadow: 0 0 12px var(--accent);
@@ -901,66 +972,6 @@ hr {
 .step.current h4{
     color:#fff;
 }
-
-/* .order_track_popup{
-    display: flex;
-    justify-content: center;
-}
-
-.track_popup{
-    background: white;
-    width: 23%;
-    padding: 20px 20px;
-}
-
-.line_details{
-    display: flex;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.order_track_line{
-    margin-left: 4%;
-    border: 2px solid #a0d590;
-    border-radius: 10px;
-}
-
-.confirmed{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 19px 10px;
-    padding-top: 0px;
-}
-
-.shipped{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 19px 10px;
-}
-
-.place{
-    padding: 0px 10px;
-    padding-bottom: 19px;
-}
-
-.partner{
-    padding: 0px 10px;
-}
-
-.shipped_details{
-    padding: 0px 10px;
-}
-
-.delivered{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 19px 10px;
-    padding-bottom: 0px;
-} */
-
 
 .order-tracking {
     width: 420px;
@@ -982,7 +993,6 @@ hr {
     padding-bottom: 25px;
 }
 
-/* vertical line */
 .tracking::before {
     content: "";
     position: absolute;
@@ -993,12 +1003,10 @@ hr {
     background: #d2d2d2;
 }
 
-/* remove line from last item */
 .tracking:last-child::before {
     display: none;
 }
 
-/* circle */
 .circlee {
     position: absolute;
     left: 0;
@@ -1009,7 +1017,6 @@ hr {
     background: #d2d2d2;
 }
 
-/* active step */
 .tracking.active .circlee {
     background: #1db954;
 }
@@ -1054,22 +1061,6 @@ hr {
     color: #808080eb;
 }
 
-/* .col-status.cancelled {
-    color: green;
-    border: none;
-    padding: 10px 10px;
-    background: #a0d591;
-    border-radius: 10px;
-}
-
-.col-status.paid {
-    color: green;
-    border: none;
-    padding: 7px 10px;
-    background: #a0d591;
-    border-radius: 10px;
-} */
-
 .paid{ 
     color: #33df7d;
     font-size: 16px;
@@ -1100,6 +1091,7 @@ hr {
 
 .footer-box h3 {
     margin-bottom: 10px;
+    letter-spacing: 0.7px;
 }
 
 .footer-box ul {

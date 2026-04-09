@@ -217,91 +217,6 @@ function addToCart(name, price, image) {
     animateCart(btn);
 }
 
-
-
-// function addToCart(name, price, image, btnElement) {
-
-//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-//     let existing = cart.find(item => item.name === name);
-
-//     if (existing) {
-//         existing.qty += 1;
-//     } else {
-//         cart.push({
-//             name,
-//             price,
-//             image,
-//             qty: 1
-//         });
-//     }
-
-//     localStorage.setItem("cart", JSON.stringify(cart));
-
-//     renderQuantity(name, btnElement.parentElement);
-// }
-
-
-// function renderQuantity(name, container) {
-
-//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-//     let product = cart.find(item => item.name === name);
-
-//     if (!product) return;
-
-//     container.innerHTML = `
-//         <div class="cart_qty">
-//             <button onclick="changeQty('${name}', -1, this)">-</button>
-//             <span>${product.qty}</span>
-//             <button onclick="changeQty('${name}', 1, this)">+</button>
-//         </div>
-//     `;
-// }
-
-// function changeQty(name, change, element) {
-
-//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-//     let product = cart.find(item => item.name === name);
-
-//     if (!product) return;
-
-//     product.qty += change;
-
-//     if (product.qty <= 0) {
-//         cart = cart.filter(item => item.name !== name);
-
-//         element.closest(".cart_action").innerHTML = `
-//             <button class="btn1 btn-primary"
-//                 onclick="addToCart('${name}', ${product.price}, '${product.image}', this)">
-//                 Add to Cart
-//             </button>
-//         `;
-//     }
-
-//     localStorage.setItem("cart", JSON.stringify(cart));
-
-//     updateAllQtyUI();
-// }
-
-// function updateAllQtyUI() {
-
-//     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-//     cart.forEach(item => {
-//         let cards = document.querySelectorAll(".cart_action");
-
-//         cards.forEach(container => {
-//             if (container.innerHTML.includes(item.name)) {
-//                 renderQuantity(item.name, container);
-//             }
-//         });
-//     });
-// }
-
-// document.addEventListener("DOMContentLoaded", updateAllQtyUI);
-
-
 function updateCartCount() {
     let count = 0;
 
@@ -541,7 +456,7 @@ function saveOrder(cartData) {
         status: "Paid"
     };
 
-    fetch("http://192.168.1.9:8800/api/orders", {
+    fetch("http://192.168.1.11:8800/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder)
@@ -649,7 +564,7 @@ async function renderOrders() {
     const orderList = document.getElementById("orderList");
     if (!orderList) return;
 
-    const res = await fetch("http://192.168.1.9:8800/api/orders");
+    const res = await fetch("http://192.168.1.11:8800/api/orders");
     const orders = await res.json();
 
     if (!orders.length) {
@@ -752,7 +667,7 @@ async function renderDetails() {
     const id = localStorage.getItem("viewOrderId");
     if (!id) return;
 
-    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.11:8800/api/orders/${id}`);
     const order = await res.json();
 
     const subtotal = order.items.reduce((t, i) => t + i.price * i.qty, 0);
@@ -969,7 +884,7 @@ function remove() {
 }
 
 async function cancelOrder(id) {
-    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.11:8800/api/orders/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "Cancelled" })
@@ -982,7 +897,7 @@ async function openPopup(id) {
     const popup = document.getElementById("orderPopup");
     const popupContent = document.getElementById("popupContent");
 
-    const res = await fetch(`http://192.168.1.9:8800/api/orders/${id}`);
+    const res = await fetch(`http://192.168.1.11:8800/api/orders/${id}`);
     const order = await res.json();
 
     popupContent.innerHTML = `
@@ -1008,7 +923,7 @@ function closePopup() {
 }
 
 async function removeOrder(id) {
-    await fetch(`http://192.168.1.9:8800/api/orders/${id}`, {
+    await fetch(`http://192.168.1.11:8800/api/orders/${id}`, {
         method: "DELETE"
     });
 
@@ -1189,7 +1104,6 @@ function openProductDetails(name, price, image) {
     window.location.href = "productdetails.html";
 }
 
-
 function productDetails() {
 
     const box = document.getElementById("orderList");
@@ -1328,7 +1242,6 @@ function productDetails() {
         startSlider(images, "mainImage");
     }
 }
-
 
 document.addEventListener("DOMContentLoaded", productDetails);
     

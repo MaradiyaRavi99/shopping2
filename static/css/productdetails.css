@@ -11,18 +11,15 @@
     --danger: #ff4757;
 }
 
-/* Full scrollbar */
 ::-webkit-scrollbar {
     width: 4px;
     height: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #3e3e3e;
 }
 
-/* Thumb */
 ::-webkit-scrollbar-thumb {
     background: #a0d591;
     border-radius: 10px;
@@ -206,36 +203,112 @@ nav {
     padding: 0px 8px;
 }
 
-.items1 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+.items1 a {
+    padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.items1 a:hover{
+    color: var(--accent);
+}
+
+.items1 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items1 a:hover::after {
+    width: 81%;
+    color: var(--accent);
 }
 
 .items2 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.items2 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+.items2 a:hover{
+    color: var(--accent);
+}
+
+.items2 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items2 a:hover::after {
+    width: 90%;
+    color: var(--accent);
 }
 
 .items3 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.items3 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+.items3 a:hover{
+    color: var(--accent);
+}
+
+.items3 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items3 a:hover::after {
+    width: 87%;
+    color: var(--accent);
 }
 
 .items4 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.items4 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+.items4 a:hover{
+    color: var(--accent);
+}
+
+.items4 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items4 a:hover::after {
+    width: 88%;
+    color: var(--accent);
 }
 
 .items5 {
@@ -406,7 +479,6 @@ nav {
 .fade-in {
     animation: fadeIn 0.5s ease-in-out;
 }
-
 
 @keyframes fadeIn {
     from {
@@ -584,9 +656,6 @@ nav {
 .count {
     font-size: 15px;
 }
-
-
-
 
 .product img {
     width: 100%;
@@ -1021,6 +1090,7 @@ nav {
 
 .footer-box h3 {
     margin-bottom: 10px;
+    letter-spacing: 0.7px;
 }
 
 .footer-box ul {

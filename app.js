@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const app = express();
 const mongoose = require('mongoose');
-const bodyparser = require('body-parser')
+const bodyparser = require('body-parser');
 mongoose.connect("mongodb://127.0.0.1:27017/apnashop");
 const port = 8800;
 const cors = require("cors");
@@ -35,8 +35,8 @@ const Order = mongoose.model("Order", OrderSchema);
 app.use(express.json());
 
 const allowedOrigins = [
-  "http://localhost:8800",
-  "http://192.168.1.9:8800/index.html"
+  "http://localhost:8800/index.html",
+  "http://192.168.1.11:8800/index.html"
 ];
 
 app.use(cors());
@@ -77,6 +77,14 @@ app.get("/categories.html", (req, res) => {
   res.sendFile(path.join(__dirname, "categories.html"));
 });
 
+app.get("/aboutus.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "aboutus.html"));
+});
+
+app.get("/contact.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "contact.html"));
+});
+
 app.get("/orderdetail.html", (req, res) => {
   res.sendFile(path.join(__dirname, "orderdetail.html"));
 });
@@ -101,6 +109,7 @@ app.get("/api/orders", async (req, res) => {
   res.json(orders);
 });
 
+
 app.post("/login", async (req, res) => {
   try {
     const myData = new Login(req.body);
@@ -114,6 +123,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
+
 app.post("/login2", async (req, res) => {
   try {
     const myData = new Login(req.body);
@@ -126,6 +136,7 @@ app.post("/login2", async (req, res) => {
     return res.status(400).send("You are Already Login in this site.");
   }
 });
+
 
 // Get single order
 app.get("/api/orders/:id", async (req, res) => {

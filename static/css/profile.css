@@ -202,38 +202,110 @@ nav {
 
 .items1 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .items1 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
+}
+
+.items1 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items1 a:hover::after {
+    width: 81%;
+    color: var(--accent);
 }
 
 .items2 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .items2 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
+}
+
+.items2 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items2 a:hover::after {
+    width: 90%;
+    color: var(--accent);
 }
 
 .items3 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .items3 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
+}
+
+.items3 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items3 a:hover::after {
+    width: 87%;
+    color: var(--accent);
 }
 
 .items4 a {
     padding: 0px 8px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .items4 a:hover {
-    text-decoration: underline;
-    color: #a1d591;
+    color: var(--accent);
+}
+
+.items4 a::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.items4 a:hover::after {
+    width: 88%;
+    color: var(--accent);
 }
 
 .items5 {
@@ -1044,11 +1116,9 @@ nav {
 }
 
 .order_container {
-    /* background: #2e2e2e; */
     margin-top: -1.6%;
     color: white;
     text-align: center;
-    /* height: 500px; */
 }
 
 #orderList h2 {
@@ -1056,10 +1126,6 @@ nav {
     text-align: left;
     margin-bottom: 2%;
 }
-
-/* .orders {
-    max-width: 500px;
-} */
 
 .order-id {
     display: flex;
@@ -1083,7 +1149,6 @@ nav {
     border-radius: 20px;
     padding: 15px;
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
     margin-bottom: 15px;
     margin-top: 2%;
@@ -1242,7 +1307,6 @@ nav {
     display: flex;
 }
 
-/* order row card */
 .order-row {
     display: flex;
     align-items: center;
@@ -1336,7 +1400,6 @@ nav {
     cursor: pointer;
     display: flex;
     align-items: center;
-    /* height: 20px; */
     margin-top: 9px;
 }
 
@@ -1475,7 +1538,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 20px; */
     color: white;
 }
 
@@ -1562,11 +1624,6 @@ nav {
     font-weight: 600;
 }
 
-
-
-
-
-
 @media (max-width:1024px) {
 
     .main_profile {
@@ -1617,9 +1674,6 @@ nav {
     }
 
 }
-
-
-
 
 @media (max-width:768px) {
 
@@ -1685,8 +1739,6 @@ nav {
 
 }
 
-
-
 @media (max-width:480px) {
 
     .navigation {
@@ -1731,7 +1783,6 @@ nav {
     }
 
 }
-
 
 @media (max-width:1024px) {
 
@@ -1786,8 +1837,6 @@ nav {
     }
 
 }
-
-
 
 @media (max-width:768px) {
 
@@ -1863,8 +1912,6 @@ nav {
 
 }
 
-
-
 @media (max-width:480px) {
 
     .order-row {
@@ -1904,9 +1951,7 @@ nav {
 
 }
 
-
 /* MAIN PROFILE */
-
 .main_profile {
     margin-top: 120px;
     padding: 30px;
@@ -1915,7 +1960,6 @@ nav {
 }
 
 /* PROFILE HEADER */
-
 .profile {
     display: flex;
     flex-direction: column;
@@ -1941,7 +1985,6 @@ nav {
 }
 
 .btn_edit {
-    /* background: #a0d490; */
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
@@ -1950,20 +1993,13 @@ nav {
     font-weight: 600;
 }
 
-/* .profile_name h1 {
-    font-size: 28px;
-    margin-top: 10px;
-} */
-
 /* PROFILE LAYOUT */
-
 .profile_details {
     display: flex;
     gap: 25px;
 }
 
 /* LEFT SIDEBAR */
-
 .profile_categories {
     width: 453px;
     background: #1f1f23;
@@ -1990,7 +2026,6 @@ nav {
 }
 
 /* RIGHT CONTENT */
-
 .personal_registry,
 .my_order,
 .main_payment_section,
@@ -1999,16 +2034,13 @@ nav {
     padding: 25px;
     background: #1f1f23;
     border-radius: 12px;
-    /* padding-top: 10px; */
     padding-left: 23px;
 }
 
 /* PERSONAL DETAILS GRID */
-
 .personal_registry {
     display: none;
     grid-template-columns: repeat(2, 1fr);
-    /* gap: 20px; */
 }
 
 .personal_registry_name,
@@ -2024,7 +2056,6 @@ nav {
 }
 
 /* DETAILS ROW */
-
 .personal_details_name,
 .personal_details_email,
 .personal_details_number,
@@ -2037,7 +2068,6 @@ nav {
 }
 
 /* RADIO BUTTON */
-
 .radio-wrap {
     display: flex;
     align-items: center;
@@ -2402,6 +2432,7 @@ nav {
 
 .footer-box h3 {
     margin-bottom: 10px;
+    letter-spacing: 0.7px;
 }
 
 .footer-box ul {
