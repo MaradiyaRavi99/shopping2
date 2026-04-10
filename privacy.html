@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <link rel="shortcut icon" href="static/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/privacy.css">
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="navigation" id="navigation">
+            <nav>
+                <div class="nav_logo">
+                    <img src="/static/logo1.png" alt="" id="logo">
+                </div>
+                <ul>
+                    <div class="nav_ul" id="nav_ul">
+                        <li class="items1"><a href="/index.html">Home</a></li>
+                        <li class="items2"><a href="/categories.html">Categories</a></li>
+                        <li class="items3"><a href="/aboutus.html">About US</a></li>
+                        <li class="items4"><a href="/contact.html">Contact</a></li>
+                        <li class="items8"><button class="login_btn" id="openBtn3" onclick="showWrapper()">Sign
+                                Up</button></li>
+                    </div>
+                </ul>
+                <div class="icons" id="icons">
+                    <ul>
+                        <div id="search">
+                            <form class="example" action="/action_page.php" style="max-width:300px">
+                                <input type="text" placeholder="Search products.." name="search2">
+                                <button type="submit">
+                                    <div class="hi">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#fff"
+                                                d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </form>
+                        </div>
+                        <li class="items6">
+                            <a href="/profile.html" class="user_profile_btn" aria-label="Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="M19 20.75a1 1 0 0 0 1-1v-1.246c.004-2.806-3.974-5.004-8-5.004s-8 2.198-8 5.004v1.246a1 1 0 0 0 1 1zM15.604 6.854a3.604 3.604 0 1 1-7.208 0a3.604 3.604 0 0 1 7.208 0" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="items5">
+                            <button class="cart" id="openBtn">
+                                <span id="cartCount">0</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    style="margin-left: 4px; margin-top: -7px;" viewBox="0 0 16 16">
+                                    <path fill="#fff"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607L1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4a2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2a1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2a1 1 0 0 1 0-2" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <li class="items7">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            style="margin-left: 5px; margin-top: 5px;" viewBox="0 0 24 24">
+                            <path fill="#fff"
+                                d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2m18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2m0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2" />
+                        </svg>
+                    </a>
+                </li>
+            </nav>
+            <div class="menu-overlay" id="menuOverlay"></div>
+            <svg width="0" height="0">
+                <defs>
+                    <filter id="glass" x="-50%" y="-50%" width="200%" height="200%">
+                        <!-- Displacement texture -->
+                        <feImage href="https://essykings.github.io/JavaScript/map.png" x="-50%" y="-50%" width="200%"
+                            height="200%" result="map" />
+                        <!-- Blur the original object -->
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="0.02" result="blur" />
+                        <!-- Glass distortion -->
+                        <feDisplacementMap in="blur" in2="map" scale="20" xChannelSelector="R" yChannelSelector="G" />
+                        <!-- <feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/> -->
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <div class="privacy_heading">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us. This policy explains how we handle your information with the care and
+            sophistication it deserves.</p>
+    </div>
+
+    <div class="main_privacy">
+        <div class="privacy_left">
+            <navbar class="privacy_link">
+                <a href="#introduction_detail">Introduction</a>
+                <a href="#information_collect">Information Collection</a>
+                <a href="#main_use">How We Use Data</a>
+                <a href="#main_cookies">Cookies Policy</a>
+                <a href="#second_container">Security & Sharing</a>
+                <a href="#main_sovereign">Your Rights</a>
+                <a href="#main_curators">Contact Us</a>
+            </navbar>
+        </div>
+
+        <div class="privacy_right">
+            <div id="introduction_detail" class="introduction_detail">
+                <div class="commitment">
+                    <h3>Commitment to Privacy</h3>
+                    <p>At ApnaShop, we believe that luxury is built on a foundation of trust. Our commitment to your
+                        privacy is absolute. We curate not just atmospheric experiences, but also the security of your
+                        personal data. This policy outlines our transparent practices in managing the digital footprint
+                        you leave within our boutique ecosystem.</p>
+                </div>
+            </div>
+
+            <div id="information_collect" class="information_collect">
+                <div class="information">
+                    <h3>Information We Collect</h3>
+                    <div class="information_card_box">
+                        <div class="information_card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                                <path
+                                    d="M9.175 10.825Q8 9.65 8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12t-2.825-1.175M4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20zm2-2h12v-.8q0-.275-.137-.5t-.363-.35q-1.35-.675-2.725-1.012T12 15t-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2zm7.413-8.587Q14 8.825 14 8t-.587-1.412T12 6t-1.412.588T10 8t.588 1.413T12 10t1.413-.587M12 18" />
+                            </svg>
+                            <h4>Personal Identity</h4>
+                            <div class="card_detail">
+                                <span>Legal Full Name</span>
+                                <span>Email Address</span>
+                                <span>Contact Phone</span>
+                                <span>Shipping & Billing Address</span>
+                            </div>
+                        </div>
+                        <div class="information_card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                                <path
+                                    d="M2 20v-2h10v2zm3-3q-.825 0-1.412-.587T3 15V6q0-.825.588-1.412T5 4h14q.825 0 1.413.588T21 6H5v9h7v2zm15 1v-8h-4v8zm-4.5 2q-.625 0-1.062-.437T14 18.5v-9q0-.625.438-1.062T15.5 8h5q.625 0 1.063.438T22 9.5v9q0 .625-.437 1.063T20.5 20zm2.5-7.5q.325 0 .538-.225t.212-.525q0-.325-.213-.537T18 11q-.3 0-.525.213t-.225.537q0 .3.225.525T18 12.5m0 1.5" />
+                            </svg>
+                            <h4>Technical Data</h4>
+                            <div class="card_detail">
+                                <span>IP Address</span>
+                                <span>Browser Typography Prefs</span>
+                                <span>Device Hardware Model</span>
+                                <span>Operating System</span>
+                            </div>
+                        </div>
+                        <div class="information_card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                                <path
+                                    d="M7 17h2v-5H7zm8 0h2V7h-2zm-4 0h2v-3h-2zm0-5h2v-2h-2zm-6 9q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zM5 5v14z" />
+                            </svg>
+                            <h3>Usage Insights</h3>
+                            <div class="card_detail">
+                                <span>Collection Interaction</span>
+                                <span>Time Spent on Boutique</span>
+                                <span>Page Transition Flow</span>
+                                <span>Interaction Heatmaps</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main_use" class="main_use">
+                <h3>How We Use Information</h3>
+                <div class="use">
+                    <div class="use_left">
+                        <div class="how_use_details">
+                            <h5>Order Fulfillment</h5>
+                            <p>Processing transactions and ensuring your curated selections reach your doorstep with
+                                precision.</p>
+                        </div>
+                        <div class="how_use_details">
+                            <h5>Experience Elevation</h5>
+                            <p>Tailoring our 'Atmospheric Curator' interface to better suit your aesthetic preferences
+                                and browsing style..</p>
+                        </div>
+                        <div class="how_use_details">
+                            <h5>Refined Communication</h5>
+                            <p>Sending updates about new arrivals and exclusive boutique events that align with your
+                                taste.</p>
+                        </div>
+                    </div>
+                    <div class="use_right">
+                        <img src="static/Atmospheric.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="main_cookies" class="main_cookies">
+                <h3>Cookies Policy</h3>
+                <div class="cookies_container">
+                    <p>ApnaShop uses essential and performance cookies to maintain your session and remember your
+                        boutique preferences. These small digital tokens allow us to provide a seamless, continuous
+                        experience.</p>
+                    <ul>
+                        <li><span>Session Cookies:</span> Temporarily stored to allow smooth navigation between boutique
+                            collections.</li>
+                        <li><span>Preference Cookies:</span> Remember your currency, language, and display settings for
+                            future visits.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="second_container" class="second_container">
+                <div class="our_sacred_oath">
+                    <h2>Our Sacred Oath</h2>
+                    <p>RangBazaar does NOT, and will never, sell your personal data to third parties.</p>
+                    <span>Your information is encrypted using industry-standard TLS 1.3 protocols and stored on secure, air-gapped servers where applicable. Access is restricted to a select few 'Curators' who require the data for essential service delivery.</span>
+                </div>
+            </div>
+
+            <div id="main_sovereign" class="main_sovereign">
+                <h3>Your Sovereign Rights</h3>
+                <div class="access_erasure">
+                    <div class="to_access">
+                        <h5>Right to Access</h5>
+                        <p>Request a comprehensive transcript of all personal data we hold about you at any time.</p>
+                    </div>
+                    <div class="to_erasure">
+                        <h5>Right to Erasure</h5>
+                        <p>The 'Right to be Forgotten'. You may request the permanent deletion of your profile and historical data.</p>
+                    </div>
+                </div>
+
+                <div class="third_portability">
+                    <div class="to_third">
+                        <h5>Third-Party Links</h5>
+                        <p>Our boutique may contain links to external artistic partners. We are not responsible for their independent privacy practices.</p>
+                    </div>
+                    <div class="to_portability">
+                        <h5>Portability</h5>
+                        <p>Request your data in a structured, machine-readable format to transfer to another curator.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main_curators" class="main_curators">
+                <h3>Contact the Curators</h3>
+                <div class="curators">
+                    <div class="curators_email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z"/></svg>
+                        <p>email support</p>
+                        <span>privacy@apnashop.com</span>
+                    </div>
+                    <div class="curators_phone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 11.95q0-2.925-2.037-4.962T12 4.95v-2q1.875 0 3.513.713t2.85 1.925t1.925 2.85T21 11.95zm-4 0q0-1.25-.875-2.125T12 8.95v-2q2.075 0 3.538 1.463T17 11.95zM19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3"/></svg>
+                        <p>Inquiry Line</p>
+                        <span>+91 1800-LUXURY</span>
+                    </div>
+                    <div class="curators_address">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.413 11.413Q14 10.825 14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12t1.413-.587M12 19.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></svg>
+                        <p>addres</p>
+                        <span>Luxury Enclave, Mumbai, MH</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <img src="/static/logo1.png" alt="">
+                <p style="margin-top: 10px; letter-spacing: 0.7px;">Your one-stop shop for all products.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Shop</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#faq-container">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Newsletter</h3>
+                <input type="email" placeholder="Enter email">
+                <button>Subscribe</button>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 ApnaShop.com. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="static/js/index.js" defer></script>
+</body>
+
+</html>

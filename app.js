@@ -97,6 +97,10 @@ app.get("/productdetails.html", (req, res) => {
   res.sendFile(path.join(__dirname, "productdetails.html"));
 });
 
+app.get("/privacy.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "privacy.html"));
+});
+
 app.post("/api/orders", async (req, res) => {
   const order = new Order(req.body);
   await order.save();
@@ -108,7 +112,6 @@ app.get("/api/orders", async (req, res) => {
   const orders = await Order.find().sort({ _id: -1 });
   res.json(orders);
 });
-
 
 app.post("/login", async (req, res) => {
   try {
@@ -123,7 +126,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
 app.post("/login2", async (req, res) => {
   try {
     const myData = new Login(req.body);
@@ -136,7 +138,6 @@ app.post("/login2", async (req, res) => {
     return res.status(400).send("You are Already Login in this site.");
   }
 });
-
 
 // Get single order
 app.get("/api/orders/:id", async (req, res) => {

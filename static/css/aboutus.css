@@ -1593,3 +1593,67 @@ nav {
         transform: translateY(100vh) rotate(360deg);
     }
 }
+
+.footer {
+    background: #111111;
+    color: #fff;
+    padding: 40px 7% 10px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.footer-box img {
+    width: 50%;
+}
+
+.footer-box h3 {
+    margin-bottom: 10px;
+    letter-spacing: 0.7px;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin: 8px 0;
+}
+
+.footer-box ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-box input {
+    width: 60%;
+    padding: 7px;
+    margin: 10px 0;
+    border-radius: 7px;
+    border: 1px solid #ffffff3d;
+    background: transparent;
+    outline: none;
+    color: white;
+}
+
+.footer-box button {
+    padding: 8px 21px;
+    background: linear-gradient(45deg, var(--accent), #56bc37);
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
